@@ -568,6 +568,15 @@ if(VEYRA_NVOF_SDK_ROOT AND EXISTS "${VEYRA_NVOF_SDK_ROOT}/NvOFInterface/nvOptica
     "${VEYRA_NVOF_SDK_ROOT}/NvOFInterface"
     "${VEYRA_NVOF_SDK_ROOT}/Common/NvOFBase")
   target_link_libraries(veyra_nvof_probe PRIVATE veyra_gfx veyra_base)
+else()
+  # BPN Vision: without the Optical Flow SDK the session reports the runtime as unavailable (as on PCs
+  # without nvofapi64.dll), so EnhanceGraph and the engine still build and take their fallback paths.
+  add_library(veyra_nvof STATIC src/ngx/NvOfSessionUnavailable.cpp)
+  veyra_apply_warnings(veyra_nvof)
+  target_compile_features(veyra_nvof PUBLIC cxx_std_20)
+  target_include_directories(veyra_nvof PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+  target_link_libraries(veyra_nvof PUBLIC veyra_base veyra_gfx)
+  message(STATUS "NVIDIA Optical Flow SDK not found: building the unavailable-session stand-in")
 endif()
 
 # Resolve FFmpeg before any consumer, including the shared enhancement graph.

@@ -14,6 +14,10 @@
 - `i18n/catalog.json`: колонка `ru` для всех строк и новые строки облака на всех языках.
 - `src/ui/UiLanguage.cpp`, `include/veyra/ui/UiLanguage.h`, `qml/Veyra/SettingsPage.qml`, `qml/Veyra/Theme.qml`: язык «Русский», автовыбор на русской Windows, шрифт Segoe UI для кириллицы.
 
+## Сборка
+- `.github/workflows/build.yml`, `.github/ci/*`, `.github/vcpkg-triplets/*`: сборка в GitHub Actions с теми же версиями зависимостей, что у Veyra 2.1.6, и пакеты из портативных архивов Veyra 2.1.6.
+- `src/ngx/NvOfSessionUnavailable.cpp`, `CMakeLists.txt`: без NVIDIA Optical Flow SDK (выдаётся только после входа разработчика) собирается сеанс, который сообщает «недоступно», как на ПК без `nvofapi64.dll`; цепочка улучшения картинки собирается и идёт запасными путями.
+
 ## Бренд
 - `include/veyra/Brand.h`, `qml/Veyra/Theme.qml`: название и адреса BPN Vision в одном месте.
 - `src/ui/UpdateChecker.cpp`, `include/veyra/ui/UpdateChecker.h`, `tests/unit/UpdateCheckerTests.cpp`, `src/ui/bridge/Preferences.cpp`: обновления, ошибки и страница проекта ведут в репозиторий BPN Vision.
