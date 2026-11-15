@@ -1,0 +1,160 @@
+name: build
+
+# Stage 1: the Xbox/cloud and language code on real MSVC, with the same dependency versions as
+# Veyra 2.1.6 (vcpkg 30ef65cad9: FFmpeg 9.0.1, OpenSSL 3.6.4, libdatachannel 0.24.5, Qt 6.8.3).
+# Logs go to the ci-logs branch so they can be read without signing in.
+
+on:
+  push:
+    branches: [main, "ci/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  VCPKG_COMMIT: 30ef65cad98f08e7197c9a1656fbd871bcb72f2d
+  VCPKG_ROOT: C:\vcpkg-veyra
+  VCPKG_DEFAULT_BINARY_CACHE: C:\vcpkg-bincache
+  VCPKG_TRIPLET: x64-windows-veyra
+  DEPS: C:\deps
+
+jobs:
+  stage1:
+    runs-on: windows-2022
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+
+      - name: Logs folder
+        shell: pwsh
+        run: New-Item -ItemType Directory -Force -Path "$env:GITHUB_WORKSPACE\ci-out" | Out-Null
+
+      - name: vcpkg binary cache
+        uses: actions/cache@v4
+        with:
+          path: C:\vcpkg-bincache
+          key: vcpkg-${{ env.VCPKG_COMMIT }}-${{ hashFiles('.github/vcpkg-triplets/**', 'scripts/xbox/vcpkg-overlay/**', '.github/workflows/build.yml') }}
+          restore-keys: vcpkg-${{ env.VCPKG_COMMIT }}-
+
+      - name: vcpkg at Veyra's commit
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path $env:VCPKG_DEFAULT_BINARY_CACHE | Out-Null
+          git init -q $env:VCPKG_ROOT
+          git -C $env:VCPKG_ROOT fetch -q --depth 1 https://github.com/microsoft/vcpkg.git $env:VCPKG_COMMIT
+          git -C $env:VCPKG_ROOT checkout -q FETCH_HEAD
+          & "$env:VCPKG_ROOT\bootstrap-vcpkg.bat" -disableMetrics
+
+      - name: vcpkg install
+        shell: pwsh
+        run: |
+          $t = $env:VCPKG_TRIPLET
+          & "$env:VCPKG_ROOT\vcpkg.exe" install --classic `
+            --overlay-triplets="$env:GITHUB_WORKSPACE\.github\vcpkg-triplets" `
+            --overlay-ports="$env:GITHUB_WORKSPACE\scripts\xbox\vcpkg-overlay" `
+            "ffmpeg[core,avcodec,avformat,swresample,swscale]:$t" "opus:$t" "openssl:$t" "libdatachannel[srtp,ws]:$t" "nlohmann-json:$t" 2>&1 |
+            Tee-Object -FilePath "$env:GITHUB_WORKSPACE\ci-out\vcpkg.log"
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Pinned sources (nv-codec-headers, moonlight-common-c)
+        shell: pwsh
+        run: |
+          git clone -q --depth 1 --branch n13.0.19.0 https://github.com/FFmpeg/nv-codec-headers.git third_party_local\nvidia\nv-codec-headers-13.0
+          $lock = Get-Content scripts\moonlight\dependency-lock.json -Raw | ConvertFrom-Json
+          $m = $lock.moonlight_common_c
+          $dir = "$env:DEPS\moonlight-common-c"
+          git init -q $dir
+          git -C $dir fetch -q --depth 1 $m.repository $m.commit
+          git -C $dir checkout -q FETCH_HEAD
+          foreach ($name in @("enet", "nanors")) {
+            $s = $m.submodules.$name
+            git init -q "$dir\$name"
+            git -C "$dir\$name" fetch -q --depth 1 $s.repository $s.commit
+            git -C "$dir\$name" checkout -q FETCH_HEAD
+          }
+
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.3"
+          arch: win64_msvc2022_64
+          cache: true
+
+      - name: Configure
+        shell: pwsh
+        run: |
+          $inst = "$env:VCPKG_ROOT\installed\$env:VCPKG_TRIPLET"
+          cmake -S . -B out -G Ninja -DCMAKE_BUILD_TYPE=Release `
+            -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake" `
+            -DVCPKG_MANIFEST_MODE=OFF -DVCPKG_TARGET_TRIPLET="$env:VCPKG_TRIPLET" `
+            -DVCPKG_OVERLAY_TRIPLETS="$env:GITHUB_WORKSPACE\.github\vcpkg-triplets" `
+            -DCMAKE_PREFIX_PATH="$env:QT_ROOT_DIR" `
+            -DVEYRA_DISPLAY_VERSION=2.1.6-bpn `
+            -DVEYRA_ENABLE_D3D12_DEBUG=OFF `
+            -DVEYRA_FFMPEG_ROOT="$inst" -DVEYRA_ENABLE_DEINTERLACE=OFF `
+            -DOPENSSL_ROOT_DIR="$inst" -DOPENSSL_USE_STATIC_LIBS=ON -DOPENSSL_MSVC_STATIC_RT=ON `
+            -DVEYRA_ENABLE_MOONLIGHT=ON -DVEYRA_MOONLIGHT_SOURCE_DIR="$env:DEPS\moonlight-common-c" `
+            -DVEYRA_ENABLE_XBOX=ON -DVEYRA_BUILD_QML_UI=ON `
+            -DPython3_EXECUTABLE="$((Get-Command python).Source)" 2>&1 |
+            Tee-Object -FilePath ci-out\configure.log
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Build Xbox, language and update-checker targets
+        shell: pwsh
+        run: |
+          cmake --build out --parallel 4 --target veyra_xbox_protocol veyra_xbox_tests veyra_ui_i18n_tests veyra_update_checker_tests veyra_xbox_model veyra_sources 2>&1 |
+            Tee-Object -FilePath ci-out\build.log
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Tests
+        shell: pwsh
+        run: |
+          $env:PATH = "$env:QT_ROOT_DIR\bin;$env:PATH"
+          $failed = 0
+          foreach ($t in @("veyra_xbox_tests", "veyra_ui_i18n_tests", "veyra_update_checker_tests")) {
+            $exe = Get-ChildItem -Path out -Recurse -Filter "$t.exe" | Select-Object -First 1
+            if (-not $exe) { "MISSING $t" | Tee-Object -Append -FilePath ci-out\tests.log; $failed++; continue }
+            "== $t" | Tee-Object -Append -FilePath ci-out\tests.log
+            & $exe.FullName 2>&1 | Tee-Object -Append -FilePath ci-out\tests.log
+            "exit $LASTEXITCODE" | Tee-Object -Append -FilePath ci-out\tests.log
+            if ($LASTEXITCODE -ne 0) { $failed++ }
+          }
+          if ($failed -ne 0) { exit 1 }
+
+      - name: Publish logs to ci-logs
+        if: always()
+        shell: pwsh
+        run: |
+          $dir = "run-${{ github.run_number }}"
+          $out = "$env:GITHUB_WORKSPACE\ci-out"
+          "status=${{ job.status }} sha=${{ github.sha }} run=${{ github.run_id }}" | Set-Content "$out\STATUS.txt"
+          foreach ($f in Get-ChildItem $out -Filter *.log) {
+            Select-String -Path $f.FullName -Pattern 'error|FAILED|FAIL |fatal|CMake Error|Could not|not found' -CaseSensitive:$false |
+              Select-Object -First 300 | ForEach-Object { $_.Line } | Set-Content "$out\$($f.BaseName).errors.txt"
+            Get-Content $f.FullName -Tail 300 | Set-Content "$out\$($f.BaseName).tail.txt"
+          }
+          Remove-Item "$out\*.log" -ErrorAction SilentlyContinue
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch -q origin ci-logs 2>$null
+          if ($LASTEXITCODE -eq 0) { git worktree add -q ..\logs origin/ci-logs } else { git worktree add -q --orphan -b ci-logs ..\logs }
+          Push-Location ..\logs
+          New-Item -ItemType Directory -Force -Path $dir | Out-Null
+          Copy-Item "$out\*" $dir
+          Set-Content -Path LATEST -Value $dir
+          git add -A
+          git commit -q -m "logs $dir (${{ job.status }})"
+          git push -q origin HEAD:ci-logs
+          Pop-Location
