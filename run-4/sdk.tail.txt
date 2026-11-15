@@ -1,0 +1,300 @@
+  ffx_cacao_generate_q2_pass.hlsl
+  ffx_cacao_generate_q2_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  ffx_fsr1_easu_pass.hlsl
+  ffx_fsr1_easu_pass.hlsl: Processed 8 shader permutations, found 4 duplicates (0 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q2_pass_wave64_16bit_permutations.h
+  ffx_brixelizergi_emit_irradiance_cache.hlsl
+  ffx_brixelizergi_emit_irradiance_cache.hlsl: Processed 8 shader permutations, found 7 duplicates (0 found early).
+  3>Generating ../shaders/dx12/ffx_fsr1_easu_pass_wave64_16bit_permutations.h
+  ffx_sssr_intersect_pass.hlsl
+  ffx_sssr_intersect_pass.hlsl: Processed 2 shader permutations, found 0 duplicates (0 found early).
+  1>Generating ../shaders/dx12/ffx_brixelizergi_emit_irradiance_cache_wave64_16bit_permutations.h
+  ffx_cacao_generate_q2_pass.hlsl
+  ffx_cacao_generate_q2_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  ffx_fsr1_easu_pass.hlsl
+  ffx_fsr1_easu_pass.hlsl: Processed 8 shader permutations, found 4 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_sssr_intersect_pass_wave64_16bit_permutations.h
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q2_pass_wave64_permutations.h
+  3>Generating ../shaders/dx12/ffx_fsr1_easu_pass_wave64_permutations.h
+  ffx_brixelizergi_emit_irradiance_cache.hlsl
+  ffx_brixelizergi_emit_irradiance_cache.hlsl: Processed 8 shader permutations, found 7 duplicates (0 found early).
+  ffx_sssr_intersect_pass.hlsl
+  ffx_sssr_intersect_pass.hlsl: Processed 2 shader permutations, found 0 duplicates (0 found early).
+  ffx_cacao_generate_q2_pass.hlsl
+  ffx_cacao_generate_q2_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  ffx_fsr1_easu_pass.hlsl
+  ffx_fsr1_easu_pass.hlsl: Processed 8 shader permutations, found 4 duplicates (0 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q3_base_pass_16bit_permutations.h
+  ffx_cacao_generate_q3_base_pass.hlsl
+  ffx_cacao_generate_q3_base_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q3_base_pass_permutations.h
+  ffx_cacao_generate_q3_base_pass.hlsl
+  ffx_cacao_generate_q3_base_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q3_base_pass_wave64_16bit_permutations.h
+  ffx_cacao_generate_q3_base_pass.hlsl
+  ffx_cacao_generate_q3_base_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q3_base_pass_wave64_permutations.h
+  ffx_cacao_generate_q3_base_pass.hlsl
+  ffx_cacao_generate_q3_base_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q3_pass_16bit_permutations.h
+  ffx_cacao_generate_q3_pass.hlsl
+  ffx_cacao_generate_q3_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q3_pass_permutations.h
+  ffx_cacao_generate_q3_pass.hlsl
+  ffx_cacao_generate_q3_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q3_pass_wave64_16bit_permutations.h
+  ffx_cacao_generate_q3_pass.hlsl
+  ffx_cacao_generate_q3_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_generate_q3_pass_wave64_permutations.h
+  ffx_cacao_generate_q3_pass.hlsl
+  ffx_cacao_generate_q3_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_and_mips_pass_16bit_permutations.h
+  ffx_cacao_prepare_downsampled_depths_and_mips_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_and_mips_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_and_mips_pass_permutations.h
+  ffx_cacao_prepare_downsampled_depths_and_mips_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_and_mips_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_and_mips_pass_wave64_16bit_permutations.h
+  ffx_cacao_prepare_downsampled_depths_and_mips_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_and_mips_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_and_mips_pass_wave64_permutations.h
+  ffx_cacao_prepare_downsampled_depths_and_mips_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_and_mips_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_half_pass_16bit_permutations.h
+  ffx_cacao_prepare_downsampled_depths_half_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_half_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_half_pass_permutations.h
+  4>Generating ../shaders/dx12/ffx_sssr_intersect_pass_wave64_permutations.h
+  ffx_sssr_intersect_pass.hlsl
+  ffx_sssr_intersect_pass.hlsl: Processed 2 shader permutations, found 0 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_sssr_prepare_blue_noise_texture_pass_16bit_permutations.h
+  ffx_sssr_prepare_blue_noise_texture_pass.hlsl
+  ffx_sssr_prepare_blue_noise_texture_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_sssr_prepare_blue_noise_texture_pass_permutations.h
+  ffx_sssr_prepare_blue_noise_texture_pass.hlsl
+  ffx_sssr_prepare_blue_noise_texture_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_sssr_prepare_blue_noise_texture_pass_wave64_16bit_permutations.h
+  ffx_sssr_prepare_blue_noise_texture_pass.hlsl
+  ffx_sssr_prepare_blue_noise_texture_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_sssr_prepare_blue_noise_texture_pass_wave64_permutations.h
+  ffx_sssr_prepare_blue_noise_texture_pass.hlsl
+  ffx_sssr_prepare_blue_noise_texture_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_sssr_prepare_indirect_args_pass_16bit_permutations.h
+  ffx_sssr_prepare_indirect_args_pass.hlsl
+  ffx_sssr_prepare_indirect_args_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_sssr_prepare_indirect_args_pass_permutations.h
+  ffx_sssr_prepare_indirect_args_pass.hlsl
+  ffx_sssr_prepare_indirect_args_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_sssr_prepare_indirect_args_pass_wave64_16bit_permutations.h
+  ffx_sssr_prepare_indirect_args_pass.hlsl
+  ffx_sssr_prepare_indirect_args_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_sssr_prepare_indirect_args_pass_wave64_permutations.h
+  ffx_sssr_prepare_indirect_args_pass.hlsl
+  ffx_sssr_prepare_indirect_args_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_vrs_imagegen_pass_16bit_permutations.h
+  ffx_vrs_imagegen_pass.hlsl
+  ffx_vrs_imagegen_pass.hlsl: Processed 6 shader permutations, found 0 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_vrs_imagegen_pass_permutations.h
+  ffx_vrs_imagegen_pass.hlsl
+  ffx_vrs_imagegen_pass.hlsl: Processed 6 shader permutations, found 0 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_vrs_imagegen_pass_wave64_16bit_permutations.h
+  ffx_vrs_imagegen_pass.hlsl
+  ffx_vrs_imagegen_pass.hlsl: Processed 6 shader permutations, found 0 duplicates (0 found early).
+  4>Generating ../shaders/dx12/ffx_vrs_imagegen_pass_wave64_permutations.h
+  ffx_vrs_imagegen_pass.hlsl
+  ffx_vrs_imagegen_pass.hlsl: Processed 6 shader permutations, found 0 duplicates (0 found early).
+  3>Generating ../shaders/dx12/ffx_fsr1_rcas_pass_16bit_permutations.h
+  ffx_fsr1_rcas_pass.hlsl
+  ffx_fsr1_rcas_pass.hlsl: Processed 8 shader permutations, found 6 duplicates (4 found early).
+  3>Generating ../shaders/dx12/ffx_fsr1_rcas_pass_permutations.h
+  ffx_fsr1_rcas_pass.hlsl
+  ffx_fsr1_rcas_pass.hlsl: Processed 8 shader permutations, found 6 duplicates (4 found early).
+  3>Generating ../shaders/dx12/ffx_fsr1_rcas_pass_wave64_16bit_permutations.h
+  ffx_fsr1_rcas_pass.hlsl
+  ffx_fsr1_rcas_pass.hlsl: Processed 8 shader permutations, found 6 duplicates (4 found early).
+  3>Generating ../shaders/dx12/ffx_fsr1_rcas_pass_wave64_permutations.h
+  ffx_fsr1_rcas_pass.hlsl
+  ffx_fsr1_rcas_pass.hlsl: Processed 8 shader permutations, found 6 duplicates (4 found early).
+  3>Generating ../shaders/dx12/ffx_fsr2_accumulate_pass_16bit_permutations.h
+  ffx_fsr2_accumulate_pass.hlsl
+  ffx_fsr2_accumulate_pass.hlsl: Processed 64 shader permutations, found 40 duplicates (0 found early).
+  3>Generating ../shaders/dx12/ffx_fsr2_accumulate_pass_permutations.h
+  ffx_fsr2_accumulate_pass.hlsl
+  ffx_fsr2_accumulate_pass.hlsl: Processed 64 shader permutations, found 40 duplicates (0 found early).
+  3>Generating ../shaders/dx12/ffx_fsr2_accumulate_pass_wave64_16bit_permutations.h
+  ffx_cacao_prepare_downsampled_depths_half_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_half_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_half_pass_wave64_16bit_permutations.h
+  ffx_cacao_prepare_downsampled_depths_half_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_half_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_half_pass_wave64_permutations.h
+  ffx_cacao_prepare_downsampled_depths_half_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_half_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_pass_16bit_permutations.h
+  ffx_cacao_prepare_downsampled_depths_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_pass_permutations.h
+  ffx_cacao_prepare_downsampled_depths_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_pass_wave64_16bit_permutations.h
+  ffx_fsr2_accumulate_pass.hlsl
+  ffx_fsr2_accumulate_pass.hlsl: Processed 64 shader permutations, found 40 duplicates (0 found early).
+  3>Generating ../shaders/dx12/ffx_fsr2_accumulate_pass_wave64_permutations.h
+  ffx_cacao_prepare_downsampled_depths_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_depths_pass_wave64_permutations.h
+  ffx_cacao_prepare_downsampled_depths_pass.hlsl
+  ffx_cacao_prepare_downsampled_depths_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_normals_from_input_normals_pass_16bit_permutations.h
+  ffx_cacao_prepare_downsampled_normals_from_input_normals_pass.hlsl
+  ffx_cacao_prepare_downsampled_normals_from_input_normals_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_normals_from_input_normals_pass_permutations.h
+  ffx_cacao_prepare_downsampled_normals_from_input_normals_pass.hlsl
+  ffx_cacao_prepare_downsampled_normals_from_input_normals_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_normals_from_input_normals_pass_wave64_16bit_permutations.h
+  ffx_cacao_prepare_downsampled_normals_from_input_normals_pass.hlsl
+  ffx_cacao_prepare_downsampled_normals_from_input_normals_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_normals_from_input_normals_pass_wave64_permutations.h
+  ffx_cacao_prepare_downsampled_normals_from_input_normals_pass.hlsl
+  ffx_cacao_prepare_downsampled_normals_from_input_normals_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_normals_pass_16bit_permutations.h
+  ffx_fsr2_accumulate_pass.hlsl
+  ffx_fsr2_accumulate_pass.hlsl: Processed 64 shader permutations, found 40 duplicates (0 found early).
+  3>Generating ../shaders/dx12/ffx_fsr2_autogen_reactive_pass_16bit_permutations.h
+  ffx_cacao_prepare_downsampled_normals_pass.hlsl
+  ffx_cacao_prepare_downsampled_normals_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  ffx_fsr2_autogen_reactive_pass.hlsl
+  ffx_fsr2_autogen_reactive_pass.hlsl: Processed 64 shader permutations, found 63 duplicates (60 found early).
+  2>Generating ../shaders/dx12/ffx_cacao_prepare_downsampled_normals_pass_permutations.h
+  3>Generating ../shaders/dx12/ffx_fsr2_autogen_reactive_pass_permutations.h
+  ffx_fsr2_autogen_reactive_pass.hlsl
+  ffx_fsr2_autogen_reactive_pass.hlsl: Processed 64 shader permutations, found 63 duplicates (60 found early).
+  ffx_cacao_prepare_downsampled_normals_pass.hlsl
+  ffx_cacao_prepare_downsampled_normals_pass.hlsl: Processed 2 shader permutations, found 1 duplicates (1 found early).
+  3>Generating ../shaders/dx12/ffx_fsr2_autogen_reactive_pass_wave64_16bit_permutations.h
+  ffx_fsr2_autogen_reactive_pass.hlsl
+  ffx_fsr2_autogen_reactive_pass.hlsl: Processed 64 shader permutations, found 63 duplicates (60 found early).
+  3>Generating ../shaders/dx12/ffx_fsr2_autogen_reactive_pass_wave64_permutations.h
+  ffx_fsr2_autogen_reactive_pass.hlsl
+  ffx_fsr2_autogen_reactive_pass.hlsl: Processed 64 shader permutations, found 63 duplicates (60 found early).
+  3>Generating ../shaders/dx12/ffx_fsr2_compute_luminance_pyramid_pass_16bit_permutations.h
+  ffx_fsr2_compute_luminance_pyramid_pass.hlsl
+  ffx_fsr2_compute_luminance_pyramid_pass.hlsl: Processed 64 shader permutations, found 63 duplicates (60 found early).
+  Building Custom Rule C:/sdk/FidelityFX-SDK-1.1.4/sdk/src/backends/dx12/CMakeLists.txt
+  Building Custom Rule C:/sdk/FidelityFX-SDK-1.1.4/sdk/src/backends/dx12/CMakeLists.txt
+  FrameInterpolationSwapchainDX12.cpp
+  Building Custom Rule C:/sdk/FidelityFX-SDK-1.1.4/sdk/src/components/sssr/CMakeLists.txt
+  Building Custom Rule C:/sdk/FidelityFX-SDK-1.1.4/sdk/src/components/brixelizergi/CMakeLists.txt
+  ffx_assert.cpp
+  Building Custom Rule C:/sdk/FidelityFX-SDK-1.1.4/sdk/src/components/fsr3/CMakeLists.txt
+  ffx_assert.cpp
+  ffx_assert.cpp
+  ffx_breadcrumbs_list.cpp
+  ffx_breadcrumbs_list.cpp
+  FrameInterpolationSwapchainDX12_DebugPacing.cpp
+  ffx_breadcrumbs_list.cpp
+  ffx_message.cpp
+  ffx_message.cpp
+  ffx_message.cpp
+  ffx_object_management.cpp
+  FrameInterpolationSwapchainDX12_Helpers.cpp
+  ffx_object_management.cpp
+  ffx_object_management.cpp
+  ffx_sssr.cpp
+  ffx_brixelizergi.cpp
+  ffx_fsr3.cpp
+  Generating Code...
+  samplerBlueNoiseErrorDistribution_128x128_OptimizedFor_2d2d2d2d_128spp.cpp
+  FrameInterpolationSwapchainDX12_UiComposition.cpp
+  Generating Code...
+  ffx_brixelizergi_x64.vcxproj -> C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_brixelizergi_x64.lib
+  samplerBlueNoiseErrorDistribution_128x128_OptimizedFor_2d2d2d2d_16spp.cpp
+  ffx_fsr3_x64.vcxproj -> C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_fsr3_x64.lib
+  samplerBlueNoiseErrorDistribution_128x128_OptimizedFor_2d2d2d2d_1spp.cpp
+  samplerBlueNoiseErrorDistribution_128x128_OptimizedFor_2d2d2d2d_256spp.cpp
+  ffx_dx12.cpp
+  samplerBlueNoiseErrorDistribution_128x128_OptimizedFor_2d2d2d2d_2spp.cpp
+  samplerBlueNoiseErrorDistribution_128x128_OptimizedFor_2d2d2d2d_32spp.cpp
+  samplerBlueNoiseErrorDistribution_128x128_OptimizedFor_2d2d2d2d_4spp.cpp
+  samplerBlueNoiseErrorDistribution_128x128_OptimizedFor_2d2d2d2d_64spp.cpp
+  samplerBlueNoiseErrorDistribution_128x128_OptimizedFor_2d2d2d2d_8spp.cpp
+  Generating Code...
+  ffx_shader_blobs.cpp
+  ffx_assert.cpp
+  ffx_sssr_x64.vcxproj -> C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_sssr_x64.lib
+  ffx_breadcrumbs_list.cpp
+  ffx_message.cpp
+  ffx_fsr1_shaderblobs.cpp
+  ffx_fsr2_shaderblobs.cpp
+  ffx_fsr3upscaler_shaderblobs.cpp
+  ffx_frameinterpolation_shaderblobs.cpp
+  ffx_opticalflow_shaderblobs.cpp
+  ffx_spd_shaderblobs.cpp
+  ffx_cacao_shaderblobs.cpp
+  ffx_lpm_shaderblobs.cpp
+  ffx_blur_shaderblobs.cpp
+  ffx_vrs_shaderblobs.cpp
+  ffx_cas_shaderblobs.cpp
+  Generating Code...
+  Compiling...
+  ffx_dof_shaderblobs.cpp
+  ffx_lens_shaderblobs.cpp
+  ffx_parallelsort_shaderblobs.cpp
+  ffx_denoiser_shaderblobs.cpp
+  ffx_classifier_shaderblobs.cpp
+  ffx_sssr_shaderblobs.cpp
+  ffx_brixelizer_shaderblobs.cpp
+  ffx_brixelizergi_shaderblobs.cpp
+  Generating Code...
+  ffx_backend_dx12_x64.vcxproj -> C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_backend_dx12_x64.lib
+  Building Custom Rule C:/sdk/FidelityFX-SDK-1.1.4/sdk/CMakeLists.txt
+== FidelityFX 1.1.4 libraries
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_backend_dx12_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_blur_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_breadcrumbs_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_brixelizer_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_brixelizergi_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_cacao_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_cas_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_classifier_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_denoiser_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_dof_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_frameinterpolation_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_fsr1_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_fsr2_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_fsr3_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_fsr3upscaler_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_lens_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_lpm_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_opticalflow_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_parallelsort_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_spd_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_sssr_x64.lib
+C:\sdk\FidelityFX-SDK-1.1.4\sdk\bin\ffx_sdk\ffx_vrs_x64.lib
+== CUDA headers download
+== CUDA headers extract
+== CUDA headers copy
+== DeckLink IDL (OBS 31.1.2)
+warning: refs/tags/31.1.2 e9a59fed8e893b5b13dfe5b77e1cf816ac3211d3 is not a commit!
+Note: switching to '7778070cbd8e4689d91d90068091ced467c5fdef'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+== DeckLink IDL copy
+== RDNA3 network source
+== RDNA3 extract
+VB-CABLE sha256 bc44e8974191a5a2427d6c979e2dab08dbb09925f3f435dfa2f0ba3e45b6eb90
+SDK ready

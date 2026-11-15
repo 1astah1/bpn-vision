@@ -1,0 +1,15 @@
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(817): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(818): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(841): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(842): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(849): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(850): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(925): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(926): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf_general.c(303): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+[156/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\strerror.c.obj
+FAILED: [code=1] chiaki/lib/protobuf/takion.pb.c chiaki/lib/protobuf/takion.pb.h D:/a/bpn-vision/bpn-vision/out/chiaki/lib/protobuf/takion.pb.c D:/a/bpn-vision/bpn-vision/out/chiaki/lib/protobuf/takion.pb.h 
+         *** Could not import the Google protobuf Python libraries          ***
+ModuleNotFoundError: No module named 'google'
+ninja: build stopped: subcommand failed.
+FAILED (1): cmake build

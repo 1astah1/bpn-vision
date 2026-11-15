@@ -1,0 +1,300 @@
+Downloading https://github.com/libass/libass/archive/0.17.5.tar.gz -> libass-libass-0.17.5.tar.gz
+Successfully downloaded libass-libass-0.17.5.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/libass-libass-0.17.5.tar.gz
+-- Applying patch arm64-windows-asm.patch
+-- Using source at C:/vcpkg-veyra/buildtrees/libass/src/0.17.5-77fe69f1c7.clean
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Configuring x64-windows-veyra-dbg
+-- Getting CMake variables for x64-windows-veyra
+-- Loading CMake variables from C:/vcpkg-veyra/buildtrees/libass/cmake-get-vars_C_CXX-x64-windows-veyra.cmake.log
+-- Configuring x64-windows-veyra-dbg done
+-- Configuring x64-windows-veyra-rel
+-- Configuring x64-windows-veyra-rel done
+-- Package x64-windows-veyra-dbg
+-- Package x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libass_x64-windows-veyra/lib/pkgconfig/libass.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libass_x64-windows-veyra/debug/lib/pkgconfig/libass.pc
+-- Installing: C:/vcpkg-veyra/packages/libass_x64-windows-veyra/share/libass/copyright
+-- Performing post-build validation
+Starting submission of libass:x64-windows-veyra@0.17.5 to 1 binary cache(s) in the background
+Elapsed time to handle libass:x64-windows-veyra: 30 s
+Completed submission of json-c:x64-windows-veyra@0.19-20260627#1 to 1 binary cache(s) in 109 ms
+Installing 19/30 libjuice:x64-windows-veyra@1.7.2#1...
+libjuice:x64-windows-veyra@1.7.2#1 package ABI: 2cb4ee223dcea7cc647e5c0f9a02d6d81ff2a969978334a438da216699ab0a03
+Elapsed time to handle libjuice:x64-windows-veyra: 14.5 ms
+Installing 20/30 libsrtp:x64-windows-veyra@2.8.0...
+libsrtp:x64-windows-veyra@2.8.0 package ABI: ea0ce1ce1ef9a4e7675f172abedd521792ca66be63857799b7c92ce3d43d9cab
+Elapsed time to handle libsrtp:x64-windows-veyra: 30.4 ms
+Installing 21/30 nlohmann-json:x64-windows-veyra@3.12.0#2...
+nlohmann-json:x64-windows-veyra@3.12.0#2 package ABI: 949f9aac482728810e517c00e056dd80a5c9f133184c7845a5da91d5f8f58c51
+Elapsed time to handle nlohmann-json:x64-windows-veyra: 31.1 ms
+Installing 22/30 openssl:x64-windows-veyra@3.6.4...
+openssl:x64-windows-veyra@3.6.4 package ABI: 4efd8fa6e0f1e53733b7003bae7504aa72efab74186633983cb40a3bc8a3578e
+Elapsed time to handle openssl:x64-windows-veyra: 86.2 ms
+Installing 23/30 plog:x64-windows-veyra@1.1.11...
+plog:x64-windows-veyra@1.1.11 package ABI: d0c49ece34149fec8b5c0e7b4692a1e272e6d4e677232daeb45302b146515e89
+Elapsed time to handle plog:x64-windows-veyra: 29.9 ms
+Installing 24/30 usrsctp:x64-windows-veyra@0.9.5.0#4...
+usrsctp:x64-windows-veyra@0.9.5.0#4 package ABI: e74134c3f82ededbb119a38ab7bf97dc72c91e9ba96efef90752a86bdb60d7c4
+Elapsed time to handle usrsctp:x64-windows-veyra: 10.9 ms
+Installing 25/30 libdatachannel[core,srtp,ws]:x64-windows-veyra@0.24.5...
+libdatachannel[core,srtp,ws]:x64-windows-veyra@0.24.5 package ABI: 35c40254b35f2283bd01843a5fef1b3c80b009798155f2671e7f9df7165e6e72
+Elapsed time to handle libdatachannel:x64-windows-veyra: 29.9 ms
+Installing 26/30 libevent[core,thread]:x64-windows-veyra@2.1.12+20230128#1...
+libevent[core,thread]:x64-windows-veyra@2.1.12+20230128#1 package ABI: 8a7b10129485ba8e3948d5edc38655948392092bcbac997e4b6aa282337528c1
+Building libevent[core,thread]:x64-windows-veyra@2.1.12+20230128#1...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/libevent/libevent/archive/4d85d28acdbb83bb60e500e9345bab757b64d6d1.tar.gz -> libevent-libevent-4d85d28acdbb83bb60e500e9345bab757b64d6d1.tar.gz
+Successfully downloaded libevent-libevent-4d85d28acdbb83bb60e500e9345bab757b64d6d1.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/libevent-libevent-4d85d28acdbb83bb60e500e9345bab757b64d6d1.tar.gz
+-- Applying patch fix-uwp.patch
+-- Applying patch fix-file_path.patch
+-- Applying patch fix-LibeventConfig_cmake_in_path.patch
+-- Applying patch fix-usage.patch
+-- Using source at C:/vcpkg-veyra/buildtrees/libevent/src/757b64d6d1-bfa17b9727.clean
+-- Configuring x64-windows-veyra
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libevent_x64-windows-veyra/lib/pkgconfig/libevent.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libevent_x64-windows-veyra/lib/pkgconfig/libevent_core.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libevent_x64-windows-veyra/lib/pkgconfig/libevent_extra.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libevent_x64-windows-veyra/debug/lib/pkgconfig/libevent.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libevent_x64-windows-veyra/debug/lib/pkgconfig/libevent_core.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libevent_x64-windows-veyra/debug/lib/pkgconfig/libevent_extra.pc
+-- Installing: C:/vcpkg-veyra/packages/libevent_x64-windows-veyra/share/libevent/copyright
+-- Performing post-build validation
+Starting submission of libevent[core,thread]:x64-windows-veyra@2.1.12+20230128#1 to 1 binary cache(s) in the background
+Elapsed time to handle libevent:x64-windows-veyra: 1.1 min
+Completed submission of libass:x64-windows-veyra@0.17.5 to 1 binary cache(s) in 276 ms
+Installing 27/30 miniupnpc:x64-windows-veyra@2.3.2...
+miniupnpc:x64-windows-veyra@2.3.2 package ABI: a6aa1c7a9070c57dda4537c9c2dc642c33055dcbf36639adc2eec16cfbd72263
+Building miniupnpc:x64-windows-veyra@2.3.2...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/miniupnp/miniupnp/archive/miniupnpc_2_3_2.tar.gz -> miniupnp-miniupnp-miniupnpc_2_3_2.tar.gz
+Successfully downloaded miniupnp-miniupnp-miniupnpc_2_3_2.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/miniupnp-miniupnp-miniupnpc_2_3_2.tar.gz
+-- Using source at C:/vcpkg-veyra/buildtrees/miniupnpc/src/pnpc_2_3_2-d021c8e75c.clean
+-- Configuring x64-windows-veyra
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/miniupnpc_x64-windows-veyra/lib/pkgconfig/miniupnpc.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/miniupnpc_x64-windows-veyra/debug/lib/pkgconfig/miniupnpc.pc
+-- Installing: C:/vcpkg-veyra/packages/miniupnpc_x64-windows-veyra/share/miniupnpc/copyright
+-- Performing post-build validation
+Starting submission of miniupnpc:x64-windows-veyra@2.3.2 to 1 binary cache(s) in the background
+Elapsed time to handle miniupnpc:x64-windows-veyra: 4.1 s
+Completed submission of libevent[core,thread]:x64-windows-veyra@2.1.12+20230128#1 to 1 binary cache(s) in 517 ms
+Installing 28/30 opus:x64-windows-veyra@1.6.1...
+opus:x64-windows-veyra@1.6.1 package ABI: 1e64adf412f3ec53966c35784e4389e3c13d4aad34492e0ea49bb0b122ac5792
+Elapsed time to handle opus:x64-windows-veyra: 13.1 ms
+Installing 29/30 pkgconf:x64-windows-veyra@3.0.3...
+pkgconf:x64-windows-veyra@3.0.3 package ABI: b851b7d8b41787331aeec7984f1db8c2d7424f3d7f759d2e954f09c51394c2bc
+Building pkgconf:x64-windows-veyra@3.0.3...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+-- Found Python version '3.14.2 at C:/vcpkg-veyra/downloads/tools/python/python-3.14.2-x64-1/python.exe'
+-- Using meson: C:/vcpkg-veyra/downloads/tools/meson-1.9.0-633807/meson.py
+Downloading https://github.com/pkgconf/pkgconf/archive/pkgconf-3.0.3.tar.gz -> pkgconf-pkgconf-pkgconf-3.0.3.tar.gz
+Successfully downloaded pkgconf-pkgconf-pkgconf-3.0.3.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/pkgconf-pkgconf-pkgconf-3.0.3.tar.gz
+-- Using source at C:/vcpkg-veyra/buildtrees/pkgconf/src/conf-3.0.3-bff6744efe.clean
+-- Configuring x64-windows-veyra-dbg
+-- Getting CMake variables for x64-windows-veyra
+-- Loading CMake variables from C:/vcpkg-veyra/buildtrees/pkgconf/cmake-get-vars_C_CXX-x64-windows-veyra.cmake.log
+-- Configuring x64-windows-veyra-dbg done
+-- Configuring x64-windows-veyra-rel
+-- Configuring x64-windows-veyra-rel done
+-- Package x64-windows-veyra-dbg
+-- Package x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/pkgconf_x64-windows-veyra/lib/pkgconfig/libpkgconf.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/pkgconf_x64-windows-veyra/debug/lib/pkgconfig/libpkgconf.pc
+-- Installing: C:/vcpkg-veyra/packages/pkgconf_x64-windows-veyra/share/pkgconf/copyright
+-- Performing post-build validation
+Starting submission of pkgconf:x64-windows-veyra@3.0.3 to 1 binary cache(s) in the background
+Elapsed time to handle pkgconf:x64-windows-veyra: 11 s
+Completed submission of miniupnpc:x64-windows-veyra@2.3.2 to 1 binary cache(s) in 94 ms
+Installing 30/30 sdl3:x64-windows-veyra@3.4.14...
+sdl3:x64-windows-veyra@3.4.14 package ABI: 49dbe48193c28b543e533b869f2bca04c5ee9eddd3b2a455c3de77c593ca1c74
+Building sdl3:x64-windows-veyra@3.4.14...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/libsdl-org/SDL/archive/release-3.4.14.tar.gz -> libsdl-org-SDL-release-3.4.14.tar.gz
+Successfully downloaded libsdl-org-SDL-release-3.4.14.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/libsdl-org-SDL-release-3.4.14.tar.gz
+-- Applying patch fix-freebsd.patch
+-- Using source at C:/vcpkg-veyra/buildtrees/sdl3/src/ase-3.4.14-af942a6848.clean
+-- Configuring x64-windows-veyra
+CMake Warning at installed/x64-windows/share/vcpkg-cmake/vcpkg_cmake_configure.cmake:346 (message):
+  The following variables are not used in CMakeLists.txt:
+
+      SDL_UNIX_CONSOLE_BUILD
+
+  Please recheck them and remove the unnecessary options from the
+  `vcpkg_cmake_configure` call.
+
+  If these options should still be passed for whatever reason, please use the
+  `MAYBE_UNUSED_VARIABLES` argument.
+Call Stack (most recent call first):
+  ports/sdl3/portfile.cmake:58 (vcpkg_cmake_configure)
+  scripts/ports.cmake:209 (include)
+
+
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/sdl3_x64-windows-veyra/lib/pkgconfig/sdl3.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/sdl3_x64-windows-veyra/debug/lib/pkgconfig/sdl3.pc
+-- Installing: C:/vcpkg-veyra/packages/sdl3_x64-windows-veyra/share/sdl3/usage
+-- Performing post-build validation
+Starting submission of sdl3:x64-windows-veyra@3.4.14 to 1 binary cache(s) in the background
+Elapsed time to handle sdl3:x64-windows-veyra: 43 s
+Total install time: 26 min
+Installed contents are licensed to you by owners. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Some packages did not declare an SPDX license. Check the `copyright` file for each package for more information about their licensing.
+Packages installed in this vcpkg installation declare the following licenses:
+(FTL OR GPL-2.0-or-later)
+Apache-2.0
+BSD-3-Clause
+ISC
+LGPL-2.1-or-later
+MIT
+MIT-Modern-Variant
+MPL-2.0
+Zlib
+bzip2-1.0.6
+libpng-2.0
+ffmpeg provides CMake integration:
+
+  find_package(FFMPEG REQUIRED)
+  target_include_directories(main PRIVATE ${FFMPEG_INCLUDE_DIRS})
+  target_link_directories(main PRIVATE ${FFMPEG_LIBRARY_DIRS})
+  target_link_libraries(main PRIVATE ${FFMPEG_LIBRARIES})
+
+ffmpeg provides pkg-config modules:
+
+  # FFmpeg codec library
+  libavcodec
+
+  # FFmpeg device handling library
+  libavdevice
+
+  # FFmpeg audio/video filtering library
+  libavfilter
+
+  # FFmpeg container format library
+  libavformat
+
+  # FFmpeg utility library
+  libavutil
+
+  # FFmpeg audio resampling library
+  libswresample
+
+  # FFmpeg image rescaling library
+  libswscale
+
+json-c provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(json-c CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE json-c::json-c)
+
+json-c provides pkg-config modules:
+
+  # A JSON implementation in C
+  json-c
+
+libass provides pkg-config modules:
+
+  # libass is an SSA/ASS subtitles rendering library
+  libass
+
+The package nlohmann-json provides CMake targets:
+
+    find_package(nlohmann_json CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE nlohmann_json::nlohmann_json)
+
+The package nlohmann-json can be configured to not provide implicit conversions via a custom triplet file:
+
+    set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)
+
+For more information, see the docs here:
+    
+    https://json.nlohmann.me/api/macros/json_use_implicit_conversions/
+
+openssl is compatible with built-in CMake targets:
+
+  find_package(OpenSSL REQUIRED)
+  target_link_libraries(main PRIVATE OpenSSL::SSL)
+  target_link_libraries(main PRIVATE OpenSSL::Crypto)
+
+libdatachannel provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(LibDataChannel CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE LibDataChannel::LibDataChannel)
+
+libevent provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(Libevent CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE libevent::core libevent::extra)
+
+libevent provides pkg-config modules:
+
+  # libevent is an asynchronous notification event loop library
+  libevent
+
+  # libevent_core
+  libevent_core
+
+  # libevent_extra
+  libevent_extra
+
+miniupnpc provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(miniupnpc CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE miniupnpc::miniupnpc miniupnpc::miniupnpc-private)
+
+miniupnpc provides pkg-config modules:
+
+  # UPnP IGD client lightweight library
+  miniupnpc
+
+opus provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(Opus CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE Opus::opus)
+
+opus provides pkg-config modules:
+
+  # Opus IETF audio codec ( build)
+  opus
+
+pkgconf provides pkg-config modules:
+
+  # a library for accessing and manipulating development framework configuration
+  libpkgconf
+
+sdl3 provides CMake targets:
+
+  find_package(SDL3 CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE SDL3::SDL3)
+
+Completed submission of pkgconf:x64-windows-veyra@3.0.3 to 1 binary cache(s) in 154 ms
+Waiting for 1 remaining binary cache submissions...
+Completed submission of sdl3:x64-windows-veyra@3.4.14 to 1 binary cache(s) in 2.7 s (1/1)
+All requested installations completed successfully in: 26 min
