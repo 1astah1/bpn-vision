@@ -28,8 +28,10 @@ namespace veyra::source {
 
 struct XboxConnectDesc {
     std::shared_ptr<xbox::Account> account;
-    std::string serverId;            // the console
+    std::string serverId;            // the console (home streaming)
     std::string consoleName;         // for messages
+    std::string titleId;             // a cloud game instead of a console (xCloud); serverId is then unused
+    std::string titleName;           // for messages
     bool gamepad = true;             // forward the PC's controller
     std::string locale = "zh-CN";
     std::shared_ptr<ID3D12Device> decodeDevice;

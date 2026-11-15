@@ -5,10 +5,12 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 
+#include <algorithm>
 #include <chrono>
 #include <cstdlib>
 #include <nlohmann/json.hpp>
 #include <sstream>
+#include <stdexcept>
 #include <thread>
 
 namespace veyra::xbox {
@@ -52,8 +54,10 @@ std::string serviceError(const json& response) {
 
 } // namespace
 
-StreamApi::StreamApi(std::shared_ptr<HttpsTransport> transport, std::string host, std::string gsToken)
-    : http_(std::move(transport)), host_(std::move(host)), token_(std::move(gsToken)) {}
+StreamApi::StreamApi(std::shared_ptr<HttpsTransport> transport, std::string host, std::string gsToken, std::string kind)
+    : http_(std::move(transport)), host_(std::move(host)), token_(std::move(gsToken)), kind_(std::move(kind)) {
+    if (kind_ != "home" && kind_ != "cloud") throw std::invalid_argument("StreamApi kind must be home or cloud");
+}
 
 HttpsResponse StreamApi::call(const std::string& method, const std::string& path, const std::string& body,
                               const std::map<std::string, std::string>& extraHeaders) {
@@ -95,17 +99,57 @@ std::vector<Console> StreamApi::consoles() {
     }
 }
 
-std::string StreamApi::play(const std::string& serverId, const std::string& locale) {
+std::vector<CloudTitle> StreamApi::parseTitles(const std::string& body) {
+    std::vector<CloudTitle> out;
+    const json j = json::parse(body);
+    for (const auto& t : j.value("results", json::array())) {
+        CloudTitle title;
+        title.titleId = text(t, "titleId");
+        if (title.titleId.empty()) continue;
+        const json details = t.value("details", json::object());
+        title.productId = text(details, "productId");
+        // Greenlight: hasEntitlement, or a title that is free in the store (the f2p catalogue).
+        title.entitled = details.value("hasEntitlement", false) || details.value("isFreeInStore", false);
+        title.name = title.titleId;
+        out.push_back(std::move(title));
+    }
+    return out;
+}
+
+std::vector<CloudTitle> StreamApi::titles() {
+    const HttpsResponse response = call("GET", "/v2/titles", "");
+    try {
+        return parseTitles(response.body);
+    } catch (const json::exception&) {
+        throw std::runtime_error("title list is not JSON");
+    }
+}
+
+int StreamApi::parseWaitSeconds(const std::string& body) {
+    try {
+        const json j = json::parse(body);
+        const auto it = j.find("estimatedTotalWaitTimeInSeconds");
+        if (it != j.end() && it->is_number()) return std::max(0, it->get<int>());
+    } catch (const json::exception&) {}
+    return -1;
+}
+
+int StreamApi::waitSeconds(const std::string& titleId) {
+    return parseWaitSeconds(call("GET", "/v1/waittime/" + titleId, "").body);
+}
+
+std::string StreamApi::play(const std::string& target, const std::string& locale) {
+    const bool cloud = kind_ == "cloud";
     const json body = {
-        {"titleId", ""}, {"systemUpdateGroup", ""}, {"clientSessionId", ""},
+        {"titleId", cloud ? target : std::string()}, {"systemUpdateGroup", ""}, {"clientSessionId", ""},
         {"settings", {{"nanoVersion", "V3;WebrtcTransport.dll"}, {"enableTextToSpeech", false}, {"highContrast", 0},
                       {"locale", locale}, {"useIceConnection", false}, {"timezoneOffsetMinutes", 480},
                       {"sdkType", "web"}, {"osName", "windows"}}},
-        {"serverId", serverId}, {"fallbackRegionNames", json::array()},
+        {"serverId", cloud ? std::string() : target}, {"fallbackRegionNames", json::array()},
     };
-    const json j = parse(call("POST", "/v5/sessions/home/play", body.dump(), {{"X-MS-Device-Info", kDeviceInfo}}), "play");
+    const json j = parse(call("POST", sessions() + "/play", body.dump(), {{"X-MS-Device-Info", kDeviceInfo}}), "play");
     const std::string path = j.value("sessionPath", "");
-    // "v5/sessions/home/<id>"
+    // "v5/sessions/home/<id>" or "v5/sessions/cloud/<id>"
     const auto slash = path.find_last_of('/');
     const std::string id = slash == std::string::npos ? path : path.substr(slash + 1);
     if (id.empty()) throw std::runtime_error("play returned no session");
@@ -113,7 +157,7 @@ std::string StreamApi::play(const std::string& serverId, const std::string& loca
 }
 
 SessionState StreamApi::state(const std::string& sessionId) {
-    const json j = parse(call("GET", "/v5/sessions/home/" + sessionId + "/state", ""), "session state");
+    const json j = parse(call("GET", sessions() + "/" + sessionId + "/state", ""), "session state");
     SessionState s;
     s.state = j.value("state", "");
     if (j.contains("errorDetails") && j["errorDetails"].is_object()) {
@@ -125,7 +169,7 @@ SessionState StreamApi::state(const std::string& sessionId) {
 }
 
 void StreamApi::connect(const std::string& sessionId, const std::string& transferToken) {
-    call("POST", "/v5/sessions/home/" + sessionId + "/connect", json{{"userToken", transferToken}}.dump());
+    call("POST", sessions() + "/" + sessionId + "/connect", json{{"userToken", transferToken}}.dump());
 }
 
 // The service returns 204 or a nullable pending wrapper until the console replies.
@@ -166,7 +210,7 @@ std::string StreamApi::exchangeSdp(const std::string& sessionId, const std::stri
             {"message", {{"minVersion", 1}, {"maxVersion", 1}}},
         }},
     };
-    const std::string path = "/v5/sessions/home/" + sessionId + "/sdp";
+    const std::string path = sessions() + "/" + sessionId + "/sdp";
     call("POST", path, body.dump());
     const std::string exchange = getExchange(path);
     json answer;
@@ -234,7 +278,7 @@ std::vector<IceCandidate> StreamApi::parseIce(const std::string& exchangeRespons
 std::vector<IceCandidate> StreamApi::exchangeIce(const std::string& sessionId, const std::vector<IceCandidate>& local) {
     json candidates = json::array();
     for (const auto& c : local) candidates.push_back({{"candidate", c.candidate}, {"sdpMid", c.sdpMid}, {"sdpMLineIndex", c.sdpMLineIndex}});
-    const std::string path = "/v5/sessions/home/" + sessionId + "/ice";
+    const std::string path = sessions() + "/" + sessionId + "/ice";
     call("POST", path, json{{"messageType", "iceCandidate"}, {"candidate", candidates}}.dump());
     try {
         return parseIce(getExchange(path));
@@ -244,11 +288,75 @@ std::vector<IceCandidate> StreamApi::exchangeIce(const std::string& sessionId, c
 }
 
 void StreamApi::keepalive(const std::string& sessionId) {
-    call("POST", "/v5/sessions/home/" + sessionId + "/keepalive", "{}");
+    call("POST", sessions() + "/" + sessionId + "/keepalive", "{}");
 }
 
 void StreamApi::stop(const std::string& sessionId) {
-    call("DELETE", "/v5/sessions/home/" + sessionId, "");
+    call("DELETE", sessions() + "/" + sessionId, "");
+}
+
+namespace {
+
+// Store tiles come back as protocol-relative URLs ("//store-images.s-microsoft.com/...").
+std::string httpsUrl(std::string url) {
+    if (url.rfind("//", 0) == 0) url = "https:" + url;
+    if (url.rfind("http://", 0) == 0) url = "https://" + url.substr(7);
+    return url.rfind("https://", 0) == 0 ? url : std::string();
+}
+
+std::string imageUrl(const json& product, const char* key) {
+    const auto it = product.find(key);
+    if (it == product.end()) return {};
+    if (it->is_object()) return httpsUrl(text(*it, "URL"));
+    if (it->is_string()) return httpsUrl(it->get<std::string>());
+    return {};
+}
+
+} // namespace
+
+void applyCatalog(std::vector<CloudTitle>& titles, const std::string& body) {
+    json products;
+    try {
+        products = json::parse(body).value("Products", json::object());
+    } catch (const json::exception&) {
+        return;
+    }
+    if (!products.is_object()) return;
+    for (auto& title : titles) {
+        const auto it = products.find(title.productId);
+        if (title.productId.empty() || it == products.end() || !it->is_object()) continue;
+        const std::string name = text(*it, "ProductTitle");
+        if (!name.empty()) title.name = name;
+        title.publisher = text(*it, "PublisherName");
+        std::string image = imageUrl(*it, "Image_Tile");
+        if (image.empty()) image = imageUrl(*it, "Image_Poster");
+        title.image = image;
+    }
+}
+
+void fillCatalog(HttpsTransport& http, std::vector<CloudTitle>& titles, const std::string& language) {
+    std::vector<std::string> ids;
+    for (const auto& t : titles) if (!t.productId.empty()) ids.push_back(t.productId);
+    for (size_t first = 0; first < ids.size(); first += 100) {
+        const size_t last = std::min(ids.size(), first + 100);
+        HttpsRequest r;
+        r.method = "POST";
+        r.host = "catalog.gamepass.com";
+        r.path = "/v3/products?market=US&language=" + language + "&hydration=RemoteHighSapphire0";
+        r.headers["Content-Type"] = "application/json";
+        r.headers["ms-cv"] = "0";
+        r.headers["calling-app-name"] = "Xbox Cloud Gaming Web";
+        r.headers["calling-app-version"] = "21.0.0";
+        r.body = json{{"Products", std::vector<std::string>(ids.begin() + first, ids.begin() + last)}}.dump();
+        try {
+            const HttpsResponse response = http.send(r);
+            if (response.status >= 200 && response.status <= 299) applyCatalog(titles, response.body);
+            else log::warn("xbox-catalog", "catalogue returned HTTP " + std::to_string(response.status));
+        } catch (const std::exception& e) {
+            log::warn("xbox-catalog", std::string("catalogue: ") + e.what());
+            return;   // names are optional; the titleIds still let the user start a game
+        }
+    }
 }
 
 } // namespace veyra::xbox

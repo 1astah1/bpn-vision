@@ -122,6 +122,7 @@ struct XboxSessionSource::Impl {
     std::shared_ptr<xbox::HttpsTransport> http;
     std::unique_ptr<xbox::StreamApi> api;
     std::string host, gsToken;
+    std::string kind = "home";      // "cloud" for xCloud
     std::string sessionId;
     xbox::WebRtcSession rtc;
     std::atomic<bool> streaming{false}, ended{false};
@@ -231,25 +232,57 @@ void XboxSessionSource::run(XboxConnectDesc desc) {
 
     try {
         if (!p.desc.account || !p.desc.account->signedIn()) { fail(L"请先登录 Xbox 账号。"); return; }
-        setState(XboxStats::State::Starting, L"正在登录 Xbox 串流服务…");
-        const xbox::StreamingAccess access = p.desc.account->streamingAccess();
+        const bool cloud = !p.desc.titleId.empty();
+        setState(XboxStats::State::Starting, cloud ? L"正在登录 Xbox 云游戏服务…" : L"正在登录 Xbox 串流服务…");
+        xbox::StreamingAccess access;
+        if (cloud) {
+            std::string why;
+            const std::optional<xbox::StreamingAccess> granted = p.desc.account->cloudAccess(&why);
+            if (!granted) {
+                log::warn("xbox", "no cloud gaming offering for this account/network: " + why);
+                fail(L"微软没有为这个账号或当前网络开放 Xbox 云游戏。云游戏只在部分国家提供，请连接到支持的地区（例如通过 VPN）后重试。");
+                return;
+            }
+            access = *granted;
+        } else {
+            access = p.desc.account->streamingAccess();
+        }
+        p.kind = cloud ? "cloud" : "home";
         p.http = xbox::makeWinHttpTransport(&cancel_);
-        p.api = std::make_unique<xbox::StreamApi>(p.http, access.host, access.gsToken);
+        p.api = std::make_unique<xbox::StreamApi>(p.http, access.host, access.gsToken, p.kind);
         p.host = access.host;
         p.gsToken = access.gsToken;
-        log::info("xbox", "streaming region " + access.regionName + " host " + access.host);
+        log::info("xbox", "streaming offering " + access.offering + " region " + access.regionName + " host " + access.host);
 
-        setState(XboxStats::State::Starting, L"正在唤醒主机并准备串流…");
-        p.sessionId = p.api->play(p.desc.serverId, p.desc.locale);
-        log::info("xbox", "session " + p.sessionId);
-        bool connectSent = false;
-        const auto deadline = Clock::now() + std::chrono::seconds(120);
+        setState(XboxStats::State::Starting, cloud ? L"正在申请云端主机…" : L"正在唤醒主机并准备串流…");
+        p.sessionId = p.api->play(cloud ? p.desc.titleId : p.desc.serverId, p.desc.locale);
+        log::info("xbox", "session " + p.sessionId + (cloud ? " title " + p.desc.titleId : std::string()));
+        bool connectSent = false, queued = false;
+        // A console wakes within two minutes. A cloud queue at peak hours can take much longer: once the
+        // service says the session waits for a server, the wait follows its estimate (at most 30 minutes).
+        auto deadline = Clock::now() + std::chrono::seconds(120);
         for (;;) {
             if (cancelled()) { fail(L"已取消。"); return; }
-            if (Clock::now() > deadline) { fail(L"主机长时间没有准备好串流。请确认主机开着并且网络正常。"); return; }
+            if (Clock::now() > deadline) {
+                fail(cloud ? L"云端主机长时间没有准备好。请稍后重试。" : L"主机长时间没有准备好串流。请确认主机开着并且网络正常。");
+                return;
+            }
             const xbox::SessionState state = p.api->state(p.sessionId);
             log::info("xbox", "session state " + state.state);
             if (state.state == "Provisioned") break;
+            if (state.state == "WaitingForResources" && cloud) {
+                if (!queued) {
+                    queued = true;
+                    int wait = -1;
+                    try { wait = p.api->waitSeconds(p.desc.titleId); } catch (const std::exception& e) { log::warn("xbox", std::string("wait time: ") + e.what()); }
+                    log::info("xbox", std::format("cloud queue estimate {} s", wait));
+                    deadline = Clock::now() + std::chrono::minutes(30);
+                    setState(XboxStats::State::Starting, wait > 0 ? std::format(L"云端排队中，预计等待 {} 分钟…", (wait + 59) / 60)
+                                                                   : std::wstring(L"云端排队中…"));
+                }
+                std::this_thread::sleep_for(std::chrono::seconds(2));
+                continue;
+            }
             if (state.state == "Failed") {
                 log::error("xbox", "session failed code=" + (state.errorCode.empty() ? std::string("?") : state.errorCode) +
                                    " message=" + (state.errorMessage.empty() ? std::string("?") : state.errorMessage));
@@ -745,9 +778,9 @@ void XboxSessionSource::close() noexcept {
         // The session's own transport is cancelled by now, and teardown must not wait on the network:
         // a detached request with its own transport and copies of what it needs.
         if (p.api && !p.sessionId.empty()) {
-            std::thread([host = p.host, token = p.gsToken, id = p.sessionId] {
+            std::thread([host = p.host, token = p.gsToken, kind = p.kind, id = p.sessionId] {
                 try {
-                    xbox::StreamApi(xbox::makeWinHttpTransport(), host, token).stop(id);
+                    xbox::StreamApi(xbox::makeWinHttpTransport(), host, token, kind).stop(id);
                     log::info("xbox", "session " + id + " stopped");
                 } catch (const std::exception& e) {
                     log::warn("xbox", std::string("session stop: ") + e.what());

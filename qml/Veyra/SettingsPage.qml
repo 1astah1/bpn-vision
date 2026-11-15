@@ -249,7 +249,8 @@ VPage {
                                     { id: "zh-CN", label: qsTr("简体中文") },
                                     { id: "zh-TW", label: qsTr("繁體中文") },
                                     { id: "en", label: "English" },
-                                    { id: "ja", label: qsTr("日本語") }
+                                    { id: "ja", label: qsTr("日本語") },
+                                    { id: "ru", label: "Русский" }
                                 ]
                                 value: (options.find(o => o.id === (veyra.preferences.language || "auto")) || options[0]).label
                                 onPicked: id => veyra.setPreference("language", id)
@@ -1184,12 +1185,19 @@ VPage {
                         }
                         ColumnLayout {
                             spacing: 4
-                            VH1 { text: "Veyra" }
+                            VH1 { text: Theme.brandName }
                             Text {
                                 text: qsTr("版本 ") + veyra.version
                                 color: Theme.t2
                                 font.family: Theme.fontUi
                                 font.pixelSize: Theme.fsBody
+                            }
+                            Text {
+                                objectName: "about-upstream"
+                                text: qsTr("基于 Veyra（Likely7）· GPL-3.0 开源")
+                                color: Theme.t3
+                                font.family: Theme.fontUi
+                                font.pixelSize: Theme.fsSmall
                             }
                         }
                     }
@@ -1209,6 +1217,16 @@ VPage {
                                 text: qsTr("查看更新")
                                 onClicked: veyra.updates.openRelease()
                             }
+                        }
+                        VRow {
+                            label: "BPN VPN"
+                            hint: qsTr("用于 Xbox 云游戏和外服游戏的 VPN")
+                            VButton { objectName: "about-bpn"; text: qsTr("打开"); primary: true; onClicked: Qt.openUrlExternally(Theme.bpnUrl) }
+                        }
+                        VRow {
+                            label: qsTr("原版 Veyra")
+                            hint: qsTr("原作者的项目主页与源代码")
+                            VButton { text: qsTr("查看"); ghost: true; onClicked: Qt.openUrlExternally(Theme.upstreamUrl) }
                         }
                         VRow {
                             label: qsTr("反馈问题")

@@ -9,16 +9,29 @@ DialogLayer {
     key: "xbox"
     glyph: "gamepad"
     title: qsTr("Xbox 串流")
-    sub: qsTr("串流你自己的 Xbox 主机 · 非官方实验功能 · 增强与调色沿用软件自己的处理链")
+    sub: qsTr("串流你自己的 Xbox 主机或 Xbox 云游戏 · 非官方实验功能 · 增强与调色沿用软件自己的处理链")
     dialogWidth: 680
     readonly property var xb: veyra.xbox
     readonly property var st: xb ? xb.state : ({})
     readonly property var list: xb ? xb.consoles : []
+    readonly property var games: xb ? xb.games : []
+    readonly property bool cloud: st.mode === "cloud"
+    // BPN: the VPN this build is distributed with. Cloud gaming is sold only in some countries.
+    readonly property string bpnUrl: Theme.bpnUrl
+    property string gameFilter: ""
+    readonly property var shownGames: {
+        const q = gameFilter.trim().toLowerCase()
+        if (q.length === 0) return games
+        return games.filter(g => (g.name || "").toLowerCase().indexOf(q) >= 0 || (g.publisher || "").toLowerCase().indexOf(q) >= 0)
+    }
     actions: st.streaming ? [
         { label: qsTr("关闭") },
         { label: qsTr("断开"), primary: true }
     ] : !st.signedIn ? [
         { label: st.busy ? qsTr("取消操作") : qsTr("关闭") }
+    ] : cloud ? [
+        { label: st.busy ? qsTr("取消操作") : qsTr("关闭") },
+        { label: qsTr("开始游戏"), primary: true, icon: "play" }
     ] : [
         { label: st.busy ? qsTr("取消操作") : qsTr("关闭") },
         { label: qsTr("开始串流"), primary: true, icon: "play" }
@@ -27,6 +40,7 @@ DialogLayer {
         if (label === qsTr("断开")) { veyra.xboxDisconnect(); dialogHost.close(); return }
         if (label === qsTr("取消操作")) { xb.cancel(); return }
         if (label === qsTr("关闭")) { dialogHost.close(); return }
+        if (label === qsTr("开始游戏")) { if (st.signedIn && !st.busy && (st.selectedGame || "").length > 0) xb.playGame(); return }
         if (st.signedIn && !st.busy && (st.selected || "").length > 0) xb.connectStream()
     }
     Connections {
@@ -91,9 +105,147 @@ DialogLayer {
         }
     }
 
-    DialogSection { visible: !!xbDialog.st.signedIn; text: qsTr("主机") }
+    // What to play: the consoles on the account, or games that run in Microsoft's cloud.
+    DialogGroup {
+        visible: !!xbDialog.st.signedIn
+        VRow {
+            label: qsTr("串流来源")
+            hint: xbDialog.cloud ? qsTr("游戏在微软的云端主机上运行，不需要自己的主机") : qsTr("串流你账号下的 Xbox Series X|S 或 Xbox One")
+            VSeg {
+                objectName: "xbox-mode"
+                options: [{ id: "console", label: qsTr("我的主机") }, { id: "cloud", label: qsTr("云游戏") }]
+                current: xbDialog.cloud ? "cloud" : "console"
+                enabled: !xbDialog.st.busy && !xbDialog.st.streaming
+                onPicked: id => xbDialog.xb.set("mode", id)
+            }
+        }
+    }
+
+    // ---------------------------------------------------------------- cloud gaming
+    Rectangle {
+        objectName: "xbox-cloud-blocked"
+        visible: !!xbDialog.st.signedIn && xbDialog.cloud && xbDialog.st.cloudChecked === true && xbDialog.st.cloudAvailable !== true && !xbDialog.st.busy
+        Layout.fillWidth: true
+        Layout.topMargin: 8
+        implicitHeight: blockedCol.implicitHeight + 28
+        radius: 11
+        color: Theme.accentSoft
+        border.width: 1
+        border.color: Theme.accent
+        ColumnLayout {
+            id: blockedCol
+            anchors.fill: parent
+            anchors.margins: 14
+            spacing: 8
+            Text {
+                Layout.fillWidth: true
+                text: qsTr("Xbox 云游戏只在部分国家提供，微软按你的网络所在地区判断。连接 BPN VPN，选择支持云游戏的国家（例如德国或美国），然后点“刷新”。")
+                color: Theme.t1
+                font.family: Theme.fontUi
+                font.pixelSize: Theme.fsBody
+                wrapMode: Text.WordWrap
+            }
+            RowLayout {
+                Layout.alignment: Qt.AlignHCenter
+                spacing: 8
+                VButton { objectName: "xbox-bpn"; text: qsTr("获取 BPN VPN"); primary: true; onClicked: Qt.openUrlExternally(xbDialog.bpnUrl) }
+                VButton { text: qsTr("刷新"); ghost: true; enabled: !xbDialog.st.busy; onClicked: xbDialog.xb.loadGames() }
+            }
+        }
+    }
+    DialogSection { visible: !!xbDialog.st.signedIn && xbDialog.cloud && xbDialog.st.cloudAvailable === true; text: qsTr("云游戏") }
+    DialogTextField {
+        objectName: "xbox-game-search"
+        visible: !!xbDialog.st.signedIn && xbDialog.cloud && xbDialog.games.length > 0
+        Layout.fillWidth: true
+        Layout.topMargin: 6
+        placeholder: qsTr("搜索游戏")
+        onTyped: text => xbDialog.gameFilter = text
+        onEdited: text => xbDialog.gameFilter = text
+    }
+    ListView {
+        id: gameList
+        objectName: "xbox-games"
+        visible: !!xbDialog.st.signedIn && xbDialog.cloud && xbDialog.games.length > 0
+        Layout.fillWidth: true
+        Layout.topMargin: 6
+        Layout.preferredHeight: Math.min(contentHeight, 330)
+        clip: true
+        spacing: 6
+        boundsBehavior: Flickable.StopAtBounds
+        model: xbDialog.shownGames
+        ScrollBar.vertical: VScrollBar {}
+        delegate: Rectangle {
+            id: gameRow
+            required property var modelData
+            readonly property bool picked: xbDialog.st.selectedGame === modelData.id
+            objectName: "xbox-game-" + modelData.id
+            width: ListView.view.width
+            implicitHeight: 54
+            radius: 11
+            opacity: modelData.entitled ? 1 : 0.6
+            color: picked ? Theme.accentSoft : (gameHover.hovered ? Theme.card3 : Theme.card2)
+            border.width: 1
+            border.color: picked ? Theme.accent : Theme.stroke
+            HoverHandler { id: gameHover; cursorShape: Qt.PointingHandCursor }
+            TapHandler {
+                onTapped: xbDialog.xb.selectGame(gameRow.modelData.id)
+                onDoubleTapped: { xbDialog.xb.selectGame(gameRow.modelData.id); if (!xbDialog.st.busy) xbDialog.xb.playGame() }
+            }
+            RowLayout {
+                anchors.fill: parent
+                anchors.leftMargin: 8
+                anchors.rightMargin: 12
+                spacing: 12
+                Rectangle {
+                    Layout.preferredWidth: 38
+                    Layout.preferredHeight: 38
+                    Layout.alignment: Qt.AlignVCenter
+                    radius: 8
+                    color: Theme.card3
+                    clip: true
+                    Image {
+                        anchors.fill: parent
+                        source: gameRow.modelData.image || ""
+                        visible: status === Image.Ready
+                        asynchronous: true
+                        cache: true
+                        fillMode: Image.PreserveAspectCrop
+                        sourceSize.width: 76
+                        sourceSize.height: 76
+                    }
+                }
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: 1
+                    Text { Layout.fillWidth: true; text: gameRow.modelData.name; color: Theme.t1; font.family: Theme.fontUi; font.pixelSize: Theme.fsBody; font.weight: Font.Medium; elide: Text.ElideRight }
+                    Text {
+                        Layout.fillWidth: true
+                        text: gameRow.modelData.entitled ? (gameRow.modelData.publisher || "") : qsTr("需要 Game Pass Ultimate")
+                        color: Theme.t3; font.family: Theme.fontUi; font.pixelSize: Theme.fsSmall; elide: Text.ElideRight
+                    }
+                }
+            }
+        }
+    }
+    DialogGroup {
+        visible: !!xbDialog.st.signedIn && xbDialog.cloud && xbDialog.st.cloudAvailable === true
+        VRow {
+            label: xbDialog.st.cloudOffering || qsTr("云游戏")
+            hint: qsTr("高峰时段可能需要排队；画面最高 1080p，增强和补帧在本机完成")
+            VButton { text: qsTr("刷新"); ghost: true; enabled: !xbDialog.st.busy; onClicked: xbDialog.xb.loadGames() }
+        }
+        VRow {
+            label: qsTr("手柄")
+            hint: qsTr("把电脑手柄当作云端主机上的手柄")
+            VSwitch { checked: xbDialog.st.gamepad !== false; onToggled: checked => xbDialog.xb.set("gamepad", checked) }
+        }
+    }
+
+    // ---------------------------------------------------------------- own consoles
+    DialogSection { visible: !!xbDialog.st.signedIn && !xbDialog.cloud; text: qsTr("主机") }
     Repeater {
-        model: xbDialog.st.signedIn ? xbDialog.list : []
+        model: xbDialog.st.signedIn && !xbDialog.cloud ? xbDialog.list : []
         delegate: Rectangle {
             id: consoleRow
             required property var modelData
@@ -127,7 +279,7 @@ DialogLayer {
         }
     }
     DialogGroup {
-        visible: !!xbDialog.st.signedIn
+        visible: !!xbDialog.st.signedIn && !xbDialog.cloud
         VRow {
             label: qsTr("主机列表")
             hint: qsTr("主机要用同一个账号登录，并在 设置 → 设备和连接 → 远程功能 里启用远程功能")

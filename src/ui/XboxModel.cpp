@@ -9,6 +9,7 @@
 #include <QMetaObject>
 #include <QSaveFile>
 #include <QUrl>
+#include <algorithm>
 #include <chrono>
 
 #include "veyra/Log.h"
@@ -47,6 +48,22 @@ QString typeText(const std::string& type) {
     return qs(type);
 }
 
+// The language of game names and of the game itself, from the interface language.
+std::string gameLocale() {
+    const QString ui = veyra::ui::i18n::current();
+    if (ui == "ru") return "ru-RU";
+    if (ui == "zh-TW") return "zh-TW";
+    if (ui == "zh-CN" || ui.isEmpty()) return "zh-CN";
+    if (ui == "ja") return "ja-JP";
+    return "en-US";
+}
+
+QString offeringText(const QString& offering) {
+    if (offering == "xgpuweb") return QObject::tr("Game Pass 云游戏");
+    if (offering == "xgpuwebf2p") return QObject::tr("免费云游戏（无需订阅）");
+    return offering;
+}
+
 QString settingsPath() { return QString::fromStdWString((xbox::dataDirectory() / L"settings.json").wstring()); }
 
 } // namespace
@@ -63,6 +80,9 @@ void XboxModel::loadSettings() {
     const QJsonObject o = QJsonDocument::fromJson(file.readAll()).object();
     lastId_ = o.value("lastConsole").toString();
     lastName_ = o.value("lastName").toString();
+    lastKind_ = o.value("lastKind").toString(QStringLiteral("console"));
+    mode_ = o.value("mode").toString(QStringLiteral("console"));
+    if (mode_ != "cloud") mode_ = QStringLiteral("console");
     gamepad_ = o.value("gamepad").toBool(true);
 }
 
@@ -71,7 +91,8 @@ void XboxModel::saveSettings() const {
     std::filesystem::create_directories(xbox::dataDirectory(), ec);
     QSaveFile file(settingsPath());
     if (!file.open(QIODevice::WriteOnly)) return;
-    file.write(QJsonDocument(QJsonObject{{"lastConsole", lastId_}, {"lastName", lastName_}, {"gamepad", gamepad_}}).toJson());
+    file.write(QJsonDocument(QJsonObject{{"lastConsole", lastId_}, {"lastName", lastName_}, {"lastKind", lastKind_},
+                                         {"mode", mode_}, {"gamepad", gamepad_}}).toJson());
     file.commit();
 }
 
@@ -80,6 +101,8 @@ QVariantMap XboxModel::state() const {
         {"signedIn", account_->signedIn()}, {"busy", busy_}, {"status", status_}, {"code", code_},
         {"verificationUri", verificationUri_}, {"signingIn", signingIn_}, {"selected", selected_}, {"gamepad", gamepad_},
         {"streaming", streamActive_}, {"stream", stream_}, {"lastLabel", lastName_},
+        {"mode", mode_}, {"selectedGame", selectedGame_}, {"cloudChecked", cloudChecked_},
+        {"cloudAvailable", cloudAvailable_}, {"cloudOffering", offeringText(cloudOffering_)},
     };
 }
 
@@ -113,7 +136,8 @@ void XboxModel::cancel() {
 
 void XboxModel::load() {
     if (!loaded_) { loadSettings(); loaded_ = true; }
-    if (account_->signedIn() && consoles_.isEmpty()) refresh();
+    if (account_->signedIn() && mode_ == "cloud" && !cloudChecked_) loadGames();
+    else if (account_->signedIn() && consoles_.isEmpty()) refresh();
     emit changed();
 }
 
@@ -174,6 +198,10 @@ void XboxModel::signOut() {
     account_->signOut();
     consoles_.clear();
     selected_.clear();
+    games_.clear();
+    selectedGame_.clear();
+    cloudChecked_ = cloudAvailable_ = false;
+    cloudOffering_.clear();
     status_ = tr("已退出登录，本机保存的登录信息已删除。");
     emit changed();
 }
@@ -202,8 +230,105 @@ void XboxModel::select(const QString& id) {
     emit changed();
 }
 
+void XboxModel::loadGames() {
+    if (!account_->signedIn()) { emit changed(); return; }
+    startJob(tr("正在读取云游戏列表…"), [this, locale = gameLocale()](const std::atomic<bool>& cancel) -> std::function<void()> {
+        std::string why;
+        const std::optional<xbox::StreamingAccess> access = account_->cloudAccess(&why);
+        if (!access) {
+            log::warn("xbox", "no cloud gaming offering: " + why);
+            return [this] {
+                cloudChecked_ = true;
+                cloudAvailable_ = false;
+                cloudOffering_.clear();
+                games_.clear();
+                selectedGame_.clear();
+                status_ = tr("微软没有为这个账号或当前网络开放 Xbox 云游戏。云游戏只在部分国家提供，请连接到支持的地区（例如通过 VPN）后点“刷新”。");
+            };
+        }
+        const auto http = xbox::makeWinHttpTransport(&cancel);
+        std::vector<xbox::CloudTitle> titles = xbox::StreamApi(http, access->host, access->gsToken, "cloud").titles();
+        if (cancel.load()) return [this] { status_ = tr("已取消。"); };
+        xbox::fillCatalog(*http, titles, locale);
+        std::stable_sort(titles.begin(), titles.end(), [](const xbox::CloudTitle& a, const xbox::CloudTitle& b) {
+            if (a.entitled != b.entitled) return a.entitled;
+            return QString::fromStdString(a.name).compare(QString::fromStdString(b.name), Qt::CaseInsensitive) < 0;
+        });
+        QVariantList games;
+        int entitled = 0;
+        for (const auto& t : titles) {
+            entitled += t.entitled ? 1 : 0;
+            games << QVariantMap{{"id", qs(t.titleId)}, {"name", qs(t.name)}, {"publisher", qs(t.publisher)},
+                                 {"image", qs(t.image)}, {"entitled", t.entitled}};
+        }
+        log::info("xbox", "cloud offering " + access->offering + ": " + std::to_string(titles.size()) + " titles, " + std::to_string(entitled) + " playable");
+        const QString offering = qs(access->offering);
+        return [this, games, offering, entitled] {
+            cloudChecked_ = true;
+            cloudAvailable_ = true;
+            cloudOffering_ = offering;
+            games_ = games;
+            bool known = false;
+            for (const QVariant& g : std::as_const(games_)) known = known || g.toMap().value("id").toString() == selectedGame_;
+            if (!known) selectedGame_ = entitled > 0 ? games_.front().toMap().value("id").toString() : QString();
+            status_ = games_.isEmpty() ? tr("云游戏列表是空的。") : entitled == 0 ? tr("列表里的游戏都需要 Game Pass Ultimate 订阅。") : QString();
+        };
+    });
+}
+
+void XboxModel::selectGame(const QString& id) {
+    if (selectedGame_ == id) return;
+    selectedGame_ = id;
+    emit changed();
+}
+
+bool XboxModel::launchGame(const QString& id, const QString& name) {
+    if (!account_->signedIn()) { status_ = tr("请先登录 Xbox 账号。"); emit changed(); return false; }
+    if (!launch_ || id.isEmpty()) return false;
+    Launch launch;
+    launch.desc.account = account_;
+    launch.desc.titleId = id.toStdString();
+    launch.desc.titleName = name.toStdString();
+    launch.desc.gamepad = gamepad_;
+    launch.desc.locale = gameLocale();
+    launch.label = name.isEmpty() ? QStringLiteral("Xbox Cloud") : name;
+    if (!launch_(std::move(launch))) { status_ = tr("无法开始串流，请查看日志。"); emit changed(); return false; }
+    lastKind_ = QStringLiteral("cloud");
+    lastId_ = id;
+    lastName_ = name;
+    saveSettings();
+    status_ = tr("正在启动云游戏…（高峰时段可能需要排队）");
+    emit changed();
+    emit started();
+    return true;
+}
+
+bool XboxModel::playGame() {
+    if (busy_) return false;
+    for (const QVariant& g : std::as_const(games_)) {
+        const QVariantMap m = g.toMap();
+        if (m.value("id").toString() != selectedGame_) continue;
+        if (!m.value("entitled").toBool()) { status_ = tr("这款游戏需要 Game Pass Ultimate 订阅。"); emit changed(); return false; }
+        return launchGame(selectedGame_, m.value("name").toString());
+    }
+    return false;
+}
+
 bool XboxModel::set(const QString& key, const QVariant& value) {
     if (key == "gamepad") { gamepad_ = value.toBool(); saveSettings(); emit changed(); return true; }
+    if (key == "mode") {
+        const QString mode = value.toString() == "cloud" ? QStringLiteral("cloud") : QStringLiteral("console");
+        if (mode_ == mode) return true;
+        mode_ = mode;
+        status_.clear();
+        saveSettings();
+        emit changed();
+        if (account_->signedIn() && !busy_) {
+            if (mode_ == "cloud" && !cloudChecked_) loadGames();
+            else if (mode_ == "console" && consoles_.isEmpty()) refresh();
+        }
+        return true;
+    }
     return false;
 }
 
@@ -215,8 +340,10 @@ bool XboxModel::launchConsole(const QString& id, const QString& name) {
     launch.desc.serverId = id.toStdString();
     launch.desc.consoleName = name.toStdString();
     launch.desc.gamepad = gamepad_;
+    launch.desc.locale = gameLocale();
     launch.label = name.isEmpty() ? QStringLiteral("Xbox") : name;
     if (!launch_(std::move(launch))) { status_ = tr("无法开始串流，请查看日志。"); emit changed(); return false; }
+    lastKind_ = QStringLiteral("console");
     lastId_ = id;
     lastName_ = name;
     saveSettings();
@@ -236,7 +363,7 @@ bool XboxModel::connectStream() {
 bool XboxModel::resumeLast() {
     if (!loaded_) { loadSettings(); loaded_ = true; }
     if (lastId_.isEmpty()) return false;
-    return launchConsole(lastId_, lastName_);
+    return lastKind_ == "cloud" ? launchGame(lastId_, lastName_) : launchConsole(lastId_, lastName_);
 }
 
 void XboxModel::updateStream(bool active, const source::XboxStats& s) {

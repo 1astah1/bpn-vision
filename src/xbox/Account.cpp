@@ -183,6 +183,7 @@ void Account::signOut() {
     tokens_.reset();
     userToken_.clear();
     streaming_.reset();
+    cloud_.reset();
     std::error_code ec;
     std::filesystem::remove(file_, ec);
 }
@@ -219,6 +220,7 @@ SignInPoll Account::pollSignIn(const DeviceCode& code, std::string* detail) {
         tokens_ = std::move(t);
         userToken_.clear();
         streaming_.reset();
+        cloud_.reset();
         store();
         return SignInPoll::Done;
     }
@@ -268,9 +270,8 @@ std::string Account::xstsUserToken() {
     return userToken_;
 }
 
-StreamingAccess Account::streamingAccess() {
-    std::lock_guard lock(mutex_);
-    if (streaming_ && streaming_->expiresAt - 120 > clock_()) return *streaming_;
+// Caller holds mutex_.
+StreamingAccess Account::offeringAccess(const std::string& offering) {
     const std::string user = xstsUserToken();
     const json authorize = {{"Properties", {{"SandboxId", "RETAIL"}, {"UserTokens", json::array({user})}}},
                             {"RelyingParty", "http://gssv.xboxlive.com/"}, {"TokenType", "JWT"}};
@@ -280,15 +281,16 @@ StreamingAccess Account::streamingAccess() {
 
     HttpsRequest request;
     request.method = "POST";
-    request.host = "xhome.gssv-play-prod.xboxlive.com";
+    request.host = offering + ".gssv-play-prod.xboxlive.com";
     request.path = "/v2/login/user";
     request.headers["Content-Type"] = "application/json";
     request.headers["Cache-Control"] = "no-store, must-revalidate, no-cache";
     request.headers["x-gssv-client"] = "XboxComBrowser";
-    request.body = json{{"token", gssv}, {"offeringId", "xhome"}}.dump();
+    request.body = json{{"token", gssv}, {"offeringId", offering}}.dump();
     const json j = parse(http_->send(request), "streaming sign-in");
 
     StreamingAccess access;
+    access.offering = offering;
     access.gsToken = j.value("gsToken", "");
     access.expiresAt = clock_() + j.value("durationInSeconds", 3600);
     try {
@@ -303,8 +305,35 @@ StreamingAccess Account::streamingAccess() {
         }
     } catch (const json::exception&) {}
     if (access.gsToken.empty() || access.host.empty()) throw std::runtime_error("streaming sign-in returned no region or token");
-    streaming_ = access;
     return access;
+}
+
+StreamingAccess Account::streamingAccess() {
+    std::lock_guard lock(mutex_);
+    if (streaming_ && streaming_->expiresAt - 120 > clock_()) return *streaming_;
+    streaming_ = offeringAccess("xhome");
+    return *streaming_;
+}
+
+std::optional<StreamingAccess> Account::cloudAccess(std::string* why) {
+    std::lock_guard lock(mutex_);
+    if (cloud_ && cloud_->expiresAt - 120 > clock_()) return cloud_;
+    cloud_.reset();
+    std::string answers;
+    for (const char* offering : kCloudOfferings) {
+        try {
+            cloud_ = offeringAccess(offering);
+            return cloud_;
+        } catch (const ServiceError& e) {
+            // 400/403 from the offering's sign-in: not for this account or not in this country. Anything
+            // else (an expired sign-in, a service outage) is a real failure and is not hidden as "no cloud".
+            if (e.status != 400 && e.status != 403) throw;
+            if (!answers.empty()) answers += "; ";
+            answers += std::string(offering) + " HTTP " + std::to_string(e.status);
+        }
+    }
+    if (why) *why = answers;
+    return std::nullopt;
 }
 
 std::string Account::transferToken() {

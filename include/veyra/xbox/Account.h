@@ -35,11 +35,16 @@ struct DeviceCode {
 enum class SignInPoll { Pending, SlowDown, Done, Expired, Declined, Failed };
 
 struct StreamingAccess {
-    std::string host;              // region host of the xhome offering, without scheme
+    std::string host;              // region host of the offering, without scheme
     std::string gsToken;           // bearer token for the streaming API
     std::string regionName;
+    std::string offering;          // "xhome" (own console), "xgpuweb" (Game Pass cloud) or "xgpuwebf2p" (free cloud games)
     int64_t expiresAt = 0;         // unix seconds
 };
+
+// Cloud gaming (xCloud) offerings, tried in this order: Game Pass Ultimate, then the free-to-play catalogue
+// that needs no subscription. Microsoft refuses both outside the countries where cloud gaming is sold.
+inline constexpr const char* kCloudOfferings[] = {"xgpuweb", "xgpuwebf2p"};
 
 // The persisted part of a sign-in.
 struct SavedTokens {
@@ -70,6 +75,10 @@ public:
     // A streaming token for the home (console) offering. Refreshes everything that has expired.
     // Throws ServiceError / NetworkError / std::runtime_error.
     StreamingAccess streamingAccess();
+    // A streaming token for cloud gaming: the first of kCloudOfferings that Microsoft grants this account
+    // from this network. Empty when none does (no subscription and no free titles, or a country without
+    // cloud gaming); `why` then gets the services' answers. Other failures throw like streamingAccess().
+    std::optional<StreamingAccess> cloudAccess(std::string* why = nullptr);
     // The token the session's /connect step wants (MSAL "console transfer" token).
     std::string transferToken();
 
@@ -79,6 +88,8 @@ public:
 private:
     std::string userAccessToken();
     std::string xstsUserToken();
+    // Caller holds mutex_. Signs in to one streaming offering (xhome, xgpuweb, xgpuwebf2p).
+    StreamingAccess offeringAccess(const std::string& offering);
     void store();
 
     std::shared_ptr<HttpsTransport> http_;
@@ -88,6 +99,7 @@ private:
     std::string userToken_;          // user.auth.xboxlive.com
     int64_t userTokenExpiresAt_ = 0;
     std::optional<StreamingAccess> streaming_;
+    std::optional<StreamingAccess> cloud_;
     std::function<int64_t()> clock_;
 };
 

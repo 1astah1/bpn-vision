@@ -273,6 +273,131 @@ void accountTests() {
     std::filesystem::remove_all(dir, ec);
 }
 
+// ---------------------------------------------------------------- cloud gaming (xCloud)
+
+void cloudApiTests() {
+    const auto titles = StreamApi::parseTitles(R"({"results":[
+        {"titleId":"FORTNITE","details":{"productId":"BT5P2X999VH2","hasEntitlement":false,"isFreeInStore":true}},
+        {"titleId":"HALOINFINITE","details":{"productId":"9PP5G1F0C2B6","hasEntitlement":true}},
+        {"titleId":"FORZA5","details":{"productId":"9NKX70BBCDRN","hasEntitlement":false}},
+        {"details":{"productId":"NOTITLE"}}]})");
+    check(titles.size() == 3, "titles without a titleId are skipped");
+    check(titles[0].entitled && titles[1].entitled && !titles[2].entitled, "entitled = hasEntitlement or free in the store");
+    check(titles[0].productId == "BT5P2X999VH2" && titles[0].name == "FORTNITE", "a title is named by its titleId until the catalogue answers");
+
+    auto http = std::make_shared<FakeTransport>();
+    const std::string host = "weu.core.gssv-play-prod.xboxlive.com";
+    StreamApi api(http, host, "CLOUDGS", "cloud");
+    api.setRetryDelayMs(1);
+    http->add(host, "/v2/titles", 200, R"({"results":[{"titleId":"FORTNITE","details":{"productId":"BT5P2X999VH2","isFreeInStore":true}}]})");
+    check(api.titles().size() == 1 && http->seen.back().headers["Authorization"] == "Bearer CLOUDGS", "titles() reads the cloud catalogue with the cloud token");
+    http->add(host, "/v5/sessions/cloud/play", 200, R"({"sessionPath":"v5/sessions/cloud/C-42","state":"Provisioning"})");
+    check(api.play("FORTNITE", "ru-RU") == "C-42", "cloud play returns the session id");
+    {
+        const json body = json::parse(http->seen.back().body);
+        check(body["titleId"] == "FORTNITE" && body["serverId"] == "" && body["settings"]["locale"] == "ru-RU",
+              "cloud play sends the titleId, no serverId and the game language");
+    }
+    http->add(host, "/v5/sessions/cloud/C-42/state", 200, R"({"state":"WaitingForResources"})");
+    check(api.state("C-42").state == "WaitingForResources", "cloud state uses the cloud path");
+    http->add(host, "/v1/waittime/FORTNITE", 200, R"({"estimatedProvisioningTimeInSeconds":20,"estimatedAllocationTimeInSeconds":100,"estimatedTotalWaitTimeInSeconds":120})");
+    check(api.waitSeconds("FORTNITE") == 120, "queue estimate in seconds");
+    check(StreamApi::parseWaitSeconds("{}") == -1 && StreamApi::parseWaitSeconds("not json") == -1, "no estimate is -1");
+    http->add(host, "/v5/sessions/cloud/C-42/keepalive", 200, "{}");
+    api.keepalive("C-42");
+    check(http->seen.back().path == "/v5/sessions/cloud/C-42/keepalive", "keepalive uses the cloud path");
+    http->add(host, "/v5/sessions/cloud/C-42", 200, "");
+    api.stop("C-42");
+    check(http->seen.back().method == "DELETE" && http->seen.back().path == "/v5/sessions/cloud/C-42", "stop deletes the cloud session");
+    bool rejected = false;
+    try { StreamApi(http, host, "GS", "elsewhere"); } catch (const std::invalid_argument&) { rejected = true; }
+    check(rejected, "only home and cloud sessions exist");
+
+    // Names and tiles from the Game Pass catalogue.
+    std::vector<CloudTitle> named = titles;
+    applyCatalog(named, R"({"Products":{"BT5P2X999VH2":{"ProductTitle":"Fortnite","PublisherName":"Epic Games","Image_Tile":{"URL":"//store-images.s-microsoft.com/image/apps.1.png"}},
+                                        "9PP5G1F0C2B6":{"ProductTitle":"Halo Infinite","Image_Poster":{"URL":"http://store-images.s-microsoft.com/p.png"}}}})");
+    check(named[0].name == "Fortnite" && named[0].publisher == "Epic Games" && named[0].image == "https://store-images.s-microsoft.com/image/apps.1.png",
+          "catalogue name, publisher and a protocol-relative tile made https");
+    check(named[1].image == "https://store-images.s-microsoft.com/p.png" && named[2].name == "FORZA5", "the poster is the fallback image; unknown products keep their titleId");
+    std::vector<CloudTitle> unchanged = titles;
+    applyCatalog(unchanged, "not json");
+    check(unchanged[0].name == "FORTNITE", "a broken catalogue answer changes nothing");
+
+    std::vector<CloudTitle> many;
+    for (int i = 0; i < 150; ++i) many.push_back({"T" + std::to_string(i), "P" + std::to_string(i), true, "T" + std::to_string(i), "", ""});
+    auto store = std::make_shared<FakeTransport>();
+    const std::string path = "/v3/products?market=US&language=ru-RU&hydration=RemoteHighSapphire0";
+    store->add("catalog.gamepass.com", path, 200, R"({"Products":{"P0":{"ProductTitle":"Игра ноль"}}})");
+    store->add("catalog.gamepass.com", path, 200, R"({"Products":{"P149":{"ProductTitle":"Last"}}})");
+    fillCatalog(*store, many, "ru-RU");
+    check(store->seen.size() == 2, "the catalogue is asked 100 products at a time");
+    check(json::parse(store->seen[0].body)["Products"].size() == 100 && json::parse(store->seen[1].body)["Products"].size() == 50, "batches of 100 and the rest");
+    check(store->seen[0].headers["calling-app-name"] == "Xbox Cloud Gaming Web", "the catalogue request names the web client");
+    check(many[0].name == "Игра ноль" && many[149].name == "Last" && many[50].name == "T50", "names from every batch");
+    auto down = std::make_shared<FakeTransport>();
+    down->add("catalog.gamepass.com", path, 503, "");
+    std::vector<CloudTitle> few(titles.begin(), titles.begin() + 1);
+    fillCatalog(*down, few, "ru-RU");
+    check(few[0].name == "FORTNITE", "a catalogue outage keeps the titleIds");
+}
+
+void cloudAccountTests() {
+    const auto dir = std::filesystem::temp_directory_path() / ("veyra-xbox-cloud-test-" + std::to_string(GetCurrentProcessId()));
+    std::filesystem::create_directories(dir);
+    const auto file = dir / "account.bin";
+    int64_t now = 1'800'000'000;
+    const char* region = R"({"offeringSettings":{"regions":[{"name":"WestEurope","baseUri":"https://weu.core.gssv-play-prod.xboxlive.com/","isDefault":true}]},"gsToken":"F2P","durationInSeconds":14400})";
+
+    auto http = std::make_shared<FakeTransport>();
+    Account account(http, file);
+    account.setClock([&] { return now; });
+    std::string why;
+
+    // Sign in, as in accountTests().
+    http->add("login.microsoftonline.com", "/consumers/oauth2/v2.0/devicecode", 200,
+              R"({"user_code":"ABCD-EFGH","device_code":"DEV","verification_uri":"https://www.microsoft.com/link","expires_in":900,"interval":5})");
+    const DeviceCode code = account.beginSignIn();
+    http->add("login.microsoftonline.com", "/consumers/oauth2/v2.0/token", 200, R"({"access_token":"AT1","refresh_token":"RT1","expires_in":3600})");
+    check(account.pollSignIn(code) == SignInPoll::Done, "cloud: signed in");
+
+    // No Game Pass Ultimate: xgpuweb refuses, the free catalogue (xgpuwebf2p) is granted.
+    // The user token outlives the test (NotAfter 2030), so later offerings reuse it and only repeat XSTS.
+    http->add("user.auth.xboxlive.com", "/user/authenticate", 200, R"({"Token":"UT","NotAfter":"2030-01-01T00:00:00.0000000Z","DisplayClaims":{"xui":[{"uhs":"123"}]}})");
+    http->add("xsts.auth.xboxlive.com", "/xsts/authorize", 200, R"({"Token":"GSSV"})");
+    http->add("xgpuweb.gssv-play-prod.xboxlive.com", "/v2/login/user", 403, R"({"code":"Forbidden"})");
+    http->add("xsts.auth.xboxlive.com", "/xsts/authorize", 200, R"({"Token":"GSSV"})");
+    http->add("xgpuwebf2p.gssv-play-prod.xboxlive.com", "/v2/login/user", 200, region);
+    const auto access = account.cloudAccess(&why);
+    check(access.has_value() && access->offering == "xgpuwebf2p" && access->gsToken == "F2P" && access->host == "weu.core.gssv-play-prod.xboxlive.com",
+          "without a subscription the free cloud offering is used");
+    check(json::parse(http->seen.back().body)["offeringId"] == "xgpuwebf2p" && http->seen.back().headers["x-gssv-client"] == "XboxComBrowser",
+          "the free offering's sign-in names its offering");
+    const size_t before = http->seen.size();
+    check(account.cloudAccess().has_value() && http->seen.size() == before, "a valid cloud token is reused");
+
+    // Hours later, from a country without cloud gaming: both offerings refuse; that is "no cloud", not an error.
+    now += 4 * 3600;   // past the 14400 s cloud token
+    http->add("xsts.auth.xboxlive.com", "/xsts/authorize", 200, R"({"Token":"GSSV"})");
+    http->add("xgpuweb.gssv-play-prod.xboxlive.com", "/v2/login/user", 403, "");
+    http->add("xsts.auth.xboxlive.com", "/xsts/authorize", 200, R"({"Token":"GSSV"})");
+    http->add("xgpuwebf2p.gssv-play-prod.xboxlive.com", "/v2/login/user", 400, "");
+    why.clear();
+    check(!account.cloudAccess(&why).has_value() && why.find("xgpuweb HTTP 403") != std::string::npos && why.find("xgpuwebf2p HTTP 400") != std::string::npos,
+          "no cloud offering: empty, with both answers");
+
+    // A service outage is not hidden as "no cloud gaming here".
+    http->add("xsts.auth.xboxlive.com", "/xsts/authorize", 200, R"({"Token":"GSSV"})");
+    http->add("xgpuweb.gssv-play-prod.xboxlive.com", "/v2/login/user", 503, "");
+    bool threw = false;
+    try { account.cloudAccess(); } catch (const ServiceError& e) { threw = e.status == 503; }
+    check(threw, "a 503 from the cloud sign-in is an error");
+
+    account.signOut();
+    std::error_code ec;
+    std::filesystem::remove_all(dir, ec);
+}
+
 // ---------------------------------------------------------------- WebRTC loopback
 
 // A second libdatachannel peer playing the console: answers the offer, sends H.264 and Opus, speaks the
@@ -599,6 +724,8 @@ int main(int argc, char** argv) {
     protocolTests();
     apiTests();
     accountTests();
+    cloudApiTests();
+    cloudAccountTests();
     webrtcTests();
     std::printf("xbox tests: %d checks, %d failures\n", g_checks, g_failures);
     rtc::Cleanup();

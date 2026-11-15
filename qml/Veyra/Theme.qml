@@ -100,6 +100,11 @@ QtObject {
     // cubic-bezier(.2,.8,.2,1)
     readonly property var easeOut: [0.2, 0.8, 0.2, 1.0, 1.0, 1.0]
 
+    // Brand (BPN Vision, a fork of Veyra). Keep in step with include/veyra/Brand.h.
+    readonly property string brandName: "BPN Vision"
+    readonly property string bpnUrl: "https://t.me/tgbpn_bot?start=utm_bpnvision"
+    readonly property string upstreamUrl: "https://github.com/Likely7/Veyra-NRVideo"
+
     // --- type (--f-ui / --f-mono and the .h1/.h2/.h3 scale) ---------------
     // --f-ui is "Geist", "Noto Sans SC", ...: Geist is not on this machine (D4), so
     // the design's own second choice, which is also what Edge rendered the reference
@@ -109,7 +114,8 @@ QtObject {
     // Per interface language (Qt.uiLanguage, set by the bridge): Japanese kana and kanji
     // and Traditional characters read best in their own Windows UI fonts.
     readonly property string fontUi: Qt.uiLanguage === "ja" ? "Yu Gothic UI"
-                                   : Qt.uiLanguage === "zh-TW" ? "Microsoft JhengHei UI" : "Noto Sans SC"
+                                   : Qt.uiLanguage === "zh-TW" ? "Microsoft JhengHei UI"
+                                   : Qt.uiLanguage === "ru" ? "Segoe UI" : "Noto Sans SC"
     readonly property var axesDemiBold: ({ "wght": 600 })
     // 500: the design's .seek .peek time strip is `font: 500 11px/1 var(--f-mono)`.
     // Same reason as DemiBold - 600 lands on a thin instance, so the axis is set
