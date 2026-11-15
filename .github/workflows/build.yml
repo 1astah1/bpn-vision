@@ -132,19 +132,24 @@ jobs:
           Step "protoc 31.1" { Get-File "https://github.com/protocolbuffers/protobuf/releases/download/v31.1/protoc-31.1-win64.zip" "$env:DEPS\protoc.zip" }
           New-Item -ItemType Directory -Force -Path "$env:DEPS\protoc" | Out-Null
           Step "protoc extract" { tar -xf "$env:DEPS\protoc.zip" -C "$env:DEPS\protoc" }
-          Step "python protobuf" { python -m pip install --disable-pip-version-check -q "protobuf==6.31.1" }
 
       - uses: jurplel/install-qt-action@v4
         with:
           version: "6.8.3"
           arch: win64_msvc2022_64
           cache: true
+          # Its own Python would come first on PATH, and chiaki's nanopb generator then misses protobuf.
+          setup-python: false
 
       # ---------------------------------------------------------------- build
       - name: Configure
         shell: pwsh
         run: |
           Import-Module "$env:GITHUB_WORKSPACE\.github\ci\ci.psm1"; Use-Log "configure"
+          $python = (Get-Command python).Source
+          Step "python for the build: $python" { python --version }
+          # chiaki's nanopb generator imports google.protobuf from this same interpreter.
+          Step "python protobuf" { python -m pip install --disable-pip-version-check -q "protobuf==6.31.1" }
           $env:VCPKG_ROOT = $env:VEYRA_VCPKG
           $inst = "$env:VEYRA_VCPKG\installed\$env:VCPKG_TRIPLET"
           $env:PKG_CONFIG_PATH = "$inst\lib\pkgconfig"
@@ -177,7 +182,7 @@ jobs:
             "-DPKG_CONFIG_EXECUTABLE=$inst\tools\pkgconf\pkgconf.exe",
             "-DVEYRA_ENABLE_MOONLIGHT=ON", "-DVEYRA_MOONLIGHT_SOURCE_DIR=$env:DEPS\moonlight-common-c",
             "-DVEYRA_ENABLE_XBOX=ON", "-DVEYRA_BUILD_QML_UI=ON",
-            "-DPython3_EXECUTABLE=$((Get-Command python).Source)"
+            "-DPython3_EXECUTABLE=$python", "-DPython_EXECUTABLE=$python", "-DPYTHON_EXECUTABLE=$python"
           ) + $vbOption
           Step "cmake configure" { cmake -S . -B out -G Ninja -DCMAKE_BUILD_TYPE=Release @options }
 
