@@ -1,0 +1,97 @@
+== git init
+Initialized empty Git repository in C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/vcpkg/.git/
+== git fetch
+From https://github.com/microsoft/vcpkg
+ * branch              30ef65cad98f08e7197c9a1656fbd871bcb72f2d -> FETCH_HEAD
+== git checkout
+error: The following untracked working tree files would be overwritten by checkout:
+	.vcpkg-root
+	LICENSE.txt
+	NOTICE.txt
+	scripts/addPoshVcpkgToPowershellProfile.ps1
+	scripts/build_info.cmake
+	scripts/buildsystems/make_wrapper/cl_cpp_wrapper
+	scripts/buildsystems/make_wrapper/windres-rc
+	scripts/buildsystems/meson/meson.template.in
+	scripts/buildsystems/meson/none.txt
+	scripts/buildsystems/msbuild/applocal.ps1
+	scripts/buildsystems/msbuild/vcpkg-general.xml
+	scripts/buildsystems/msbuild/vcpkg.props
+	scripts/buildsystems/msbuild/vcpkg.targets
+	scripts/buildsystems/osx/applocal.py
+	scripts/buildsystems/vcpkg.cmake
+	scripts/cmake/compile_wrapper_consider_clang-cl.patch
+	scripts/cmake/execute_process.cmake
+	scripts/cmake/vcpkg_acquire_msys.cmake
+	scripts/cmake/vcpkg_add_to_path.cmake
+	scripts/cmake/vcpkg_apply_patches.cmake
+	scripts/cmake/vcpkg_backup_restore_env_vars.cmake
+	scripts/cmake/vcpkg_build_cmake.cmake
+	scripts/cmake/vcpkg_build_make.cmake
+	scripts/cmake/vcpkg_build_msbuild.cmake
+	scripts/cmake/vcpkg_build_ninja.cmake
+	scripts/cmake/vcpkg_build_nmake.cmake
+	scripts/cmake/vcpkg_build_qmake.cmake
+	scripts/cmake/vcpkg_buildpath_length_warning.cmake
+	scripts/cmake/vcpkg_check_features.cmake
+	scripts/cmake/vcpkg_check_linkage.cmake
+	scripts/cmake/vcpkg_clean_executables_in_bin.cmake
+	scripts/cmake/vcpkg_clean_msbuild.cmake
+	scripts/cmake/vcpkg_common_definitions.cmake
+	scripts/cmake/vcpkg_common_functions.cmake
+	scripts/cmake/vcpkg_configure_cmake.cmake
+	scripts/cmake/vcpkg_configure_gn.cmake
+	scripts/cmake/vcpkg_configure_make.cmake
+	scripts/cmake/vcpkg_configure_meson.cmake
+	scripts/cmake/vcpkg_configure_qmake.cmake
+	scripts/cmake/vcpkg_copy_pdbs.cmake
+	scripts/cmake/vcpkg_copy_tool_dependencies.cmake
+	scripts/cmake/vcpkg_copy_tools.cmake
+	scripts/cmake/vcpkg_download_distfile.cmake
+	scripts/cmake/vcpkg_download_sourceforge.cmake
+	scripts/cmake/vcpkg_execute_build_process.cmake
+	scripts/cmake/vcpkg_execute_in_download_mode.cmake
+	scripts/cmake/vcpkg_execute_required_process.cmake
+	scripts/cmake/vcpkg_execute_required_process_repeat.cmake
+	scripts/cmake/vcpkg_extract_archive.cmake
+	scripts/cmake/vcpkg_extract_source_archive.cmake
+	scripts/cmake/vcpkg_extract_source_archive_ex.cmake
+	scripts/cmake/vcpkg_fail_port_install.cmake
+	scripts/cmake/vcpkg_find_acquire_program(7Z).cmake
+	scripts/cmake/vcpkg_find_acquire_program(BAZEL).cmake
+	scripts/cmake/vcpkg_find_acquire_program(BISON).cmake
+	scripts/cmake/vcpkg_find_acquire_program(CLANG).cmake
+	scripts/cmake/vcpkg_find_acquire_program(DARK).cmake
+	scripts/cmake/vcpkg_find_acquire_program(DOXYGEN).cmake
+	scripts/cmake/vcpkg_find_acquire_program(FLEX).cmake
+	scripts/cmake/vcpkg_find_acquire_program(GASPREPROCESSOR).cmake
+	scripts/cmake/vcpkg_find_acquire_program(GIT).cmake
+	scripts/cmake/vcpkg_find_acquire_program(GN).cmake
+	scripts/cmake/vcpkg_find_acquire_program(GO).cmake
+	scripts/cmake/vcpkg_find_acquire_program(GPERF).cmake
+	scripts/cmake/vcpkg_find_acquire_program(JOM).cmake
+	scripts/cmake/vcpkg_find_acquire_program(MESON).cmake
+	scripts/cmake/vcpkg_find_acquire_program(NASM).cmake
+	scripts/cmake/vcpkg_find_acquire_program(NINJA).cmake
+	scripts/cmake/vcpkg_find_acquire_program(NUGET).cmake
+	scripts/cmake/vcpkg_find_acquire_program(PATCHELF).cmake
+	scripts/cmake/vcpkg_find_acquire_program(PERL).cmake
+	scripts/cmake/vcpkg_find_acquire_program(PKGCONFIG).cmake
+	scripts/cmake/vcpkg_find_acquire_program(PYTHON2).cmake
+	scripts/cmake/vcpkg_find_acquire_program(PYTHON3).cmake
+	scripts/cmake/vcpkg_find_acquire_program(RUBY).cmake
+	scripts/cmake/vcpkg_find_acquire_program(SCONS).cmake
+	scripts/cmake/vcpkg_find_acquire_program(SWIG).cmake
+	scripts/cmake/vcpkg_find_acquire_program(YASM).cmake
+	scripts/cmake/vcpkg_find_acquire_program.cmake
+	scripts/cmake/vcpkg_find_fortran.cmake
+	scripts/cmake/vcpkg_fixup_cmake_targets.cmake
+	scripts/cmake/vcpkg_fixup_pkgconfig.cmake
+	scripts/cmake/vcpkg_from_bitbucket.cmake
+	scripts/cmake/vcpkg_from_git.cmake
+	scripts/cmake/vcpkg_from_github.cmake
+	scripts/cmake/vcpkg_from_gitlab.cmake
+	scripts/cmake/vcpkg_from_sourceforge.cmake
+	scripts/cmake/
+Aborting
+FAILED (1): git checkout
