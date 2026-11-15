@@ -1,0 +1,14 @@
+-- Looking for fcntl - not found
+-- Looking for ioctl - not found
+-- Looking for poll - not found
+-- Looking for getaddrinfo - not found
+-- Looking for getnameinfo - not found
+-- Looking for gethostbyname_r - not found
+-- Looking for gethostbyaddr_r - not found
+-- Looking for inet_pton - not found
+-- Looking for inet_ntop - not found
+-- Performing Test HAS_MSGHDR_FLAGS - Failed
+-- Check size of socklen_t - failed
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread - not found

@@ -1,0 +1,2 @@
+2026-11-15T13:25:38.825Z t=5280 [WARN ] [xbox] exchange /sdp failed: 17
+2026-11-15T13:25:38.826Z t=5280 [WARN ] [xbox] exchange /sdp failed: OfferRejected / unsupported codec

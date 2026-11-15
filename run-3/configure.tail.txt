@@ -1,0 +1,92 @@
+CMake Warning:
+  Ignoring extra path from command line:
+
+   ".1.6-bpn"
+
+
+-- The C compiler identification is MSVC 19.44.35230.0
+-- The CXX compiler identification is MSVC 19.44.35230.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- VEYRA_DISPLAY_VERSION 2 does not match project 2.1.6; using 2.1.6
+-- Found Python3: C:\hostedtoolcache\windows\Python\3.15.2\x64\python.exe (found version "3.15.2") found components: Interpreter
+-- MOONLIGHT_STAGE PASS f900dd4767759c7b9d0e93bcea666b55c69ea62f
+-- Found OpenSSL: optimized;C:/vcpkg-veyra/installed/x64-windows-veyra/lib/libcrypto.lib;debug;C:/vcpkg-veyra/installed/x64-windows-veyra/debug/lib/libcrypto.lib (found version "3.6.4")
+-- Looking for fcntl
+-- Looking for fcntl - not found
+-- Looking for ioctl
+-- Looking for ioctl - not found
+-- Looking for poll
+-- Looking for poll - not found
+-- Looking for getaddrinfo
+-- Looking for getaddrinfo - not found
+-- Looking for getnameinfo
+-- Looking for getnameinfo - not found
+-- Looking for gethostbyname_r
+-- Looking for gethostbyname_r - not found
+-- Looking for gethostbyaddr_r
+-- Looking for gethostbyaddr_r - not found
+-- Looking for inet_pton
+-- Looking for inet_pton - not found
+-- Looking for inet_ntop
+-- Looking for inet_ntop - not found
+-- Performing Test HAS_MSGHDR_FLAGS
+-- Performing Test HAS_MSGHDR_FLAGS - Failed
+-- Check size of socklen_t
+-- Check size of socklen_t - failed
+-- Check size of QOS_FLOWID
+-- Check size of QOS_FLOWID - done
+-- Check size of PQOS_FLOWID
+-- Check size of PQOS_FLOWID - done
+CMake Warning (dev) at C:/vcpkg-veyra/installed/x64-windows-veyra/share/ffmpeg/FindFFMPEG.cmake:45 (cmake_parse_arguments):
+  The NAMES keyword was followed by an empty string or no value at all.
+  Policy CMP0174 is not set, so cmake_parse_arguments() will unset the
+  arg_NAMES variable rather than setting it to an empty string.
+Call Stack (most recent call first):
+  C:/vcpkg-veyra/installed/x64-windows-veyra/share/ffmpeg/FindFFMPEG.cmake:144 (append_dependencies)
+  C:/vcpkg-veyra/installed/x64-windows-veyra/share/ffmpeg/vcpkg-cmake-wrapper.cmake:27 (_find_package)
+  C:/vcpkg-veyra/scripts/buildsystems/vcpkg.cmake:893 (include)
+  CMakeLists.txt:576 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at C:/vcpkg-veyra/installed/x64-windows-veyra/share/ffmpeg/FindFFMPEG.cmake:45 (cmake_parse_arguments):
+  The NAMES keyword was followed by an empty string or no value at all.
+  Policy CMP0174 is not set, so cmake_parse_arguments() will unset the
+  arg_NAMES variable rather than setting it to an empty string.
+Call Stack (most recent call first):
+  C:/vcpkg-veyra/installed/x64-windows-veyra/share/ffmpeg/FindFFMPEG.cmake:145 (append_dependencies)
+  C:/vcpkg-veyra/installed/x64-windows-veyra/share/ffmpeg/vcpkg-cmake-wrapper.cmake:27 (_find_package)
+  C:/vcpkg-veyra/scripts/buildsystems/vcpkg.cmake:893 (include)
+  CMakeLists.txt:576 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found FFMPEG: optimized;C:/vcpkg-veyra/installed/x64-windows-veyra/lib/avformat.lib;debug;C:/vcpkg-veyra/installed/x64-windows-veyra/debug/lib/avformat.lib;optimized;C:/vcpkg-veyra/installed/x64-windows-veyra/lib/avcodec.lib;debug;C:/vcpkg-veyra/installed/x64-windows-veyra/debug/lib/avcodec.lib;optimized;C:/vcpkg-veyra/installed/x64-windows-veyra/lib/swresample.lib;debug;C:/vcpkg-veyra/installed/x64-windows-veyra/debug/lib/swresample.lib;optimized;C:/vcpkg-veyra/installed/x64-windows-veyra/lib/swscale.lib;debug;C:/vcpkg-veyra/installed/x64-windows-veyra/debug/lib/swscale.lib;optimized;C:/vcpkg-veyra/installed/x64-windows-veyra/lib/avutil.lib;debug;C:/vcpkg-veyra/installed/x64-windows-veyra/debug/lib/avutil.lib
+-- DeckLink native capture: no SDK configured (DirectShow remains available)
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Found nlohmann_json: C:/vcpkg-veyra/installed/x64-windows-veyra/share/nlohmann_json/nlohmann_jsonConfig.cmake (found version "3.12.0")
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- libass: not configured; ASS effects use the built-in styled renderer
+-- Configuring done (16.5s)
+-- Generating done (0.8s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    VCPKG_OVERLAY_TRIPLETS
+
+
+-- Build files have been written to: D:/a/bpn-vision/bpn-vision/out

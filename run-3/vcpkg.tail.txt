@@ -1,0 +1,300 @@
+-- Generating C:\vcpkg-veyra\packages\ffmpeg_x64-windows-veyra\lib\avutil.lib
+-- Generating C:\vcpkg-veyra\packages\ffmpeg_x64-windows-veyra\lib\swresample.lib
+-- Generating C:\vcpkg-veyra\packages\ffmpeg_x64-windows-veyra\lib\swscale.lib
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/lib/pkgconfig/libavcodec.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/lib/pkgconfig/libavformat.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/lib/pkgconfig/libavutil.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/lib/pkgconfig/libswresample.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/lib/pkgconfig/libswscale.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/debug/lib/pkgconfig/libavcodec.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/debug/lib/pkgconfig/libavformat.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/debug/lib/pkgconfig/libavutil.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/debug/lib/pkgconfig/libswresample.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/debug/lib/pkgconfig/libswscale.pc
+-- Dependencies (release): 
+-- Dependencies (debug):   
+-- Installing: C:/vcpkg-veyra/packages/ffmpeg_x64-windows-veyra/share/ffmpeg/usage
+-- Performing post-build validation
+Starting submission of ffmpeg[avcodec,avformat,core,swresample,swscale]:x64-windows-veyra@9.0.1#1 to 1 binary cache(s) in the background
+Elapsed time to handle ffmpeg:x64-windows-veyra: 19 min
+Completed submission of pkgconf:x64-windows@3.0.3 to 1 binary cache(s) in 149 ms
+Completed submission of vcpkg-pkgconfig-get-modules:x64-windows@2024-04-03 to 1 binary cache(s) in 55.4 ms
+Installing 8/16 vcpkg-cmake-config:x64-windows@2026-07-21...
+vcpkg-cmake-config:x64-windows@2026-07-21 package ABI: d640fc983c3c1d37b972469787a55a3c9835f84b3abfcdcf6f777e731eee0c02
+Building vcpkg-cmake-config:x64-windows@2026-07-21...
+-- Installing: C:/vcpkg-veyra/packages/vcpkg-cmake-config_x64-windows/share/vcpkg-cmake-config/vcpkg_cmake_config_fixup.cmake
+-- Installing: C:/vcpkg-veyra/packages/vcpkg-cmake-config_x64-windows/share/vcpkg-cmake-config/vcpkg-port-config.cmake
+-- Installing: C:/vcpkg-veyra/packages/vcpkg-cmake-config_x64-windows/share/vcpkg-cmake-config/copyright
+-- Skipping post-build validation due to VCPKG_POLICY_EMPTY_PACKAGE
+Starting submission of vcpkg-cmake-config:x64-windows@2026-07-21 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake-config:x64-windows: 51.6 ms
+Installing 9/16 libjuice:x64-windows-veyra@1.7.2#1...
+libjuice:x64-windows-veyra@1.7.2#1 package ABI: 2cb4ee223dcea7cc647e5c0f9a02d6d81ff2a969978334a438da216699ab0a03
+Building libjuice:x64-windows-veyra@1.7.2#1...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+D:\a\bpn-vision\bpn-vision\scripts\xbox\vcpkg-overlay\libjuice: info: installing overlay port from here
+Downloading https://github.com/paullouisageneau/libjuice/archive/v1.7.2.tar.gz -> paullouisageneau-libjuice-v1.7.2.tar.gz
+Successfully downloaded paullouisageneau-libjuice-v1.7.2.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/paullouisageneau-libjuice-v1.7.2.tar.gz
+-- Applying patch dependencies.diff
+-- Applying patch soversion.diff
+-- Applying patch ipv4-interrupt.diff
+-- Using source at C:/vcpkg-veyra/buildtrees/libjuice/src/v1.7.2-35d20beab6.clean
+-- Configuring x64-windows-veyra
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Installing: C:/vcpkg-veyra/packages/libjuice_x64-windows-veyra/share/libjuice/copyright
+-- Performing post-build validation
+Starting submission of libjuice:x64-windows-veyra@1.7.2#1 to 1 binary cache(s) in the background
+Elapsed time to handle libjuice:x64-windows-veyra: 12 s
+Completed submission of ffmpeg[avcodec,avformat,core,swresample,swscale]:x64-windows-veyra@9.0.1#1 to 1 binary cache(s) in 11 s
+Completed submission of vcpkg-cmake-config:x64-windows@2026-07-21 to 1 binary cache(s) in 283 ms
+Installing 10/16 libsrtp:x64-windows-veyra@2.8.0...
+libsrtp:x64-windows-veyra@2.8.0 package ABI: ea0ce1ce1ef9a4e7675f172abedd521792ca66be63857799b7c92ce3d43d9cab
+Building libsrtp:x64-windows-veyra@2.8.0...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/cisco/libsrtp/archive/v2.8.0.tar.gz -> cisco-libsrtp-v2.8.0.tar.gz
+Successfully downloaded cisco-libsrtp-v2.8.0.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/cisco-libsrtp-v2.8.0.tar.gz
+-- Applying patch cmake-config.diff
+-- Applying patch fix-runtime-destination.patch
+-- Using source at C:/vcpkg-veyra/buildtrees/libsrtp/src/v2.8.0-9df731031e.clean
+-- Configuring x64-windows-veyra
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libsrtp_x64-windows-veyra/lib/pkgconfig/libsrtp2.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/libsrtp_x64-windows-veyra/debug/lib/pkgconfig/libsrtp2.pc
+-- Installing: C:/vcpkg-veyra/packages/libsrtp_x64-windows-veyra/share/libsrtp/copyright
+-- Performing post-build validation
+Starting submission of libsrtp:x64-windows-veyra@2.8.0 to 1 binary cache(s) in the background
+Elapsed time to handle libsrtp:x64-windows-veyra: 19 s
+Completed submission of libjuice:x64-windows-veyra@1.7.2#1 to 1 binary cache(s) in 238 ms
+Installing 11/16 nlohmann-json:x64-windows-veyra@3.12.0#2...
+nlohmann-json:x64-windows-veyra@3.12.0#2 package ABI: 949f9aac482728810e517c00e056dd80a5c9f133184c7845a5da91d5f8f58c51
+Building nlohmann-json:x64-windows-veyra@3.12.0#2...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/nlohmann/json/archive/v3.12.0.tar.gz -> nlohmann-json-v3.12.0.tar.gz
+Successfully downloaded nlohmann-json-v3.12.0.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/nlohmann-json-v3.12.0.tar.gz
+-- Applying patch fix-4736_char8_t.patch
+-- Applying patch fix-4742_std_optional.patch
+-- Using source at C:/vcpkg-veyra/buildtrees/nlohmann-json/src/v3.12.0-89fed620e6.clean
+-- Configuring x64-windows-veyra
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/nlohmann-json_x64-windows-veyra/share/pkgconfig/nlohmann_json.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/nlohmann-json_x64-windows-veyra/debug/share/pkgconfig/nlohmann_json.pc
+-- Installing: C:/vcpkg-veyra/packages/nlohmann-json_x64-windows-veyra/share/nlohmann-json/copyright
+-- Performing post-build validation
+Starting submission of nlohmann-json:x64-windows-veyra@3.12.0#2 to 1 binary cache(s) in the background
+Elapsed time to handle nlohmann-json:x64-windows-veyra: 4.1 s
+Completed submission of libsrtp:x64-windows-veyra@2.8.0 to 1 binary cache(s) in 198 ms
+Installing 12/16 openssl:x64-windows-veyra@3.6.4...
+openssl:x64-windows-veyra@3.6.4 package ABI: 4efd8fa6e0f1e53733b7003bae7504aa72efab74186633983cb40a3bc8a3578e
+Building openssl:x64-windows-veyra@3.6.4...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/openssl/openssl/archive/openssl-3.6.4.tar.gz -> openssl-openssl-openssl-3.6.4.tar.gz
+Successfully downloaded openssl-openssl-openssl-3.6.4.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/openssl-openssl-openssl-3.6.4.tar.gz
+-- Applying patch cmake-config.patch
+-- Applying patch command-line-length.patch
+-- Applying patch script-prefix.patch
+-- Applying patch windows/install-layout.patch
+-- Applying patch windows/install-pdbs.patch
+-- Applying patch windows/install-programs.diff
+-- Applying patch unix/android-cc.patch
+-- Applying patch unix/move-openssldir.patch
+-- Applying patch unix/no-empty-dirs.patch
+-- Applying patch unix/no-static-libs-for-shared.patch
+-- Using source at C:/vcpkg-veyra/buildtrees/openssl/src/nssl-3.6.4-c134d64f50.clean
+-- Getting CMake variables for x64-windows-veyra
+-- Loading CMake variables from C:/vcpkg-veyra/buildtrees/openssl/cmake-get-vars_C_CXX-x64-windows-veyra.cmake.log
+Downloading https://github.com/StrawberryPerl/Perl-Dist-Strawberry/releases/download/SP_54221_64bit/strawberry-perl-5.42.2.1-64bit-portable.zip -> strawberry-perl-5.42.2.1-64bit-portable.zip
+Successfully downloaded strawberry-perl-5.42.2.1-64bit-portable.zip
+-- Getting CMake variables for x64-windows-veyra
+Downloading jom_1_1_7.zip, trying https://download.qt.io/official_releases/jom/jom_1_1_7.zip
+Successfully downloaded jom_1_1_7.zip
+-- Prerunning x64-windows-veyra-dbg
+-- Building x64-windows-veyra-dbg
+-- Prerunning x64-windows-veyra-rel
+-- Building x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/openssl_x64-windows-veyra/lib/pkgconfig/libcrypto.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/openssl_x64-windows-veyra/lib/pkgconfig/libssl.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/openssl_x64-windows-veyra/lib/pkgconfig/openssl.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/openssl_x64-windows-veyra/debug/lib/pkgconfig/libcrypto.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/openssl_x64-windows-veyra/debug/lib/pkgconfig/libssl.pc
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/openssl_x64-windows-veyra/debug/lib/pkgconfig/openssl.pc
+-- Installing: C:/vcpkg-veyra/packages/openssl_x64-windows-veyra/share/openssl/usage
+-- Installing: C:/vcpkg-veyra/packages/openssl_x64-windows-veyra/share/openssl/copyright
+-- Performing post-build validation
+Starting submission of openssl:x64-windows-veyra@3.6.4 to 1 binary cache(s) in the background
+Elapsed time to handle openssl:x64-windows-veyra: 5.4 min
+Completed submission of nlohmann-json:x64-windows-veyra@3.12.0#2 to 1 binary cache(s) in 98.1 ms
+Installing 13/16 plog:x64-windows-veyra@1.1.11...
+plog:x64-windows-veyra@1.1.11 package ABI: d0c49ece34149fec8b5c0e7b4692a1e272e6d4e677232daeb45302b146515e89
+Building plog:x64-windows-veyra@1.1.11...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/SergiusTheBest/plog/archive/1.1.11.tar.gz -> SergiusTheBest-plog-1.1.11.tar.gz
+Successfully downloaded SergiusTheBest-plog-1.1.11.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/SergiusTheBest-plog-1.1.11.tar.gz
+-- Using source at C:/vcpkg-veyra/buildtrees/plog/src/1.1.11-344c6f2c19.clean
+-- Configuring x64-windows-veyra
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Installing: C:/vcpkg-veyra/packages/plog_x64-windows-veyra/share/plog/copyright
+-- Performing post-build validation
+Starting submission of plog:x64-windows-veyra@1.1.11 to 1 binary cache(s) in the background
+Elapsed time to handle plog:x64-windows-veyra: 3.9 s
+Installing 14/16 usrsctp:x64-windows-veyra@0.9.5.0#4...
+usrsctp:x64-windows-veyra@0.9.5.0#4 package ABI: e74134c3f82ededbb119a38ab7bf97dc72c91e9ba96efef90752a86bdb60d7c4
+Building usrsctp:x64-windows-veyra@0.9.5.0#4...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/sctplab/usrsctp/archive/0.9.5.0.tar.gz -> sctplab-usrsctp-0.9.5.0.tar.gz
+Successfully downloaded sctplab-usrsctp-0.9.5.0.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/sctplab-usrsctp-0.9.5.0.tar.gz
+-- Applying patch fix_export.patch
+-- Applying patch mingw.diff
+-- Using source at C:/vcpkg-veyra/buildtrees/usrsctp/src/0.9.5.0-0e6d104a47.clean
+-- Configuring x64-windows-veyra
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/usrsctp_x64-windows-veyra/lib/pkgconfig/usrsctp.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/usrsctp_x64-windows-veyra/debug/lib/pkgconfig/usrsctp.pc
+-- Performing post-build validation
+Starting submission of usrsctp:x64-windows-veyra@0.9.5.0#4 to 1 binary cache(s) in the background
+Elapsed time to handle usrsctp:x64-windows-veyra: 15 s
+Completed submission of openssl:x64-windows-veyra@3.6.4 to 1 binary cache(s) in 8.2 s
+Completed submission of plog:x64-windows-veyra@1.1.11 to 1 binary cache(s) in 73.1 ms
+Installing 15/16 libdatachannel[core,srtp,ws]:x64-windows-veyra@0.24.5...
+libdatachannel[core,srtp,ws]:x64-windows-veyra@0.24.5 package ABI: 35c40254b35f2283bd01843a5fef1b3c80b009798155f2671e7f9df7165e6e72
+Building libdatachannel[core,srtp,ws]:x64-windows-veyra@0.24.5...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/paullouisageneau/libdatachannel/archive/v0.24.5.tar.gz -> paullouisageneau-libdatachannel-v0.24.5.tar.gz
+Successfully downloaded paullouisageneau-libdatachannel-v0.24.5.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/paullouisageneau-libdatachannel-v0.24.5.tar.gz
+-- Applying patch dependencies.diff
+-- Applying patch uwp-warnings.patch
+-- Using source at C:/vcpkg-veyra/buildtrees/libdatachannel/src/v0.24.5-28e86f3053.clean
+-- Configuring x64-windows-veyra
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Installing: C:/vcpkg-veyra/packages/libdatachannel_x64-windows-veyra/share/libdatachannel/copyright
+-- Performing post-build validation
+Starting submission of libdatachannel[core,srtp,ws]:x64-windows-veyra@0.24.5 to 1 binary cache(s) in the background
+Elapsed time to handle libdatachannel:x64-windows-veyra: 1.6 min
+Completed submission of usrsctp:x64-windows-veyra@0.9.5.0#4 to 1 binary cache(s) in 687 ms
+Installing 16/16 opus:x64-windows-veyra@1.6.1...
+opus:x64-windows-veyra@1.6.1 package ABI: 1e64adf412f3ec53966c35784e4389e3c13d4aad34492e0ea49bb0b122ac5792
+Building opus:x64-windows-veyra@1.6.1...
+D:\a\bpn-vision\bpn-vision\.github\vcpkg-triplets\x64-windows-veyra.cmake: info: loaded overlay triplet from here
+Downloading https://github.com/xiph/opus/archive/v1.6.1.tar.gz -> xiph-opus-v1.6.1.tar.gz
+Successfully downloaded xiph-opus-v1.6.1.tar.gz
+-- Extracting source C:/vcpkg-veyra/downloads/xiph-opus-v1.6.1.tar.gz
+-- Applying patch fix-pkgconfig-version.patch
+-- Applying patch fix-arm64-windows-compile.diff
+-- Using source at C:/vcpkg-veyra/buildtrees/opus/src/v1.6.1-12462bbd92.clean
+-- Configuring x64-windows-veyra
+-- Building x64-windows-veyra-dbg
+-- Building x64-windows-veyra-rel
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/opus_x64-windows-veyra/lib/pkgconfig/opus.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.5-1-x86_64.pkg.tar.zst
+-- Using msys root at C:/vcpkg-veyra/downloads/tools/msys2/3e71d1f8e22ab23f
+-- Fixing pkgconfig file: C:/vcpkg-veyra/packages/opus_x64-windows-veyra/debug/lib/pkgconfig/opus.pc
+-- Installing: C:/vcpkg-veyra/packages/opus_x64-windows-veyra/share/opus/copyright
+-- Performing post-build validation
+Starting submission of opus:x64-windows-veyra@1.6.1 to 1 binary cache(s) in the background
+Elapsed time to handle opus:x64-windows-veyra: 31 s
+Total install time: 29 min
+Installed contents are licensed to you by owners. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Some packages did not declare an SPDX license. Check the `copyright` file for each package for more information about their licensing.
+Packages installed in this vcpkg installation declare the following licenses:
+Apache-2.0
+BSD-3-Clause
+MIT
+MPL-2.0
+ffmpeg provides CMake integration:
+
+  find_package(FFMPEG REQUIRED)
+  target_include_directories(main PRIVATE ${FFMPEG_INCLUDE_DIRS})
+  target_link_directories(main PRIVATE ${FFMPEG_LIBRARY_DIRS})
+  target_link_libraries(main PRIVATE ${FFMPEG_LIBRARIES})
+
+ffmpeg provides pkg-config modules:
+
+  # FFmpeg codec library
+  libavcodec
+
+  # FFmpeg device handling library
+  libavdevice
+
+  # FFmpeg audio/video filtering library
+  libavfilter
+
+  # FFmpeg container format library
+  libavformat
+
+  # FFmpeg utility library
+  libavutil
+
+  # FFmpeg audio resampling library
+  libswresample
+
+  # FFmpeg image rescaling library
+  libswscale
+
+The package nlohmann-json provides CMake targets:
+
+    find_package(nlohmann_json CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE nlohmann_json::nlohmann_json)
+
+The package nlohmann-json can be configured to not provide implicit conversions via a custom triplet file:
+
+    set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)
+
+For more information, see the docs here:
+    
+    https://json.nlohmann.me/api/macros/json_use_implicit_conversions/
+
+openssl is compatible with built-in CMake targets:
+
+  find_package(OpenSSL REQUIRED)
+  target_link_libraries(main PRIVATE OpenSSL::SSL)
+  target_link_libraries(main PRIVATE OpenSSL::Crypto)
+
+libdatachannel provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(LibDataChannel CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE LibDataChannel::LibDataChannel)
+
+opus provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(Opus CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE Opus::opus)
+
+opus provides pkg-config modules:
+
+  # Opus IETF audio codec ( build)
+  opus
+
+Completed submission of libdatachannel[core,srtp,ws]:x64-windows-veyra@0.24.5 to 1 binary cache(s) in 27 s
+Waiting for 1 remaining binary cache submissions...
+Completed submission of opus:x64-windows-veyra@1.6.1 to 1 binary cache(s) in 463 ms (1/1)
+All requested installations completed successfully in: 29 min

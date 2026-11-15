@@ -1,0 +1,35 @@
+== git init
+Initialized empty Git repository in C:/vcpkg-veyra/.git/
+== git fetch
+From https://github.com/microsoft/vcpkg
+ * branch              30ef65cad98f08e7197c9a1656fbd871bcb72f2d -> FETCH_HEAD
+== git checkout
+Note: switching to 'FETCH_HEAD'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 30ef65ca [crcpp] Updated to 1.2.3.0 (#53710)
+== bootstrap
+Downloading https://github.com/microsoft/vcpkg-tool/releases/download/2026-07-27/vcpkg.exe -> C:\vcpkg-veyra\vcpkg.exe... done.
+Validating signature... done.
+
+vcpkg package management program version 2026-07-27-98d7cb0cf1f4686a3e43aa5672b6230c1d56bce8
+
+See LICENSE.txt for license information.
+== version
+vcpkg package management program version 2026-07-27-98d7cb0cf1f4686a3e43aa5672b6230c1d56bce8
+
+See LICENSE.txt for license information.

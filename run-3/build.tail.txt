@@ -1,0 +1,300 @@
+        with
+        [
+            _Ty=int
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\src\sink\WasapiAudioSink.cpp(972): note: see reference to function template instantiation 'void std::fill<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,int>(const _FwdIt,const _FwdIt,const int &)' being compiled
+        with
+        [
+            _Ty=float,
+            _FwdIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<float>>>
+        ]
+[165/229] Building CXX object CMakeFiles\veyra_sinks.dir\src\sink\CaptureAudioSession.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(213): warning C4244: 'return': conversion from 'int' to 'uint8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(224): warning C4244: 'return': conversion from 'int' to 'int8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(235): warning C4244: 'return': conversion from 'int' to 'uint16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(246): warning C4244: 'return': conversion from 'int' to 'int16_t', possible loss of data
+[166/229] Building CXX object CMakeFiles\veyra_sinks.dir\src\sink\NvencLiveEncoder.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\src\sink\NvencLiveEncoder.cpp(46): note: see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+        with
+        [
+            _Elem=wchar_t,
+            _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+            _Alloc=std::allocator<char>
+        ]
+D:\a\bpn-vision\bpn-vision\src\sink\NvencLiveEncoder.cpp(46): note: see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'veyra::sink::NvencLiveEncoder::Impl::fail'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(812): note: see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<wchar_t*,wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+        with
+        [
+            _Size_type=unsigned __int64,
+            _Iter=wchar_t *,
+            _Sent=wchar_t *,
+            _Size=unsigned __int64
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(968): note: see reference to function template instantiation '_OutIt *std::_Copy_n_unchecked4<wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+        with
+        [
+            _OutIt=char *,
+            _Size=unsigned __int64,
+            _InIt=wchar_t *,
+            _SizeTy=unsigned __int64
+        ]
+[167/229] Building CXX object CMakeFiles\veyra_sinks.dir\src\sink\ImageExportSink.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[168/229] Building CXX object CMakeFiles\veyra_sinks.dir\src\sink\NvencD3D12Encoder.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(90): warning C4456: declaration of 'supported' hides previous local declaration
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(63): note: see declaration of 'supported'
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(128): warning C4457: declaration of 'config' hides function parameter
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(53): note: see declaration of 'config'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(23): note: see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+        with
+        [
+            _Elem=wchar_t,
+            _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+            _Alloc=std::allocator<char>
+        ]
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(23): note: see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'veyra::sink::NvencD3D12Encoder::Impl::fail'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(812): note: see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<wchar_t*,wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+        with
+        [
+            _Size_type=std::+::_Size_type,
+            _Iter=wchar_t *,
+            _Sent=wchar_t *,
+            _Size=std::+::_Size_type
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(968): note: see reference to function template instantiation '_OutIt *std::_Copy_n_unchecked4<wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+        with
+        [
+            _OutIt=char *,
+            _Size=std::+::_Size_type,
+            _InIt=wchar_t *,
+            _SizeTy=std::+::_Size_type
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(65): note: see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+        with
+        [
+            _Elem=wchar_t,
+            _Iter=std::_String_const_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+            _Alloc=std::allocator<char>
+        ]
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(65): note: see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'veyra::sink::NvencD3D12Encoder::open'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(812): note: see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<const wchar_t*,const wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+        with
+        [
+            _Size_type=std::+::_Size_type,
+            _Iter=const wchar_t *,
+            _Sent=const wchar_t *,
+            _Size=std::+::_Size_type
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(968): note: see reference to function template instantiation '_OutIt *std::_Copy_n_unchecked4<const wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+        with
+        [
+            _OutIt=char *,
+            _Size=std::+::_Size_type,
+            _InIt=const wchar_t *,
+            _SizeTy=std::+::_Size_type
+        ]
+[169/229] Building CXX object CMakeFiles\veyra_sinks.dir\src\sink\RecordingAudioTap.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[170/229] Running rcc for resource veyra_i18n_tests
+[171/229] Automatic MOC for target veyra_xbox_model
+[172/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\ResetCoordinator.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[173/229] Building CXX object CMakeFiles\veyra_sinks.dir\src\sink\MfVideoEncoder.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\src\sink\MfVideoEncoder.cpp(296): note: see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+        with
+        [
+            _Elem=wchar_t,
+            _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+            _Alloc=std::allocator<char>
+        ]
+D:\a\bpn-vision\bpn-vision\src\sink\MfVideoEncoder.cpp(296): note: see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'veyra::sink::`anonymous-namespace'::MfVideoEncoder::openTransform'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(812): note: see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<wchar_t*,wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+        with
+        [
+            _Size_type=std::+::_Size_type,
+            _Iter=wchar_t *,
+            _Sent=wchar_t *,
+            _Size=std::+::_Size_type
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(968): note: see reference to function template instantiation '_OutIt *std::_Copy_n_unchecked4<wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+        with
+        [
+            _OutIt=char *,
+            _Size=std::+::_Size_type,
+            _InIt=wchar_t *,
+            _SizeTy=std::+::_Size_type
+        ]
+[174/229] Automatic MOC for target veyra_update_checker_tests
+[175/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\ColorGradeTables.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[176/229] Building CXX object CMakeFiles\veyra_sinks.dir\src\sink\VideoEncoderFactory.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[177/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\SmaaLookupTables.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[178/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\ColorGradeInstance.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[179/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\ColorDetailPass.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[180/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\AntiAliasPass.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[181/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\NrInstance.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[182/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\AmdHipPreflight.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310): warning C4244: '=': conversion from 'const _Ty' to 'char', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/pipeline/Rdna3HipDevices.h(102): note: see reference to function template instantiation 'void std::fill<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Elem>>>,int>(const _FwdIt,const _FwdIt,const _Ty &)' being compiled
+        with
+        [
+            _Elem=char,
+            _FwdIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<char>>>,
+            _Ty=int
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5264): warning C4244: 'initializing': conversion from 'const _Ty' to 'char', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5264): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/pipeline/Rdna3HipDevices.h(102): note: see reference to function template instantiation 'void std::fill<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Elem>>>,int>(const _FwdIt,const _FwdIt,const _Ty &)' being compiled
+        with
+        [
+            _Elem=char,
+            _FwdIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<char>>>,
+            _Ty=int
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5299): note: see reference to function template instantiation 'void std::_Fill_memset<char*,_Ty>(_CtgIt,const _Ty,const size_t)' being compiled
+        with
+        [
+            _Ty=int,
+            _CtgIt=char *
+        ]
+[183/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\LmxxfNrBackend.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+D:\a\bpn-vision\bpn-vision\src\pipeline\LmxxfNrBackend.cpp(59): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\a\bpn-vision\bpn-vision\src\pipeline\LmxxfNrBackend.cpp(60): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\a\bpn-vision\bpn-vision\src\pipeline\LmxxfNrBackend.cpp(63): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+[184/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\VfgBackend.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+D:\a\bpn-vision\bpn-vision\src\pipeline\VfgBackend.cpp(67): warning C4100: 'root': unreferenced parameter
+[185/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\Rdna3NrBackend.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[186/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\VfxSrBackend.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[187/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\VfgAmpereCompat.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[188/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\guidance\AmdOpticalFlow.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[189/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\guidance\GpuDisOpticalFlow.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[190/229] Building CXX object CMakeFiles\veyra_pipeline.dir\third_party\gpu-dis\src\gpu\native_strict_dis_provider.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[191/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\beauty\OnnxLite.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[192/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\beauty\TfliteLite.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[193/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\beauty\YuNetGpu.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[194/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\beauty\FaceMeshGpu.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[195/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\beauty\FaceTracker.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[196/229] Linking C static library moonlight-enet\enet.lib
+[197/229] Linking CXX static library third_party\soundtouch\veyra_soundtouch.lib
+[198/229] Linking CXX static library veyra_moonlight_protocol.lib
+[199/229] Linking C static library veyra_moonlight_common_c.lib
+[200/229] Linking CXX static library veyra_sinks.lib
+[201/229] Building CXX object CMakeFiles\veyra_pipeline.dir\src\pipeline\BeautyPass.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[202/229] Linking CXX static library veyra_pipeline.lib
+[203/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\NativeCaptureSink.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[204/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\MediaFileSource.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[205/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\DeckLinkCapture.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[206/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\DeckLinkDriver.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[207/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\ElgatoHdrControl.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[208/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\CaptureCardSource.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+D:\a\bpn-vision\bpn-vision\src\source\CaptureCardSource.cpp(224): warning C4100: 'b': unreferenced parameter
+D:\a\bpn-vision\bpn-vision\src\source\CaptureCardSource.cpp(1268): warning C4456: declaration of 'deviceName' hides previous local declaration
+D:\a\bpn-vision\bpn-vision\src\source\CaptureCardSource.cpp(1076): note: see declaration of 'deviceName'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\src\source\CaptureCardSource.cpp(1550): note: see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+        with
+        [
+            _Elem=wchar_t,
+            _Iter=std::_String_const_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+            _Alloc=std::allocator<char>
+        ]
+D:\a\bpn-vision\bpn-vision\src\source\CaptureCardSource.cpp(1549): note: see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'veyra::source::CaptureCardSource::connectVendorAudio'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(812): note: see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<const wchar_t*,const wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+        with
+        [
+            _Size_type=std::+::_Size_type,
+            _Iter=const wchar_t *,
+            _Sent=const wchar_t *,
+            _Size=std::+::_Size_type
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(968): note: see reference to function template instantiation '_OutIt *std::_Copy_n_unchecked4<const wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+        with
+        [
+            _OutIt=char *,
+            _Size=std::+::_Size_type,
+            _InIt=const wchar_t *,
+            _SizeTy=std::+::_Size_type
+        ]
+[209/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\AverMediaAudioSwitch.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[210/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\AverMediaVendorAudio.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+D:\a\bpn-vision\bpn-vision\src\source\AverMediaVendorAudio.cpp(66): warning C4324: 'veyra::source::AverMediaVendorAudio::Impl': structure was padded due to alignment specifier
+[211/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\ScreenCaptureSource.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[212/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\AverMediaAudioCarrier.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[213/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\CaptureCompressedDecoder.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[214/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\WasapiAudioInput.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+D:\a\bpn-vision\bpn-vision\src\source\WasapiAudioInput.cpp(118): warning C4456: declaration of 'flags' hides previous local declaration
+D:\a\bpn-vision\bpn-vision\src\source\WasapiAudioInput.cpp(82): note: see declaration of 'flags'
+[215/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\MagewellCapture.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[216/229] Building CXX object CMakeFiles\veyra_ui_i18n_tests.dir\tests\unit\UiLanguageTests.cpp.obj
+[217/229] Building CXX object CMakeFiles\veyra_ui_i18n_tests.dir\out\.qt\rcc\qrc_veyra_i18n_tests.cpp.obj
+[218/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\MoonlightSessionSource.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[219/229] Building CXX object CMakeFiles\veyra_xbox_model.dir\veyra_xbox_model_autogen\mocs_compilation.cpp.obj
+[220/229] Building CXX object CMakeFiles\veyra_sources.dir\src\source\XboxSessionSource.cpp.obj
+cl : Command line warning D9025 : overriding '/WX' with '/WX-'
+[221/229] Building CXX object CMakeFiles\veyra_update_checker_tests.dir\veyra_update_checker_tests_autogen\mocs_compilation.cpp.obj
+[222/229] Building CXX object CMakeFiles\veyra_xbox_model.dir\src\ui\XboxModel.cpp.obj
+[223/229] Linking CXX static library veyra_sources.lib
+[224/229] Linking CXX static library veyra_xbox_model.lib
+[225/229] Building CXX object CMakeFiles\veyra_xbox_tests.dir\tests\xbox\XboxTests.cpp.obj
+[226/229] Linking CXX executable veyra_ui_i18n_tests.exe
+[227/229] Linking CXX executable veyra_xbox_tests.exe
+[228/229] Building CXX object CMakeFiles\veyra_update_checker_tests.dir\tests\unit\UpdateCheckerTests.cpp.obj
+[229/229] Linking CXX executable veyra_update_checker_tests.exe
