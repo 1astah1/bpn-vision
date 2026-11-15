@@ -1,0 +1,96 @@
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(817): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(818): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(841): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(842): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(849): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(850): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(925): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(926): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf_general.c(303): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+[156/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\strerror.c.obj
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(213): warning C4244: 'return': conversion from 'int' to 'uint8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(224): warning C4244: 'return': conversion from 'int' to 'int8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(235): warning C4244: 'return': conversion from 'int' to 'uint16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(246): warning C4244: 'return': conversion from 'int' to 'int16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(213): warning C4244: 'return': conversion from 'int' to 'uint8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(224): warning C4244: 'return': conversion from 'int' to 'int8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(235): warning C4244: 'return': conversion from 'int' to 'uint16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(246): warning C4244: 'return': conversion from 'int' to 'int16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(213): warning C4244: 'return': conversion from 'int' to 'uint8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(224): warning C4244: 'return': conversion from 'int' to 'int8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(235): warning C4244: 'return': conversion from 'int' to 'uint16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(246): warning C4244: 'return': conversion from 'int' to 'int16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(213): warning C4244: 'return': conversion from 'int' to 'uint8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(224): warning C4244: 'return': conversion from 'int' to 'int8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(235): warning C4244: 'return': conversion from 'int' to 'uint16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(246): warning C4244: 'return': conversion from 'int' to 'int16_t', possible loss of data
+C:\deps\moonlight-common-c\enet\host.c(247): warning C5287: operands are different enum types '_ENetProtocolCommand' and '_ENetProtocolFlag'; use an explicit cast to silence this warning
+C:\deps\moonlight-common-c\enet\host.c(467): warning C5287: operands are different enum types '_ENetProtocolCommand' and '_ENetProtocolFlag'; use an explicit cast to silence this warning
+C:\deps\moonlight-common-c\enet\peer.c(51): warning C5287: operands are different enum types '_ENetProtocolCommand' and '_ENetProtocolFlag'; use an explicit cast to silence this warning
+C:\deps\moonlight-common-c\enet\peer.c(144): warning C5287: operands are different enum types '_ENetProtocolCommand' and '_ENetProtocolFlag'; use an explicit cast to silence this warning
+C:\deps\moonlight-common-c\enet\peer.c(203): warning C5287: operands are different enum types '_ENetProtocolCommand' and '_ENetProtocolFlag'; use an explicit cast to silence this warning
+C:\deps\moonlight-common-c\enet\peer.c(209): warning C5287: operands are different enum types '_ENetProtocolCommand' and '_ENetProtocolFlag'; use an explicit cast to silence this warning
+C:\deps\moonlight-common-c\enet\peer.c(453): warning C5287: operands are different enum types '_ENetProtocolCommand' and '_ENetProtocolFlag'; use an explicit cast to silence this warning
+C:\deps\moonlight-common-c\enet\peer.c(519): warning C5287: operands are different enum types '_ENetProtocolCommand' and '_ENetProtocolFlag'; use an explicit cast to silence this warning
+C:\deps\moonlight-common-c\enet\protocol.c(426): warning C5287: operands are different enum types '_ENetProtocolCommand' and '_ENetProtocolFlag'; use an explicit cast to silence this warning
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(213): warning C4244: 'return': conversion from 'int' to 'uint8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(224): warning C4244: 'return': conversion from 'int' to 'int8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(235): warning C4244: 'return': conversion from 'int' to 'uint16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(246): warning C4244: 'return': conversion from 'int' to 'int16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(213): warning C4244: 'return': conversion from 'int' to 'uint8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(224): warning C4244: 'return': conversion from 'int' to 'int8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(235): warning C4244: 'return': conversion from 'int' to 'uint16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(246): warning C4244: 'return': conversion from 'int' to 'int16_t', possible loss of data
+D:\a\bpn-vision\bpn-vision\src\sink\WasapiAudioSink.cpp(1289): warning C4456: declaration of 'firstPts' hides previous local declaration
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310): warning C4244: '=': conversion from 'const _Ty' to 'float', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(213): warning C4244: 'return': conversion from 'int' to 'uint8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(224): warning C4244: 'return': conversion from 'int' to 'int8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(235): warning C4244: 'return': conversion from 'int' to 'uint16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(246): warning C4244: 'return': conversion from 'int' to 'int16_t', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(213): warning C4244: 'return': conversion from 'int' to 'uint8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(224): warning C4244: 'return': conversion from 'int' to 'int8_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(235): warning C4244: 'return': conversion from 'int' to 'uint16_t', possible loss of data
+C:\vcpkg-veyra\installed\x64-windows-veyra\include\libavutil\common.h(246): warning C4244: 'return': conversion from 'int' to 'int16_t', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(90): warning C4456: declaration of 'supported' hides previous local declaration
+D:\a\bpn-vision\bpn-vision\src\sink\NvencD3D12Encoder.cpp(128): warning C4457: declaration of 'config' hides function parameter
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5310): warning C4244: '=': conversion from 'const _Ty' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(5264): warning C4244: 'initializing': conversion from 'const _Ty' to 'char', possible loss of data
+D:\a\bpn-vision\bpn-vision\src\pipeline\LmxxfNrBackend.cpp(59): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\a\bpn-vision\bpn-vision\src\pipeline\LmxxfNrBackend.cpp(60): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\a\bpn-vision\bpn-vision\src\pipeline\LmxxfNrBackend.cpp(63): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\a\bpn-vision\bpn-vision\src\source\CaptureCardSource.cpp(224): warning C4100: 'b': unreferenced parameter
+D:\a\bpn-vision\bpn-vision\src\source\CaptureCardSource.cpp(1268): warning C4456: declaration of 'deviceName' hides previous local declaration
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data
+D:\a\bpn-vision\bpn-vision\src\source\AverMediaVendorAudio.cpp(66): warning C4324: 'veyra::source::AverMediaVendorAudio::Impl': structure was padded due to alignment specifier
+D:\a\bpn-vision\bpn-vision\src\source\WasapiAudioInput.cpp(118): warning C4456: declaration of 'flags' hides previous local declaration
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data
+FAILED: [code=4294967295] veyra_qml_ui.exe 
+LINK: command "C:\PROGRA~1\MICROS~2\2022\ENTERP~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\veyra_qml_ui.rsp /out:veyra_qml_ui.exe /implib:veyra_qml_ui.lib /pdb:veyra_qml_ui.pdb /version:0.0 /machine:x64 /INCREMENTAL:NO /subsystem:windows /STACK:8388608 /MANIFESTINPUT:veyra-qml.manifest /MANIFEST:EMBED,ID=1" failed (exit code 1181) with the following output:
+LINK : fatal error LNK1181: cannot open input file 'veyra_nvof.lib'
+ninja: build stopped: subcommand failed.
+FAILED (-1): cmake build

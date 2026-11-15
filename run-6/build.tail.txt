@@ -1,0 +1,300 @@
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[494/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\PresetStore.cpp.obj
+[495/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\TiledImageProcessor.cpp.obj
+[496/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\DisplayStateService.cpp.obj
+[497/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\VideoPresenter.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[498/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\VideoExportJob.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[499/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\EngineController.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[500/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\ExportStreams.cpp.obj
+[501/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\ExportQueue.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[502/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\ExportJobManager.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[503/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\FgCompatibilityProbe.cpp.obj
+[504/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\Subtitles.cpp.obj
+[505/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\ReplayBuffer.cpp.obj
+[506/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\LiveRecorder.cpp.obj
+[507/563] Building CXX object CMakeFiles\veyra_update_checker.dir\veyra_update_checker_autogen\mocs_compilation.cpp.obj
+[508/563] Building CXX object CMakeFiles\veyra_update_checker.dir\src\ui\UpdateChecker.cpp.obj
+[509/563] Building CXX object CMakeFiles\veyra_moonlight_model.dir\veyra_moonlight_model_autogen\mocs_compilation.cpp.obj
+[510/563] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\MicrophoneCapture.cpp.obj
+[511/563] Linking CXX static library veyra_update_checker.lib
+[512/563] Linking CXX static library veyra_engine.lib
+[513/563] Copying QML
+[514/563] Running rcc for resource veyra_i18n_tests
+[515/563] Automatic MOC for target veyra_update_checker_tests
+[516/563] Building CXX object CMakeFiles\veyra_xbox_model.dir\veyra_xbox_model_autogen\mocs_compilation.cpp.obj
+[517/563] Building CXX object CMakeFiles\veyra_xbox_model.dir\src\ui\XboxModel.cpp.obj
+[518/563] Building CXX object CMakeFiles\veyra_ui_i18n_tests.dir\tests\unit\UiLanguageTests.cpp.obj
+[519/563] Building CXX object CMakeFiles\veyra_moonlight_model.dir\src\ui\MoonlightModel.cpp.obj
+[520/563] Building CXX object CMakeFiles\veyra_ui_i18n_tests.dir\out\.qt\rcc\qrc_veyra_i18n_tests.cpp.obj
+[521/563] Building CXX object CMakeFiles\veyra_update_checker_tests.dir\veyra_update_checker_tests_autogen\mocs_compilation.cpp.obj
+[522/563] Linking CXX static library veyra_xbox_model.lib
+[523/563] Linking CXX static library veyra_moonlight_model.lib
+[524/563] Linking CXX executable veyra_ui_i18n_tests.exe
+[525/563] Automatic MOC for target veyra_qml_bridge
+[526/563] Building CXX object CMakeFiles\veyra_xbox_tests.dir\tests\xbox\XboxTests.cpp.obj
+[527/563] Building CXX object CMakeFiles\veyra_update_checker_tests.dir\tests\unit\UpdateCheckerTests.cpp.obj
+[528/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\QmlExportQueueModel.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[529/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\veyra_qml_bridge_autogen\mocs_compilation.cpp.obj
+[530/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\PlaylistModel.cpp.obj
+[531/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\ThumbnailProvider.cpp.obj
+[532/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\apps\veyra\ui\SubtitleOverlay.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[533/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\QmlPlayerBridge.cpp.obj
+[534/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Hardware.cpp.obj
+[535/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Status.cpp.obj
+[536/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\FrameGeneration.cpp.obj
+[537/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Colour.cpp.obj
+[538/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\VirtualCaptureAudioSetup.cpp.obj
+[539/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Preferences.cpp.obj
+[540/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Capture.cpp.obj
+[541/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\RemotePlay.cpp.obj
+[542/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Export.cpp.obj
+[543/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Subtitles.cpp.obj
+[544/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Playback.cpp.obj
+[545/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Enhancement.cpp.obj
+[546/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Chain.cpp.obj
+[547/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Recording.cpp.obj
+[548/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\MoonlightInputCapture.cpp.obj
+[549/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\View.cpp.obj
+[550/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\remoteplay\ControllerInput.cpp.obj
+[551/563] Linking CXX executable veyra_update_checker_tests.exe
+[552/563] Building CXX object CMakeFiles\veyra_qml_bridge.dir\apps\veyra\ui\AssSubtitleRenderer.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\apps\veyra\ui\AssSubtitleRenderer.cpp(98): note: see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+        with
+        [
+            _Elem=wchar_t,
+            _Iter=std::_String_const_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+            _Alloc=std::allocator<char>
+        ]
+D:\a\bpn-vision\bpn-vision\apps\veyra\ui\AssSubtitleRenderer.cpp(98): note: see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'veyra::ui::AssSubtitleRenderer::Impl::rebuild'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(812): note: see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<const wchar_t*,const wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+        with
+        [
+            _Size_type=std::+::_Size_type,
+            _Iter=const wchar_t *,
+            _Sent=const wchar_t *,
+            _Size=std::+::_Size_type
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(968): note: see reference to function template instantiation '_OutIt *std::_Copy_n_unchecked4<const wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+        with
+        [
+            _OutIt=char *,
+            _Size=std::+::_Size_type,
+            _InIt=const wchar_t *,
+            _SizeTy=std::+::_Size_type
+        ]
+[553/563] Linking CXX static library veyra_qml_bridge.lib
+[554/563] Linking CXX executable veyra_xbox_tests.exe
+[555/563] Running rcc for resource veyra_optional_vb_cable
+[556/563] Running rcc for resource veyra_i18n
+[557/563] Building CXX object CMakeFiles\veyra_qml_ui.dir\out\.qt\rcc\qrc_veyra_i18n.cpp.obj
+[558/563] Building CXX object CMakeFiles\veyra_qml_ui.dir\out\.qt\rcc\qrc_veyra_optional_vb_cable.cpp.obj
+[559/563] Building RC object CMakeFiles\veyra_qml_ui.dir\veyra-qml-version.rc.res
+[560/563] Building CXX object CMakeFiles\veyra_qml_ui.dir\src\ui\QmlDataDirectory.cpp.obj
+[561/563] Building CXX object CMakeFiles\veyra_qml_ui.dir\src\ui\QmlDiskCache.cpp.obj
+[562/563] Building CXX object CMakeFiles\veyra_qml_ui.dir\apps\veyra-qml\main.cpp.obj
+[563/563] Linking CXX executable veyra_qml_ui.exe
+FAILED: [code=4294967295] veyra_qml_ui.exe 
+C:\Windows\system32\cmd.exe /C "cd . && "C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\veyra_qml_ui.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\mt.exe --manifests  -- C:\PROGRA~1\MICROS~2\2022\ENTERP~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\veyra_qml_ui.rsp  /out:veyra_qml_ui.exe /implib:veyra_qml_ui.lib /pdb:veyra_qml_ui.pdb /version:0.0 /machine:x64 /INCREMENTAL:NO /subsystem:windows  /STACK:8388608 /MANIFESTINPUT:veyra-qml.manifest && C:\Windows\system32\cmd.exe /C "cd /D D:\a\bpn-vision\bpn-vision\out && C:\vcpkg-veyra\vcpkg.exe z-applocal --target-binary=D:/a/bpn-vision/bpn-vision/out/veyra_qml_ui.exe --installed-bin-dir=C:/vcpkg-veyra/installed/x64-windows-veyra/bin""
+LINK: command "C:\PROGRA~1\MICROS~2\2022\ENTERP~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\veyra_qml_ui.rsp /out:veyra_qml_ui.exe /implib:veyra_qml_ui.lib /pdb:veyra_qml_ui.pdb /version:0.0 /machine:x64 /INCREMENTAL:NO /subsystem:windows /STACK:8388608 /MANIFESTINPUT:veyra-qml.manifest /MANIFEST:EMBED,ID=1" failed (exit code 1181) with the following output:
+LINK : fatal error LNK1181: cannot open input file 'veyra_nvof.lib'
+ninja: build stopped: subcommand failed.
+FAILED (-1): cmake build
