@@ -1,0 +1,11 @@
+ffmpeg[core,avcodec,avformat,avfilter,swresample,swscale]
+opus
+openssl
+libdatachannel[srtp,ws]
+nlohmann-json
+sdl3
+libass
+json-c
+libevent
+miniupnpc
+pkgconf

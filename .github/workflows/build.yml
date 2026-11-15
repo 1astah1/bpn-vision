@@ -1,7 +1,8 @@
 name: build
 
-# Stage 1: the Xbox/cloud and language code on real MSVC, with the same dependency versions as
-# Veyra 2.1.6 (vcpkg 30ef65cad9: FFmpeg 9.0.1, OpenSSL 3.6.4, libdatachannel 0.24.5, Qt 6.8.3).
+# Full BPN Vision build: veyra_qml_ui.exe with the same dependency versions as Veyra 2.1.6
+# (vcpkg 30ef65cad9: FFmpeg 9.0.1, OpenSSL 3.6.4, libdatachannel 0.24.5, SDL3 3.4.14; Qt 6.8.3; MSVC 14.44),
+# the offline tests, then the AMD and NVIDIA portable packages as a pre-release.
 # Logs go to the ci-logs branch so they can be read without signing in.
 
 on:
@@ -22,12 +23,14 @@ env:
   VEYRA_VCPKG: C:\vcpkg-veyra
   VCPKG_DEFAULT_BINARY_CACHE: C:\vcpkg-bincache
   VCPKG_TRIPLET: x64-windows-veyra
+  SDK: C:\sdk
   DEPS: C:\deps
+  BPN_VERSION: 2.1.6-bpn
 
 jobs:
-  stage1:
+  full:
     runs-on: windows-2022
-    timeout-minutes: 180
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
 
@@ -43,57 +46,93 @@ jobs:
         shell: pwsh
         run: New-Item -ItemType Directory -Force -Path "$env:GITHUB_WORKSPACE\ci-out" | Out-Null
 
-      - name: vcpkg binary cache
-        uses: actions/cache@v4
+      # ---------------------------------------------------------------- vcpkg
+      - name: Restore vcpkg binaries
+        id: vcpkg-cache
+        uses: actions/cache/restore@v4
         with:
           path: C:\vcpkg-bincache
-          key: vcpkg-${{ env.VCPKG_COMMIT }}-${{ hashFiles('.github/vcpkg-triplets/**', 'scripts/xbox/vcpkg-overlay/**', '.github/workflows/build.yml') }}
+          key: vcpkg-${{ env.VCPKG_COMMIT }}-${{ hashFiles('.github/ci/vcpkg-packages.txt', '.github/vcpkg-triplets/**', 'scripts/xbox/vcpkg-overlay/**') }}
           restore-keys: vcpkg-${{ env.VCPKG_COMMIT }}-
 
       - name: vcpkg at Veyra's commit
         shell: pwsh
         run: |
-          $log = "$env:GITHUB_WORKSPACE\ci-out\vcpkg-setup.log"
-          function Step([string]$what, [scriptblock]$cmd) {
-            "== $what" | Tee-Object -Append -FilePath $log
-            & $cmd 2>&1 | ForEach-Object { "$_" } | Tee-Object -Append -FilePath $log
-            if ($LASTEXITCODE -ne 0) { "FAILED ($LASTEXITCODE): $what" | Tee-Object -Append -FilePath $log; exit 1 }
-          }
+          Import-Module "$env:GITHUB_WORKSPACE\.github\ci\ci.psm1"; Use-Log "vcpkg-setup"
           New-Item -ItemType Directory -Force -Path $env:VCPKG_DEFAULT_BINARY_CACHE | Out-Null
-          Step "git init" { git init $env:VEYRA_VCPKG }
-          Step "git fetch" { git -C $env:VEYRA_VCPKG fetch --depth 1 https://github.com/microsoft/vcpkg.git $env:VCPKG_COMMIT }
-          Step "git checkout" { git -C $env:VEYRA_VCPKG checkout FETCH_HEAD }
+          Step "vcpkg checkout" { Get-GitCommit "https://github.com/microsoft/vcpkg.git" $env:VCPKG_COMMIT $env:VEYRA_VCPKG }
           Step "bootstrap" { cmd /c "`"$env:VEYRA_VCPKG\bootstrap-vcpkg.bat`" -disableMetrics" }
-          Step "version" { & "$env:VEYRA_VCPKG\vcpkg.exe" version }
 
       - name: vcpkg install
         shell: pwsh
         run: |
-          $t = $env:VCPKG_TRIPLET
+          Import-Module "$env:GITHUB_WORKSPACE\.github\ci\ci.psm1"; Use-Log "vcpkg"
           $env:VCPKG_ROOT = $env:VEYRA_VCPKG
-          & "$env:VEYRA_VCPKG\vcpkg.exe" install --classic --vcpkg-root="$env:VEYRA_VCPKG" `
-            --overlay-triplets="$env:GITHUB_WORKSPACE\.github\vcpkg-triplets" `
-            --overlay-ports="$env:GITHUB_WORKSPACE\scripts\xbox\vcpkg-overlay" `
-            "ffmpeg[core,avcodec,avformat,swresample,swscale]:$t" "opus:$t" "openssl:$t" "libdatachannel[srtp,ws]:$t" "nlohmann-json:$t" 2>&1 |
-            Tee-Object -FilePath "$env:GITHUB_WORKSPACE\ci-out\vcpkg.log"
-          if ($LASTEXITCODE -ne 0) { exit 1 }
+          $t = $env:VCPKG_TRIPLET
+          $packages = Get-Content .github\ci\vcpkg-packages.txt | Where-Object { $_.Trim() } | ForEach-Object { "$($_.Trim()):$t" }
+          Step "vcpkg install" {
+            & "$env:VEYRA_VCPKG\vcpkg.exe" install --classic --vcpkg-root="$env:VEYRA_VCPKG" `
+              --overlay-triplets="$env:GITHUB_WORKSPACE\.github\vcpkg-triplets" `
+              --overlay-ports="$env:GITHUB_WORKSPACE\scripts\xbox\vcpkg-overlay" @packages
+          }
 
-      - name: Pinned sources (nv-codec-headers, moonlight-common-c)
+      - name: Save vcpkg binaries
+        if: always() && steps.vcpkg-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: C:\vcpkg-bincache
+          key: vcpkg-${{ env.VCPKG_COMMIT }}-${{ hashFiles('.github/ci/vcpkg-packages.txt', '.github/vcpkg-triplets/**', 'scripts/xbox/vcpkg-overlay/**') }}-${{ github.run_id }}
+
+      # ---------------------------------------------------------------- vendor SDKs
+      - name: Restore SDKs
+        id: sdk-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: C:\sdk
+          key: sdk-${{ hashFiles('.github/ci/sdk.ps1') }}
+          restore-keys: sdk-
+
+      - name: SDKs (DLSS, XeSS, FidelityFX 1.1.4 and 2.3.0, CUDA headers, DeckLink, RDNA3, VB-CABLE)
+        shell: pwsh
+        run: '& "$env:GITHUB_WORKSPACE\.github\ci\sdk.ps1"'
+
+      - name: Save SDKs
+        if: always() && steps.sdk-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: C:\sdk
+          key: sdk-${{ hashFiles('.github/ci/sdk.ps1') }}-${{ github.run_id }}
+
+      # ---------------------------------------------------------------- pinned sources and tools
+      - name: Pinned sources (nv-codec-headers, moonlight-common-c, chiaki-ng) and protoc
         shell: pwsh
         run: |
-          git clone -q --depth 1 --branch n13.0.19.0 https://github.com/FFmpeg/nv-codec-headers.git third_party_local\nvidia\nv-codec-headers-13.0
-          $lock = Get-Content scripts\moonlight\dependency-lock.json -Raw | ConvertFrom-Json
-          $m = $lock.moonlight_common_c
-          $dir = "$env:DEPS\moonlight-common-c"
-          git init -q $dir
-          git -C $dir fetch -q --depth 1 $m.repository $m.commit
-          git -C $dir checkout -q FETCH_HEAD
+          Import-Module "$env:GITHUB_WORKSPACE\.github\ci\ci.psm1"; Use-Log "sources"
+          Step "nv-codec-headers n13.0.19.0" { git clone -q --depth 1 --branch n13.0.19.0 https://github.com/FFmpeg/nv-codec-headers.git third_party_local\nvidia\nv-codec-headers-13.0 }
+
+          $m = (Get-Content scripts\moonlight\dependency-lock.json -Raw | ConvertFrom-Json).moonlight_common_c
+          $ml = "$env:DEPS\moonlight-common-c"
+          Step "moonlight-common-c" { Get-GitCommit $m.repository $m.commit $ml }
           foreach ($name in @("enet", "nanors")) {
             $s = $m.submodules.$name
-            git init -q "$dir\$name"
-            git -C "$dir\$name" fetch -q --depth 1 $s.repository $s.commit
-            git -C "$dir\$name" checkout -q FETCH_HEAD
+            Step "moonlight $name" { Get-GitCommit $s.repository $s.commit "$ml\$name" }
           }
+
+          $rp = Get-Content scripts\remoteplay\dependency-lock.json -Raw | ConvertFrom-Json
+          $clean = "$env:DEPS\chiaki-source"; $stage = "$env:DEPS\chiaki-msvc-stage"
+          Step "chiaki-ng $($rp.chiaki_commit)" { Get-GitCommit $rp.chiaki_repository $rp.chiaki_commit $clean }
+          Step "chiaki-ng submodules" { git -C $clean submodule update --init --recursive --depth 1 }
+          Step "chiaki stage" { git -C $clean worktree add --detach $stage $rp.chiaki_commit }
+          Step "chiaki stage submodules" { git -C $stage submodule update --init --recursive --depth 1 }
+          foreach ($patch in @("0001-chiaki-msvc-vla-compat.patch", "0002-chiaki-video-metadata.patch")) {
+            Step "apply $patch" { git -C $stage apply "$env:GITHUB_WORKSPACE\scripts\remoteplay\patches\$patch" }
+          }
+          Step "verify chiaki stage" { python scripts\remoteplay\verify-chiaki-stage.py --stage $stage --clean $clean }
+
+          Step "protoc 31.1" { Get-File "https://github.com/protocolbuffers/protobuf/releases/download/v31.1/protoc-31.1-win64.zip" "$env:DEPS\protoc.zip" }
+          New-Item -ItemType Directory -Force -Path "$env:DEPS\protoc" | Out-Null
+          Step "protoc extract" { tar -xf "$env:DEPS\protoc.zip" -C "$env:DEPS\protoc" }
+          Step "python protobuf" { python -m pip install --disable-pip-version-check -q "protobuf==6.31.1" }
 
       - uses: jurplel/install-qt-action@v4
         with:
@@ -101,47 +140,86 @@ jobs:
           arch: win64_msvc2022_64
           cache: true
 
+      # ---------------------------------------------------------------- build
       - name: Configure
         shell: pwsh
         run: |
+          Import-Module "$env:GITHUB_WORKSPACE\.github\ci\ci.psm1"; Use-Log "configure"
           $env:VCPKG_ROOT = $env:VEYRA_VCPKG
           $inst = "$env:VEYRA_VCPKG\installed\$env:VCPKG_TRIPLET"
-          cmake -S . -B out -G Ninja -DCMAKE_BUILD_TYPE=Release `
-            -DCMAKE_TOOLCHAIN_FILE="$env:VEYRA_VCPKG\scripts\buildsystems\vcpkg.cmake" `
-            -DVCPKG_MANIFEST_MODE=OFF -DVCPKG_TARGET_TRIPLET="$env:VCPKG_TRIPLET" `
-            -DVCPKG_OVERLAY_TRIPLETS="$env:GITHUB_WORKSPACE\.github\vcpkg-triplets" `
-            -DCMAKE_PREFIX_PATH="$env:QT_ROOT_DIR" `
-            -DVEYRA_DISPLAY_VERSION=2.1.6-bpn `
-            -DVEYRA_ENABLE_D3D12_DEBUG=OFF `
-            -DVEYRA_FFMPEG_ROOT="$inst" -DVEYRA_ENABLE_DEINTERLACE=OFF `
-            -DOPENSSL_ROOT_DIR="$inst" -DOPENSSL_USE_STATIC_LIBS=ON -DOPENSSL_MSVC_STATIC_RT=ON `
-            -DVEYRA_ENABLE_MOONLIGHT=ON -DVEYRA_MOONLIGHT_SOURCE_DIR="$env:DEPS\moonlight-common-c" `
-            -DVEYRA_ENABLE_XBOX=ON -DVEYRA_BUILD_QML_UI=ON `
-            -DPython3_EXECUTABLE="$((Get-Command python).Source)" 2>&1 |
-            Tee-Object -FilePath ci-out\configure.log
-          if ($LASTEXITCODE -ne 0) { exit 1 }
+          $env:PKG_CONFIG_PATH = "$inst\lib\pkgconfig"
+          $vb = "$env:SDK\VBCABLE_Driver_Pack46.zip"
+          $vbOption = @()
+          if ((Test-Path $vb) -and (Get-FileHash -Algorithm SHA256 $vb).Hash.ToLower() -eq "bc44e8974191a5a2427d6c979e2dab08dbb09925f3f435dfa2f0ba3e45b6eb90") {
+            $vbOption = @("-DVEYRA_VB_CABLE_PACKAGE=$vb")
+          } else { Write-Log "VB-CABLE Pack46 missing or different: not embedded" }
+          $options = @(
+            "-DCMAKE_TOOLCHAIN_FILE=$env:VEYRA_VCPKG\scripts\buildsystems\vcpkg.cmake",
+            "-DVCPKG_MANIFEST_MODE=OFF", "-DVCPKG_TARGET_TRIPLET=$env:VCPKG_TRIPLET",
+            "-DVCPKG_OVERLAY_TRIPLETS=$env:GITHUB_WORKSPACE\.github\vcpkg-triplets",
+            "-DCMAKE_PREFIX_PATH=$env:QT_ROOT_DIR",
+            "-DVEYRA_DISPLAY_VERSION=$env:BPN_VERSION",
+            "-DVEYRA_ENABLE_D3D12_DEBUG=OFF",
+            "-DVEYRA_FFMPEG_ROOT=$inst", "-DVEYRA_ENABLE_DEINTERLACE=ON",
+            "-DOPENSSL_ROOT_DIR=$inst", "-DOPENSSL_USE_STATIC_LIBS=ON", "-DOPENSSL_MSVC_STATIC_RT=ON",
+            "-DVEYRA_LIBASS_ROOT=$inst",
+            "-DVEYRA_ENABLE_EXPERIMENTAL_DLSSNR=ON", "-DVEYRA_DLSS_SDK_ROOT=$env:SDK\DLSS_SDK_310.7.0",
+            "-DVEYRA_XESS_ROOT=$env:SDK\xess-3.0.2",
+            "-DVEYRA_FIDELITYFX_ROOT=$env:SDK\FidelityFX-SDK-1.1.4\sdk",
+            "-DVEYRA_FIDELITYFX2_ROOT=$env:SDK\FidelityFX-SDK-2.3.0\Kits\FidelityFX",
+            "-DVEYRA_CUDA_DRIVER_INCLUDE_DIR=$env:SDK\cuda\include",
+            "-DVEYRA_RDNA3_NETWORK_SOURCE_DIR=$env:SDK\rdna3-network",
+            "-DVEYRA_DECKLINK_SDK_DIR=$env:SDK\decklink",
+            "-DVEYRA_AMD_NR_TEST_GRAPH_SOURCE=$env:GITHUB_WORKSPACE\src\pipeline\EnhanceGraph.cpp",
+            "-DVEYRA_ENABLE_REMOTEPLAY=ON",
+            "-DVEYRA_RP_CHIAKI_VERIFY_DIR=$env:DEPS\chiaki-source", "-DVEYRA_RP_CHIAKI_SOURCE_DIR=$env:DEPS\chiaki-msvc-stage",
+            "-DPROTOC=$env:DEPS\protoc\bin\protoc.exe",
+            "-DPKG_CONFIG_EXECUTABLE=$inst\tools\pkgconf\pkgconf.exe",
+            "-DVEYRA_ENABLE_MOONLIGHT=ON", "-DVEYRA_MOONLIGHT_SOURCE_DIR=$env:DEPS\moonlight-common-c",
+            "-DVEYRA_ENABLE_XBOX=ON", "-DVEYRA_BUILD_QML_UI=ON",
+            "-DPython3_EXECUTABLE=$((Get-Command python).Source)"
+          ) + $vbOption
+          Step "cmake configure" { cmake -S . -B out -G Ninja -DCMAKE_BUILD_TYPE=Release @options }
 
-      - name: Build Xbox, language and update-checker targets
+      - name: Build
         shell: pwsh
         run: |
-          cmake --build out --parallel 4 --target veyra_xbox_protocol veyra_xbox_tests veyra_ui_i18n_tests veyra_update_checker_tests veyra_xbox_model veyra_sources 2>&1 |
-            Tee-Object -FilePath ci-out\build.log
-          if ($LASTEXITCODE -ne 0) { exit 1 }
+          Import-Module "$env:GITHUB_WORKSPACE\.github\ci\ci.psm1"; Use-Log "build"
+          Step "cmake build" { cmake --build out --parallel 4 --target veyra_qml_ui veyra_xbox_tests veyra_ui_i18n_tests veyra_update_checker_tests }
 
       - name: Tests
         shell: pwsh
         run: |
+          Import-Module "$env:GITHUB_WORKSPACE\.github\ci\ci.psm1"; Use-Log "tests"
           $env:PATH = "$env:QT_ROOT_DIR\bin;$env:PATH"
-          $failed = 0
           foreach ($t in @("veyra_xbox_tests", "veyra_ui_i18n_tests", "veyra_update_checker_tests")) {
             $exe = Get-ChildItem -Path out -Recurse -Filter "$t.exe" | Select-Object -First 1
-            if (-not $exe) { "MISSING $t" | Tee-Object -Append -FilePath ci-out\tests.log; $failed++; continue }
-            "== $t" | Tee-Object -Append -FilePath ci-out\tests.log
-            & $exe.FullName 2>&1 | Tee-Object -Append -FilePath ci-out\tests.log
-            "exit $LASTEXITCODE" | Tee-Object -Append -FilePath ci-out\tests.log
-            if ($LASTEXITCODE -ne 0) { $failed++ }
+            if (-not $exe) { Write-Log "MISSING $t"; exit 1 }
+            Step $t { & $exe.FullName }
           }
-          if ($failed -ne 0) { exit 1 }
+
+      # ---------------------------------------------------------------- packages
+      - name: Package
+        shell: pwsh
+        run: '& "$env:GITHUB_WORKSPACE\.github\ci\package.ps1" -Version "$env:BPN_VERSION.${{ github.run_number }}" -OutDir "$env:RUNNER_TEMP\dist"'
+
+      - name: Pre-release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          Import-Module "$env:GITHUB_WORKSPACE\.github\ci\ci.psm1"; Use-Log "release"
+          $tag = "v$env:BPN_VERSION.${{ github.run_number }}"
+          $notes = @(
+            "Предварительная сборка BPN Vision из коммита ${{ github.sha }}.",
+            "",
+            "- **AMD** — для видеокарт Radeon, **NVIDIA** — для GeForce RTX. Распакуйте и запустите veyra_qml_ui.exe.",
+            "- Новое: облачный Xbox («Стриминг Xbox» → «Облако»), русский интерфейс, бренд BPN.",
+            "- Все остальные файлы — без изменений из Veyra 2.1.6 (Likely7, GPL-3.0). Исходники — этот репозиторий."
+          ) -join "`n"
+          Set-Content -Path "$env:RUNNER_TEMP\notes.md" -Value $notes -Encoding utf8
+          $files = Get-ChildItem "$env:RUNNER_TEMP\dist" -Filter *.zip | ForEach-Object { $_.FullName }
+          Step "gh release create $tag" { gh release create $tag @files --prerelease --target "${{ github.sha }}" --title "BPN Vision $env:BPN_VERSION (сборка ${{ github.run_number }})" --notes-file "$env:RUNNER_TEMP\notes.md" }
 
       - name: Publish logs to ci-logs
         if: always()
@@ -149,10 +227,11 @@ jobs:
         run: |
           $dir = "run-${{ github.run_number }}"
           $out = "$env:GITHUB_WORKSPACE\ci-out"
+          New-Item -ItemType Directory -Force -Path $out | Out-Null
           "status=${{ job.status }} sha=${{ github.sha }} run=${{ github.run_id }}" | Set-Content "$out\STATUS.txt"
           foreach ($f in Get-ChildItem $out -Filter *.log) {
-            Select-String -Path $f.FullName -Pattern 'error|FAILED|FAIL |fatal|CMake Error|Could not|not found' -CaseSensitive:$false |
-              Select-Object -First 300 | ForEach-Object { $_.Line } | Set-Content "$out\$($f.BaseName).errors.txt"
+            Select-String -Path $f.FullName -Pattern 'error|FAILED|EXCEPTION|fatal|CMake Error|Could not|not found|warning C' -CaseSensitive:$false |
+              Select-Object -First 400 | ForEach-Object { $_.Line } | Set-Content "$out\$($f.BaseName).errors.txt"
             Get-Content $f.FullName -Tail 300 | Set-Content "$out\$($f.BaseName).tail.txt"
           }
           Remove-Item "$out\*.log" -ErrorAction SilentlyContinue
