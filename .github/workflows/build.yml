@@ -190,6 +190,9 @@ jobs:
         shell: pwsh
         run: |
           Import-Module "$env:GITHUB_WORKSPACE\.github\ci\ci.psm1"; Use-Log "build"
+          # chiaki's nanopb generator runs protoc from PATH (or $env:PROTOC), not from the CMake option.
+          $env:PATH = "$env:DEPS\protoc\bin;$env:PATH"
+          $env:PROTOC = "$env:DEPS\protoc\bin\protoc.exe"
           Step "cmake build" { cmake --build out --parallel 4 --target veyra_qml_ui veyra_xbox_tests veyra_ui_i18n_tests veyra_update_checker_tests }
 
       - name: Tests
