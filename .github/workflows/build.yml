@@ -52,11 +52,18 @@ jobs:
       - name: vcpkg at Veyra's commit
         shell: pwsh
         run: |
+          $log = "$env:GITHUB_WORKSPACE\ci-out\vcpkg-setup.log"
+          function Step([string]$what, [scriptblock]$cmd) {
+            "== $what" | Tee-Object -Append -FilePath $log
+            & $cmd 2>&1 | ForEach-Object { "$_" } | Tee-Object -Append -FilePath $log
+            if ($LASTEXITCODE -ne 0) { "FAILED ($LASTEXITCODE): $what" | Tee-Object -Append -FilePath $log; exit 1 }
+          }
           New-Item -ItemType Directory -Force -Path $env:VCPKG_DEFAULT_BINARY_CACHE | Out-Null
-          git init -q $env:VCPKG_ROOT
-          git -C $env:VCPKG_ROOT fetch -q --depth 1 https://github.com/microsoft/vcpkg.git $env:VCPKG_COMMIT
-          git -C $env:VCPKG_ROOT checkout -q FETCH_HEAD
-          & "$env:VCPKG_ROOT\bootstrap-vcpkg.bat" -disableMetrics
+          Step "git init" { git init $env:VCPKG_ROOT }
+          Step "git fetch" { git -C $env:VCPKG_ROOT fetch --depth 1 https://github.com/microsoft/vcpkg.git $env:VCPKG_COMMIT }
+          Step "git checkout" { git -C $env:VCPKG_ROOT checkout FETCH_HEAD }
+          Step "bootstrap" { cmd /c "`"$env:VCPKG_ROOT\bootstrap-vcpkg.bat`" -disableMetrics" }
+          Step "version" { & "$env:VCPKG_ROOT\vcpkg.exe" version }
 
       - name: vcpkg install
         shell: pwsh
