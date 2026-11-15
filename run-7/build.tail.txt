@@ -1,0 +1,300 @@
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[516/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\VideoExportJob.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[517/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\ExportStreams.cpp.obj
+[518/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\EngineController.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[519/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\ExportQueue.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[520/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\FgCompatibilityProbe.cpp.obj
+[521/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\ExportJobManager.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[522/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\LiveRecorder.cpp.obj
+[523/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\Subtitles.cpp.obj
+[524/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\ReplayBuffer.cpp.obj
+[525/581] Building CXX object CMakeFiles\veyra_update_checker.dir\veyra_update_checker_autogen\mocs_compilation.cpp.obj
+[526/581] Building CXX object CMakeFiles\veyra_update_checker.dir\src\ui\UpdateChecker.cpp.obj
+[527/581] Building CXX object CMakeFiles\veyra_moonlight_model.dir\veyra_moonlight_model_autogen\mocs_compilation.cpp.obj
+[528/581] Building CXX object CMakeFiles\veyra_engine.dir\src\engine\MicrophoneCapture.cpp.obj
+[529/581] Linking CXX static library veyra_update_checker.lib
+[530/581] Linking CXX static library veyra_engine.lib
+[531/581] Copying QML
+[532/581] Running rcc for resource veyra_i18n_tests
+[533/581] Automatic MOC for target veyra_update_checker_tests
+[534/581] Building CXX object CMakeFiles\veyra_xbox_model.dir\veyra_xbox_model_autogen\mocs_compilation.cpp.obj
+[535/581] Building CXX object CMakeFiles\veyra_moonlight_model.dir\src\ui\MoonlightModel.cpp.obj
+[536/581] Linking CXX static library veyra_moonlight_model.lib
+[537/581] Building CXX object CMakeFiles\veyra_ui_i18n_tests.dir\out\.qt\rcc\qrc_veyra_i18n_tests.cpp.obj
+[538/581] Building CXX object CMakeFiles\veyra_update_checker_tests.dir\veyra_update_checker_tests_autogen\mocs_compilation.cpp.obj
+[539/581] Building CXX object CMakeFiles\veyra_xbox_model.dir\src\ui\XboxModel.cpp.obj
+[540/581] Linking CXX static library veyra_xbox_model.lib
+[541/581] Building CXX object CMakeFiles\veyra_ui_i18n_tests.dir\tests\unit\UiLanguageTests.cpp.obj
+[542/581] Building CXX object CMakeFiles\veyra_update_checker_tests.dir\tests\unit\UpdateCheckerTests.cpp.obj
+[543/581] Automatic MOC for target veyra_qml_bridge
+[544/581] Linking CXX executable veyra_update_checker_tests.exe
+[545/581] Building CXX object CMakeFiles\veyra_xbox_tests.dir\tests\xbox\XboxTests.cpp.obj
+[546/581] Linking CXX executable veyra_ui_i18n_tests.exe
+[547/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\QmlExportQueueModel.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[548/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\veyra_qml_bridge_autogen\mocs_compilation.cpp.obj
+[549/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\ThumbnailProvider.cpp.obj
+[550/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\PlaylistModel.cpp.obj
+[551/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\apps\veyra\ui\SubtitleOverlay.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty1=float
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+        with
+        [
+            _Other1=int,
+            _Other2=int
+        ]
+D:\a\bpn-vision\bpn-vision\include\veyra/engine/PreviewView.h(39): note: see the first reference to 'std::pair<float,float>::pair' in 'veyra::engine::PreviewView::renderedSize'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\utility(274): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+        with
+        [
+            _Ty=int
+        ]
+        and
+        [
+            _Ty2=float
+        ]
+[552/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\QmlPlayerBridge.cpp.obj
+[553/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Hardware.cpp.obj
+[554/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Status.cpp.obj
+[555/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\FrameGeneration.cpp.obj
+[556/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Colour.cpp.obj
+[557/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\VirtualCaptureAudioSetup.cpp.obj
+[558/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Preferences.cpp.obj
+[559/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Capture.cpp.obj
+[560/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\RemotePlay.cpp.obj
+[561/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Export.cpp.obj
+[562/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Subtitles.cpp.obj
+[563/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Playback.cpp.obj
+[564/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Chain.cpp.obj
+[565/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Enhancement.cpp.obj
+[566/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\Recording.cpp.obj
+[567/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\apps\veyra\ui\AssSubtitleRenderer.cpp.obj
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xutility(4813): note: the template instantiation context (the oldest one first) is
+D:\a\bpn-vision\bpn-vision\apps\veyra\ui\AssSubtitleRenderer.cpp(98): note: see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+        with
+        [
+            _Elem=wchar_t,
+            _Iter=std::_String_const_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+            _Alloc=std::allocator<char>
+        ]
+D:\a\bpn-vision\bpn-vision\apps\veyra\ui\AssSubtitleRenderer.cpp(98): note: see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'veyra::ui::AssSubtitleRenderer::Impl::rebuild'
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(812): note: see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<const wchar_t*,const wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+        with
+        [
+            _Size_type=std::+::_Size_type,
+            _Iter=const wchar_t *,
+            _Sent=const wchar_t *,
+            _Size=std::+::_Size_type
+        ]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\xstring(968): note: see reference to function template instantiation '_OutIt *std::_Copy_n_unchecked4<const wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+        with
+        [
+            _OutIt=char *,
+            _Size=std::+::_Size_type,
+            _InIt=const wchar_t *,
+            _SizeTy=std::+::_Size_type
+        ]
+[568/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\MoonlightInputCapture.cpp.obj
+[569/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\remoteplay\ControllerInput.cpp.obj
+[570/581] Building CXX object CMakeFiles\veyra_qml_bridge.dir\src\ui\bridge\View.cpp.obj
+[571/581] Linking CXX static library veyra_qml_bridge.lib
+[572/581] Running rcc for resource veyra_optional_vb_cable
+[573/581] Running rcc for resource veyra_i18n
+[574/581] Linking CXX executable veyra_xbox_tests.exe
+[575/581] Building CXX object CMakeFiles\veyra_qml_ui.dir\out\.qt\rcc\qrc_veyra_i18n.cpp.obj
+[576/581] Building CXX object CMakeFiles\veyra_qml_ui.dir\src\ui\QmlDataDirectory.cpp.obj
+[577/581] Building RC object CMakeFiles\veyra_qml_ui.dir\veyra-qml-version.rc.res
+[578/581] Building CXX object CMakeFiles\veyra_qml_ui.dir\out\.qt\rcc\qrc_veyra_optional_vb_cable.cpp.obj
+[579/581] Building CXX object CMakeFiles\veyra_qml_ui.dir\src\ui\QmlDiskCache.cpp.obj
+[580/581] Building CXX object CMakeFiles\veyra_qml_ui.dir\apps\veyra-qml\main.cpp.obj
+[581/581] Linking CXX executable veyra_qml_ui.exe
+FAILED: [code=4294967295] veyra_qml_ui.exe 
+C:\Windows\system32\cmd.exe /C "cd . && "C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\veyra_qml_ui.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\mt.exe --manifests  -- C:\PROGRA~1\MICROS~2\2022\ENTERP~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\veyra_qml_ui.rsp  /out:veyra_qml_ui.exe /implib:veyra_qml_ui.lib /pdb:veyra_qml_ui.pdb /version:0.0 /machine:x64 /INCREMENTAL:NO /subsystem:windows  /STACK:8388608 /MANIFESTINPUT:veyra-qml.manifest && C:\Windows\system32\cmd.exe /C "cd /D D:\a\bpn-vision\bpn-vision\out && C:\vcpkg-veyra\vcpkg.exe z-applocal --target-binary=D:/a/bpn-vision/bpn-vision/out/veyra_qml_ui.exe --installed-bin-dir=C:/vcpkg-veyra/installed/x64-windows-veyra/bin""
+LINK: command "C:\PROGRA~1\MICROS~2\2022\ENTERP~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\veyra_qml_ui.rsp /out:veyra_qml_ui.exe /implib:veyra_qml_ui.lib /pdb:veyra_qml_ui.pdb /version:0.0 /machine:x64 /INCREMENTAL:NO /subsystem:windows /STACK:8388608 /MANIFESTINPUT:veyra-qml.manifest /MANIFEST:EMBED,ID=1" failed (exit code 1169) with the following output:
+ffx_opticalflow_x64.lib(ffx_opticalflow.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_opticalflow_x64.lib(ffx_object_management.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_dx12.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(FrameInterpolationSwapchainDX12.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_shader_blobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_breadcrumbs_list.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(FrameInterpolationSwapchainDX12_Helpers.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(FrameInterpolationSwapchainDX12_UiComposition.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(FrameInterpolationSwapchainDX12_DebugPacing.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_fsr1_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_fsr2_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_fsr3upscaler_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_frameinterpolation_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_opticalflow_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_spd_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_cacao_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_lpm_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_blur_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_vrs_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_cas_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_dof_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_lens_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_parallelsort_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_sssr_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_denoiser_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_classifier_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_brixelizer_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+ffx_backend_dx12_x64.lib(ffx_brixelizergi_shaderblobs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in main.cpp.obj
+msvcprt.lib(MSVCP140.dll) : error LNK2005: "public: struct _Cvtvec __cdecl std::_Locinfo::_Getcvt(void)const " (?_Getcvt@_Locinfo@std@@QEBA?AU_Cvtvec@@XZ) already defined in main.cpp.obj
+msvcprt.lib(MSVCP140.dll) : error LNK2005: "public: unsigned short const * __cdecl std::_Locinfo::_W_Getdays(void)const " (?_W_Getdays@_Locinfo@std@@QEBAPEBGXZ) already defined in libcpmt.lib(wlocale.obj)
+msvcprt.lib(MSVCP140.dll) : error LNK2005: "public: unsigned short const * __cdecl std::_Locinfo::_W_Getmonths(void)const " (?_W_Getmonths@_Locinfo@std@@QEBAPEBGXZ) already defined in libcpmt.lib(wlocale.obj)
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4217: symbol '_invoke_watson' defined in 'libucrt.lib(invalid_parameter.obj)' is imported by 'ffx_opticalflow_x64.lib(ffx_opticalflow.obj)' in function '"void * __cdecl std::_Allocate<16,struct std::_Default_allocate_traits>(unsigned __int64)" (??$_Allocate@$0BA@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z)'
+LINK : warning LNK4217: symbol 'wcscpy_s' defined in 'libucrt.lib(wcscpy_s.obj)' is imported by 'ffx_opticalflow_x64.lib(ffx_opticalflow.obj)' in function '"int __cdecl createPipelineStates(struct FfxOpticalflowContext_Private *)" (?createPipelineStates@@YAHPEAUFfxOpticalflowContext_Private@@@Z)'
+LINK : warning LNK4286: symbol 'wcscpy_s' defined in 'libucrt.lib(wcscpy_s.obj)' is imported by 'ffx_backend_dx12_x64.lib(ffx_dx12.obj)'
+LINK : warning LNK4217: symbol '__stdio_common_vsprintf_s' defined in 'libucrt.lib(output.obj)' is imported by 'ffx_backend_dx12_x64.lib(ffx_dx12.obj)' in function 'sprintf_s'
+LINK : warning LNK4217: symbol 'calloc' defined in 'libucrt.lib(calloc.obj)' is imported by 'ffx_backend_dx12_x64.lib(ffx_dx12.obj)' in function '"protected: void __cdecl std::time_get<char,class std::istreambuf_iterator<char,struct std::char_traits<char> > >::_Getvals<wchar_t>(wchar_t,class std::_Locinfo const &)" (??$_Getvals@_W@?$time_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@IEAAX_WAEBV_Locinfo@1@@Z)'
+LINK : warning LNK4217: symbol 'wcstombs_s' defined in 'libucrt.lib(wcstombs.obj)' is imported by 'ffx_backend_dx12_x64.lib(ffx_dx12.obj)' in function '"void __cdecl TIF(long)" (?TIF@@YAXJ@Z)'
+LINK : warning LNK4217: symbol '__p___argc' defined in 'libucrt.lib(argv_data.obj)' is imported by 'Qt6EntryPoint.lib(qtentrypoint_win.cpp.obj)' in function '"int __cdecl qtEntryPoint(void)" (?qtEntryPoint@@YAHXZ)'
+LINK : warning LNK4217: symbol '__p___argv' defined in 'libucrt.lib(argv_data.obj)' is imported by 'Qt6EntryPoint.lib(qtentrypoint_win.cpp.obj)' in function '"int __cdecl qtEntryPoint(void)" (?qtEntryPoint@@YAHXZ)'
+veyra_qml_ui.exe : fatal error LNK1169: one or more multiply defined symbols found
+ninja: build stopped: subcommand failed.
+FAILED (-1): cmake build

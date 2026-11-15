@@ -1,0 +1,26 @@
+-- Looking for fcntl - not found
+-- Looking for ioctl - not found
+-- Looking for poll - not found
+-- Looking for getaddrinfo - not found
+-- Looking for getnameinfo - not found
+-- Looking for gethostbyname_r - not found
+-- Looking for gethostbyaddr_r - not found
+-- Looking for inet_pton - not found
+-- Looking for inet_ntop - not found
+-- Performing Test HAS_MSGHDR_FLAGS - Failed
+-- Check size of socklen_t - failed
+-- NVIDIA Optical Flow SDK not found: building the unavailable-session stand-in
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread - not found
+--   Package 'libidn2' not found
+--   Package 'libnghttp2' not found
+-- Could NOT find NGHTTP2 (missing: NGHTTP2_INCLUDE_DIR NGHTTP2_LIBRARY) 
+--   Package 'libidn2' not found
+-- Could NOT find Libidn2 (missing: LIBIDN2_INCLUDE_DIR LIBIDN2_LIBRARY) 
+--   Package 'libpsl' not found
+-- Could NOT find Libpsl (missing: LIBPSL_INCLUDE_DIR LIBPSL_LIBRARY) 
+  libpsl is enabled, but not found.
+--   Package 'libssh2' not found
+-- Could NOT find Libssh2 (missing: LIBSSH2_INCLUDE_DIR LIBSSH2_LIBRARY) 
+-- Check size of ssize_t - failed
