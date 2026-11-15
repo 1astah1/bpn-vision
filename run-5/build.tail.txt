@@ -1,0 +1,286 @@
+== cmake build
+[1/563] Building CXX object CMakeFiles\veyra_base.dir\src\base\NgxResult.cpp.obj
+[2/563] Building CXX object CMakeFiles\veyra_base.dir\src\base\RuntimePaths.cpp.obj
+[3/563] Building CXX object CMakeFiles\veyra_base.dir\src\base\FileIdentity.cpp.obj
+[4/563] Building CXX object CMakeFiles\veyra_base.dir\src\base\ThunkHook.cpp.obj
+[5/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf.c.obj
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(817): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(818): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(841): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(842): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(849): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(850): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(925): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(926): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+[6/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_wgen.c.obj
+[7/563] Building CXX object CMakeFiles\veyra_base.dir\src\engine\ColorLut.cpp.obj
+[8/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_w4.c.obj
+[9/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_w8.c.obj
+[10/563] Building CXX object CMakeFiles\veyra_base.dir\src\engine\ColorLookStore.cpp.obj
+[11/563] Building CXX object CMakeFiles\veyra_base.dir\src\base\Log.cpp.obj
+[12/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_w16.c.obj
+[13/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_w32.c.obj
+[14/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_w64.c.obj
+[15/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_rand.c.obj
+[16/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_w128.c.obj
+[17/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_cpu.c.obj
+[18/563] Generating takion.pb
+[19/563] Building C object chiaki\third-party\CMakeFiles\gf_complete.dir\gf-complete\src\gf_general.c.obj
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf_general.c(303): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+[20/563] Linking CXX static library veyra_base.lib
+[21/563] Building CXX object CMakeFiles\veyra_gfx.dir\src\gfx\GpuSchedulingPriority.cpp.obj
+[22/563] Building CXX object CMakeFiles\veyra_gfx.dir\src\gfx\CommandSlotRing.cpp.obj
+[23/563] Building CXX object CMakeFiles\veyra_gfx.dir\src\gfx\D3D12DeviceContext.cpp.obj
+[24/563] Building CXX object CMakeFiles\veyra_gfx.dir\src\gfx\PresentSink.cpp.obj
+[25/563] Building CXX object CMakeFiles\veyra_gfx.dir\src\gfx\XessPresenter.cpp.obj
+[26/563] Building CXX object CMakeFiles\veyra_gfx.dir\src\gfx\XessMfgUnlock.cpp.obj
+[27/563] Linking C static library chiaki\third-party\gf_complete.lib
+[28/563] Building CXX object CMakeFiles\veyra_gfx.dir\src\gfx\FsrFgPresenter.cpp.obj
+[29/563] Building CXX object CMakeFiles\veyra_gfx.dir\src\gfx\XessPacing.cpp.obj
+[30/563] Building C object chiaki\third-party\CMakeFiles\jerasure.dir\jerasure\src\reed_sol.c.obj
+[31/563] Building C object chiaki\third-party\CMakeFiles\jerasure.dir\jerasure\src\galois.c.obj
+[32/563] Building C object chiaki\third-party\CMakeFiles\jerasure.dir\jerasure\src\jerasure.c.obj
+[33/563] Building C object chiaki\third-party\CMakeFiles\jerasure.dir\jerasure\src\cauchy.c.obj
+[34/563] Building C object chiaki\third-party\CMakeFiles\jerasure.dir\jerasure\src\liberation.c.obj
+[35/563] Building C object chiaki\third-party\nanopb\CMakeFiles\protobuf-nanopb-static.dir\pb_common.c.obj
+[36/563] Building C object chiaki\third-party\nanopb\CMakeFiles\protobuf-nanopb-static.dir\pb_encode.c.obj
+[37/563] Building C object chiaki\third-party\nanopb\CMakeFiles\protobuf-nanopb-static.dir\pb_decode.c.obj
+[38/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\amigaos.c.obj
+[39/563] Building CXX object CMakeFiles\veyra_gfx.dir\src\gfx\FsrSrBackend.cpp.obj
+[40/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\asyn-ares.c.obj
+[41/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\altsvc.c.obj
+[42/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\asyn-thread.c.obj
+[43/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\base64.c.obj
+[44/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\bufq.c.obj
+[45/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\bufref.c.obj
+[46/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\c-hyper.c.obj
+[47/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\cf-h2-proxy.c.obj
+[48/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\cf-haproxy.c.obj
+[49/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\cf-h1-proxy.c.obj
+[50/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\cf-https-connect.c.obj
+[51/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\cf-socket.c.obj
+[52/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\cfilters.c.obj
+[53/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\conncache.c.obj
+[54/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\connect.c.obj
+[55/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_addrinfo.c.obj
+[56/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\content_encoding.c.obj
+[57/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\cookie.c.obj
+[58/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_endian.c.obj
+[59/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_des.c.obj
+[60/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_fnmatch.c.obj
+[61/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_get_line.c.obj
+[62/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_gssapi.c.obj
+[63/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_gethostname.c.obj
+[64/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_memrchr.c.obj
+[65/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_multibyte.c.obj
+[66/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_range.c.obj
+[67/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_ntlm_core.c.obj
+[68/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_rtmp.c.obj
+[69/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_sasl.c.obj
+[70/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_sspi.c.obj
+[71/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_threads.c.obj
+[72/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_sha512_256.c.obj
+[73/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\dict.c.obj
+[74/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\curl_trc.c.obj
+[75/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\cw-out.c.obj
+[76/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\doh.c.obj
+[77/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\dynbuf.c.obj
+[78/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\dynhds.c.obj
+[79/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\easyoptions.c.obj
+[80/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\easy.c.obj
+[81/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\easygetopt.c.obj
+[82/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\escape.c.obj
+[83/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\fileinfo.c.obj
+[84/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\file.c.obj
+[85/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\fopen.c.obj
+[86/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\ftp.c.obj
+[87/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\ftplistparser.c.obj
+[88/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\getenv.c.obj
+[89/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\formdata.c.obj
+[90/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\gopher.c.obj
+[91/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\getinfo.c.obj
+[92/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\hash.c.obj
+[93/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\hmac.c.obj
+[94/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\headers.c.obj
+[95/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\hostasyn.c.obj
+[96/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\hostip4.c.obj
+[97/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\hostip.c.obj
+[98/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\hostip6.c.obj
+[99/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\hostsyn.c.obj
+[100/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\hsts.c.obj
+[101/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\http2.c.obj
+[102/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\http1.c.obj
+[103/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\http.c.obj
+[104/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\http_digest.c.obj
+[105/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\http_chunks.c.obj
+[106/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\http_aws_sigv4.c.obj
+[107/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\http_negotiate.c.obj
+[108/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\http_proxy.c.obj
+[109/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\http_ntlm.c.obj
+[110/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\idn.c.obj
+[111/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\if2ip.c.obj
+[112/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\imap.c.obj
+[113/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\inet_pton.c.obj
+[114/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\inet_ntop.c.obj
+[115/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\krb5.c.obj
+[116/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\ldap.c.obj
+[117/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\llist.c.obj
+[118/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\macos.c.obj
+[119/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\md4.c.obj
+[120/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\memdebug.c.obj
+[121/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\md5.c.obj
+[122/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\mqtt.c.obj
+[123/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\mime.c.obj
+[124/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\mprintf.c.obj
+[125/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\nonblock.c.obj
+[126/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\netrc.c.obj
+[127/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\openldap.c.obj
+[128/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\multi.c.obj
+[129/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\noproxy.c.obj
+[130/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\parsedate.c.obj
+[131/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\pop3.c.obj
+[132/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\pingpong.c.obj
+[133/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\psl.c.obj
+[134/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\progress.c.obj
+[135/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\rename.c.obj
+[136/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\rand.c.obj
+[137/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\rtsp.c.obj
+[138/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\request.c.obj
+[139/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\select.c.obj
+[140/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\sendf.c.obj
+[141/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\sha256.c.obj
+[142/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\setopt.c.obj
+[143/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\share.c.obj
+[144/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\slist.c.obj
+[145/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\smb.c.obj
+[146/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\smtp.c.obj
+[147/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\socks_gssapi.c.obj
+[148/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\socketpair.c.obj
+[149/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\socks.c.obj
+[150/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\socks_sspi.c.obj
+[151/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\speedcheck.c.obj
+[152/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\splay.c.obj
+[153/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\strcase.c.obj
+[154/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\strtok.c.obj
+[155/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\strdup.c.obj
+[156/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\strerror.c.obj
+[157/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\strtoofft.c.obj
+[158/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\telnet.c.obj
+[159/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\tftp.c.obj
+[160/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\system_win32.c.obj
+[161/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\timediff.c.obj
+[162/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\timeval.c.obj
+[163/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\transfer.c.obj
+[164/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\url.c.obj
+[165/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\version.c.obj
+[166/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\urlapi.c.obj
+[167/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\version_win32.c.obj
+[168/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\warnless.c.obj
+[169/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\cleartext.c.obj
+[170/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\ws.c.obj
+[171/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\cram.c.obj
+[172/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\digest.c.obj
+[173/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\gsasl.c.obj
+[174/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\digest_sspi.c.obj
+[175/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\krb5_gssapi.c.obj
+[176/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\ntlm.c.obj
+[177/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\krb5_sspi.c.obj
+[178/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\oauth2.c.obj
+[179/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\ntlm_sspi.c.obj
+[180/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\spnego_gssapi.c.obj
+[181/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\spnego_sspi.c.obj
+[182/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vauth\vauth.c.obj
+[183/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\bearssl.c.obj
+[184/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\cipher_suite.c.obj
+[185/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\gtls.c.obj
+[186/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\hostcheck.c.obj
+[187/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\keylog.c.obj
+[188/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\mbedtls.c.obj
+[189/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\mbedtls_threadlock.c.obj
+[190/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\openssl.c.obj
+[191/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\rustls.c.obj
+[192/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\sectransp.c.obj
+[193/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\schannel_verify.c.obj
+[194/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\vtls.c.obj
+[195/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\wolfssl.c.obj
+[196/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\schannel.c.obj
+[197/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vquic\curl_ngtcp2.c.obj
+[198/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vquic\curl_msh3.c.obj
+[199/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vquic\curl_osslq.c.obj
+[200/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vquic\curl_quiche.c.obj
+[201/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vquic\vquic.c.obj
+[202/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vquic\vquic-tls.c.obj
+[203/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vtls\x509asn1.c.obj
+[204/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vssh\libssh.c.obj
+[205/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vssh\libssh2.c.obj
+[206/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vssh\curl_path.c.obj
+[207/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\vssh\wolfssh.c.obj
+[208/563] Generating takion.pb.c, takion.pb.h
+FAILED: [code=1] chiaki/lib/protobuf/takion.pb.c chiaki/lib/protobuf/takion.pb.h D:/a/bpn-vision/bpn-vision/out/chiaki/lib/protobuf/takion.pb.c D:/a/bpn-vision/bpn-vision/out/chiaki/lib/protobuf/takion.pb.h 
+C:\Windows\system32\cmd.exe /C "cd /D D:\a\bpn-vision\bpn-vision\out\chiaki\lib\protobuf && C:\hostedtoolcache\windows\Python\3.11.9\x64\python.exe C:/deps/chiaki-msvc-stage/third-party/nanopb/generator/nanopb_generator.py D:/a/bpn-vision/bpn-vision/out/chiaki/lib/protobuf/takion.pb"
+Failed to build nanopb_pb2.py: protoc --python_out=C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\nanopb.proto -I=C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto -IC:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto
+Traceback (most recent call last):
+  File "C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\__init__.py", line 47, in build_nanopb_proto
+    invoke_protoc(argv=cmd)
+  File "C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\_utils.py", line 76, in invoke_protoc
+    return subprocess.call(argv)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+Failed to import generator/proto/nanopb_pb2.py:
+Traceback (most recent call last):
+  File "C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\__init__.py", line 101, in load_nanopb_pb2
+    from . import nanopb_pb2 as nanopb_pb2_mod
+ImportError: cannot import name 'nanopb_pb2' from 'proto' (C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\__init__.py)
+
+Failed to build nanopb_pb2.py: protoc --python_out=C:\Users\RUNNER~1\AppData\Local\Temp\nanopb-xlhdq_2p C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\nanopb.proto -I=C:\Users\RUNNER~1\AppData\Local\Temp\nanopb-xlhdq_2p -IC:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto
+Traceback (most recent call last):
+  File "C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\__init__.py", line 47, in build_nanopb_proto
+    invoke_protoc(argv=cmd)
+  File "C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\_utils.py", line 76, in invoke_protoc
+    return subprocess.call(argv)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+Failed to import C:\Users\RUNNER~1\AppData\Local\Temp\nanopb-xlhdq_2p/nanopb_pb2.py:
+Traceback (most recent call last):
+  File "C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\__init__.py", line 115, in load_nanopb_pb2
+    import nanopb_pb2 as nanopb_pb2_mod
+ModuleNotFoundError: No module named 'nanopb_pb2'
+
+
+
+Generating nanopb_pb2.py failed.
+Make sure that a protoc generator is available and matches python-protobuf version.
+Failed to import grpc_tools: Traceback (most recent call last):
+  File "C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\_utils.py", line 12, in has_grpcio_protoc
+    import grpc_tools.protoc
+ModuleNotFoundError: No module named 'grpc_tools'
+
+Using protoc from system path
+Failed to determine protoc version: [WinError 2] The system cannot find the file specified
+protoc builtin include path: ['C:\\deps\\chiaki-msvc-stage\\third-party\\nanopb\\generator\\proto']
+Python version 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+Using python-protobuf from C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\site-packages\google\protobuf\__init__.py
+Python-protobuf version: 6.31.1
+[209/563] Building CXX object CMakeFiles\veyra_moonlight_protocol.dir\src\moonlight\Crypto.cpp.obj
+[210/563] Building CXX object CMakeFiles\veyra_moonlight_protocol.dir\src\moonlight\Xml.cpp.obj
+[211/563] Building CXX object CMakeFiles\veyra_moonlight_protocol.dir\src\moonlight\Http.cpp.obj
+ninja: build stopped: subcommand failed.
+FAILED (1): cmake build

@@ -1,0 +1,108 @@
+== nv-codec-headers n13.0.19.0
+warning: refs/tags/n13.0.19.0 57f8cc0bb68e5f16f3787ea92cea59000f7bf97f is not a commit!
+Note: switching to 'e844e5b26f46bb77479f063029595293aa8f812d'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+== moonlight-common-c
+== moonlight enet
+== moonlight nanors
+== chiaki-ng 0e16950165f06e5c3291537c2eeba6e852be7120
+== chiaki-ng submodules
+Submodule 'android/app/src/main/cpp/oboe' (https://github.com/google/oboe) registered for path 'android/app/src/main/cpp/oboe'
+Submodule 'switch/borealis' (https://github.com/streetpea/borealis.git) registered for path 'switch/borealis'
+Submodule 'test/munit' (https://github.com/nemequ/munit.git) registered for path 'test/munit'
+Submodule 'third-party/cpp-steam-tools' (https://github.com/streetpea/cpp-steam-tools.git) registered for path 'third-party/cpp-steam-tools'
+Submodule 'third-party/curl' (https://github.com/curl/curl) registered for path 'third-party/curl'
+Submodule 'third-party/gf-complete' (https://github.com/streetpea/gf-complete.git) registered for path 'third-party/gf-complete'
+Submodule 'third-party/jerasure' (https://github.com/streetpea/jerasure.git) registered for path 'third-party/jerasure'
+Submodule 'third-party/nanopb' (https://github.com/nanopb/nanopb.git) registered for path 'third-party/nanopb'
+Cloning into 'C:/deps/chiaki-source/android/app/src/main/cpp/oboe'...
+Cloning into 'C:/deps/chiaki-source/switch/borealis'...
+Cloning into 'C:/deps/chiaki-source/test/munit'...
+Cloning into 'C:/deps/chiaki-source/third-party/cpp-steam-tools'...
+Cloning into 'C:/deps/chiaki-source/third-party/curl'...
+Cloning into 'C:/deps/chiaki-source/third-party/gf-complete'...
+Cloning into 'C:/deps/chiaki-source/third-party/jerasure'...
+Cloning into 'C:/deps/chiaki-source/third-party/nanopb'...
+From https://github.com/google/oboe
+ * branch            0ab5b12a5bc3630a3d6c83b20eed2a669ebf7a24 -> FETCH_HEAD
+Submodule path 'android/app/src/main/cpp/oboe': checked out '0ab5b12a5bc3630a3d6c83b20eed2a669ebf7a24'
+Submodule path 'switch/borealis': checked out '93c5d3b3bf26c8dc45d8d88b03f1b4238aad13dd'
+From https://github.com/nemequ/munit
+ * branch            439de4a9b136bc3b5163e73d4caf37c590bef875 -> FETCH_HEAD
+Submodule path 'test/munit': checked out '439de4a9b136bc3b5163e73d4caf37c590bef875'
+From https://github.com/streetpea/cpp-steam-tools
+ * branch            d36565f8eaca113efd454efe714126cd77a01512 -> FETCH_HEAD
+Submodule path 'third-party/cpp-steam-tools': checked out 'd36565f8eaca113efd454efe714126cd77a01512'
+From https://github.com/curl/curl
+ * branch            b1ef0e1a01c0bb6ee5367bd9c186a603bde3615a -> FETCH_HEAD
+Submodule path 'third-party/curl': checked out 'b1ef0e1a01c0bb6ee5367bd9c186a603bde3615a'
+Submodule path 'third-party/gf-complete': checked out 'fa54a4670a5705c84abf6c24b92b0cd479625478'
+Submodule path 'third-party/jerasure': checked out '505ccb4bc69eee8d7ea40a6089a056b99671134f'
+From https://github.com/nanopb/nanopb
+ * branch            cad3c18ef15a663e30e3e43e3a752b66378adec1 -> FETCH_HEAD
+Submodule path 'third-party/nanopb': checked out 'cad3c18ef15a663e30e3e43e3a752b66378adec1'
+== chiaki stage
+Preparing worktree (detached HEAD 0e16950)
+Updating files:  88% (680/767)
+Updating files:  89% (683/767)
+Updating files:  90% (691/767)
+Updating files:  91% (698/767)
+Updating files:  92% (706/767)
+Updating files:  93% (714/767)
+Updating files:  94% (721/767)
+Updating files:  95% (729/767)
+Updating files:  96% (737/767)
+Updating files:  97% (744/767)
+Updating files:  98% (752/767)
+Updating files:  99% (760/767)
+Updating files: 100% (767/767)
+Updating files: 100% (767/767), done.
+HEAD is now at 0e16950 Merge pull request #791 from ab300819/android/modernization-2026
+== chiaki stage submodules
+Cloning into 'C:/deps/chiaki-msvc-stage/android/app/src/main/cpp/oboe'...
+Cloning into 'C:/deps/chiaki-msvc-stage/switch/borealis'...
+Cloning into 'C:/deps/chiaki-msvc-stage/test/munit'...
+Cloning into 'C:/deps/chiaki-msvc-stage/third-party/cpp-steam-tools'...
+Cloning into 'C:/deps/chiaki-msvc-stage/third-party/curl'...
+Cloning into 'C:/deps/chiaki-msvc-stage/third-party/gf-complete'...
+Cloning into 'C:/deps/chiaki-msvc-stage/third-party/jerasure'...
+Cloning into 'C:/deps/chiaki-msvc-stage/third-party/nanopb'...
+From https://github.com/google/oboe
+ * branch            0ab5b12a5bc3630a3d6c83b20eed2a669ebf7a24 -> FETCH_HEAD
+Submodule path 'android/app/src/main/cpp/oboe': checked out '0ab5b12a5bc3630a3d6c83b20eed2a669ebf7a24'
+Submodule path 'switch/borealis': checked out '93c5d3b3bf26c8dc45d8d88b03f1b4238aad13dd'
+From https://github.com/nemequ/munit
+ * branch            439de4a9b136bc3b5163e73d4caf37c590bef875 -> FETCH_HEAD
+Submodule path 'test/munit': checked out '439de4a9b136bc3b5163e73d4caf37c590bef875'
+From https://github.com/streetpea/cpp-steam-tools
+ * branch            d36565f8eaca113efd454efe714126cd77a01512 -> FETCH_HEAD
+Submodule path 'third-party/cpp-steam-tools': checked out 'd36565f8eaca113efd454efe714126cd77a01512'
+From https://github.com/curl/curl
+ * branch            b1ef0e1a01c0bb6ee5367bd9c186a603bde3615a -> FETCH_HEAD
+Submodule path 'third-party/curl': checked out 'b1ef0e1a01c0bb6ee5367bd9c186a603bde3615a'
+Submodule path 'third-party/gf-complete': checked out 'fa54a4670a5705c84abf6c24b92b0cd479625478'
+Submodule path 'third-party/jerasure': checked out '505ccb4bc69eee8d7ea40a6089a056b99671134f'
+From https://github.com/nanopb/nanopb
+ * branch            cad3c18ef15a663e30e3e43e3a752b66378adec1 -> FETCH_HEAD
+Submodule path 'third-party/nanopb': checked out 'cad3c18ef15a663e30e3e43e3a752b66378adec1'
+== apply 0001-chiaki-msvc-vla-compat.patch
+== apply 0002-chiaki-video-metadata.patch
+== verify chiaki stage
+CHIAKI_STAGE_EXACT_PATCHES_VERIFIED
+== protoc 31.1
+== protoc extract

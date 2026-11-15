@@ -1,0 +1,25 @@
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(817): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(818): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(841): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(842): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(849): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(850): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(925): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf.c(926): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+C:\deps\chiaki-msvc-stage\third-party\gf-complete\src\gf_general.c(303): warning C4311: 'type cast': pointer truncation from 'void *' to 'unsigned long'
+[156/563] Building C object chiaki\third-party\curl\lib\CMakeFiles\libcurl_object.dir\strerror.c.obj
+FAILED: [code=1] chiaki/lib/protobuf/takion.pb.c chiaki/lib/protobuf/takion.pb.h D:/a/bpn-vision/bpn-vision/out/chiaki/lib/protobuf/takion.pb.c D:/a/bpn-vision/bpn-vision/out/chiaki/lib/protobuf/takion.pb.h 
+Failed to build nanopb_pb2.py: protoc --python_out=C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\nanopb.proto -I=C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto -IC:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+Failed to import generator/proto/nanopb_pb2.py:
+ImportError: cannot import name 'nanopb_pb2' from 'proto' (C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\__init__.py)
+Failed to build nanopb_pb2.py: protoc --python_out=C:\Users\RUNNER~1\AppData\Local\Temp\nanopb-xlhdq_2p C:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto\nanopb.proto -I=C:\Users\RUNNER~1\AppData\Local\Temp\nanopb-xlhdq_2p -IC:\deps\chiaki-msvc-stage\third-party\nanopb\generator\proto
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+Failed to import C:\Users\RUNNER~1\AppData\Local\Temp\nanopb-xlhdq_2p/nanopb_pb2.py:
+ModuleNotFoundError: No module named 'nanopb_pb2'
+Generating nanopb_pb2.py failed.
+Failed to import grpc_tools: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'grpc_tools'
+Failed to determine protoc version: [WinError 2] The system cannot find the file specified
+ninja: build stopped: subcommand failed.
+FAILED (1): cmake build
